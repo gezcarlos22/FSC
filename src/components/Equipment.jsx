@@ -50,7 +50,7 @@ export default function Equipament() {
     visible: (i) => ({
       opacity: 1,
       scale: 1,
-      transition: { delay: i * 0.1, duration: 0.8, ease: "easeOut" }
+      transition: isMobile ? { duration: 0 } : { delay: i * 0.1, duration: 0.8, ease: "easeOut" }
     })
   };
 
@@ -58,7 +58,7 @@ export default function Equipament() {
     <section id="Equipment" className="relative z-1 w-full flex flex-col items-center justify-start py-12 lg:py-30 bg-black">
       
       <motion.div 
-        initial={{ opacity: 0, y: 40 }}
+        initial={isMobile ? false : { opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
@@ -75,7 +75,6 @@ export default function Equipament() {
       <div className="flex flex-row items-center gap-2 h-[400px] md:h-[450px] w-full max-w-6xl mt-10 px-4 overflow-hidden">
         {equipData.map((item, idx) => {
           const isActiveMobile = activeIdx === idx;
-          // Lógica para mostrar todos en desktop, en móvil solo el actual y los 2 de al lado
           const isNearby = !isMobile || Math.abs(activeIdx - idx) <= 1;
           
           return (
@@ -83,17 +82,15 @@ export default function Equipament() {
               key={idx}
               custom={idx}
               variants={itemVariant}
-              initial="hidden"
+              initial={isMobile ? false : "hidden"}
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               onClick={() => setActiveIdx(idx)}
-              // En móvil: si no está cerca, ancho 0 y oculto.
               className={`relative group cursor-pointer transition-all duration-700 ease-in-out rounded-2xl overflow-hidden h-full border border-gray-800
                 ${isNearby ? "flex-[1] opacity-100" : "flex-[0] opacity-0 pointer-events-none border-none"}
                 ${isActiveMobile ? "flex-[10] md:flex-grow" : ""} 
                 md:flex-grow md:opacity-100 md:pointer-events-auto md:border md:hover:flex-[4]`} 
             >
-              {/* Imagen */}
               <img
                 className={`h-full w-full object-cover object-center transition-transform duration-700 
                   md:group-hover:scale-110 ${isActiveMobile ? "scale-110" : "scale-100"}`}
@@ -101,13 +98,11 @@ export default function Equipament() {
                 alt={item.title}
               />
               
-              {/* Overlay */}
               <div className={`absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent transition-opacity duration-500 
                 md:opacity-0 md:group-hover:opacity-100 
                 ${isActiveMobile ? "opacity-100" : "opacity-0"}`} 
               />
 
-              {/* Contenedor de la descripción */}
               <div className={`absolute bottom-6 left-4 right-4 md:left-6 md:right-6 transition-all duration-500 
                 md:translate-y-10 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100
                 ${isActiveMobile ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
@@ -128,7 +123,6 @@ export default function Equipament() {
                 </div>
               </div>
 
-              {/* Texto vertical (Móvil) */}
               <div className={`absolute inset-0 flex items-center justify-center md:hidden transition-opacity duration-300
                 ${isActiveMobile ? "opacity-0" : "opacity-100"}`}>
                  <div className="rotate-90 text-white/60 font-bold tracking-widest text-[10px] uppercase whitespace-nowrap">
@@ -140,9 +134,7 @@ export default function Equipament() {
         })}
       </div>
 
-      {/* Controles de Navegación (Móvil) */}
       <div className="flex items-center gap-6 mt-8 md:hidden">
-        {/* Flecha Izquierda */}
         <button
           onClick={() => setActiveIdx((prev) => (prev - 1 + equipData.length) % equipData.length)}
           className="p-3 border border-white/10 text-white rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-md group active:scale-90"
@@ -150,7 +142,6 @@ export default function Equipament() {
           <ArrowLeft size={18} className="group-active:-translate-x-1 transition-transform" />
         </button>
 
-        {/* Puntos de navegación */}
         <div className="flex gap-2">
           {equipData.map((_, i) => (
             <button
@@ -163,7 +154,6 @@ export default function Equipament() {
           ))}
         </div>
 
-        {/* Flecha Derecha */}
         <button
           onClick={() => setActiveIdx((prev) => (prev + 1) % equipData.length)}
           className="p-3 border border-white/10 text-white rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-md group active:scale-90"
