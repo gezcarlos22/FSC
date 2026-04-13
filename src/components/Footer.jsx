@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaTwitter, FaInstagram, FaTiktok, FaFacebookF } from "react-icons/fa6";
 import { motion } from "framer-motion";
 
@@ -71,11 +72,18 @@ export const Footer = () => {
                     >
                         <p className="text-sm font-semibold tracking-widest text-white uppercase">Secciones</p>
                         <ul className="mt-6 space-y-4">
-                            {["Inicio", "Sobre mi", "Testimonios", "Contacto"].map((item) => (
-                                <li key={item}>
-                                    <a href="#" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> {item} </a>
-                                </li>
-                            ))}
+                            <li>
+                                <Link to="/" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Inicio </Link>
+                            </li>
+                            <li>
+                                <Link to="/about" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Sobre mi </Link>
+                            </li>
+                            <li>
+                                <a href="/#Testimoneal" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Testimonios </a>
+                            </li>
+                            <li>
+                                <a href="/#Contact" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Contacto </a>
+                            </li>
                         </ul>
                     </motion.div>
 
@@ -89,11 +97,18 @@ export const Footer = () => {
                     >
                         <p className="text-sm font-semibold tracking-widest text-white uppercase">Colecciones</p>
                         <ul className="mt-6 space-y-4">
-                            {["Paisajes", "Animales", "Productos", "Bodas"].map((item) => (
-                                <li key={item}>
-                                    <a href="#" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> {item} </a>
-                                </li>
-                            ))}
+                            <li>
+                                <Link to="/categoria/paisajes" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Paisajes </Link>
+                            </li>
+                            <li>
+                                <Link to="/categoria/animales" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Animales </Link>
+                            </li>
+                            <li>
+                                <Link to="/categoria/productos" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Productos </Link>
+                            </li>
+                            <li>
+                                <Link to="/categoria/bodas" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Bodas </Link>
+                            </li>
                         </ul>
                     </motion.div>
 
