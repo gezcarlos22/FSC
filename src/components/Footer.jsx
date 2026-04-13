@@ -37,7 +37,7 @@ export const Footer = () => {
                         viewport={{ once: true }}
                         className="col-span-2 lg:col-span-1 lg:pr-8"
                     >
-                        <img className="w-auto h-9" src="./logo.png" alt="Logo" />
+                        <img className="w-auto h-9" src="public/logo.png" alt="Logo" />
                         <p className="text-base leading-relaxed text-gray-600 mt-7">
                             A través de mi lente, busco capturar la esencia de cada instante, combinando la espontaneidad con la técnica profesional.
                         </p>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Importamos Link para navegación interna
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,17 +13,13 @@ export const Header = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 10) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
+            setIsScrolled(window.scrollY > 10);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Actualizamos href para que coincida con tus rutas de React Router
+    // Cierra el menú al navegar
     const colecciones = [
         { name: 'Paisajes', href: '/categoria/paisajes' },
         { name: 'Animales', href: '/categoria/animales' },
@@ -41,16 +37,17 @@ export const Header = () => {
                 <nav className="flex items-center justify-between h-16 lg:h-20">
                     {/* Logo */}
                     <div className="flex-shrink-0 lg:flex-1">
-                        <a href="/#Home" className="flex">
-                            <img className="w-auto h-8 lg:h-10" src="./logo.png" alt="Logo" />
-                        </a>
+                        <Link to="/" className="flex">
+                            <img className="w-auto h-8 lg:h-10" src="public/logo.png" alt="Logo" />
+                        </Link>
                     </div>
 
-                    {/* CENTRO: Enlaces Desktop */}
+                    {/* Desktop Links */}
                     <div className="hidden lg:flex lg:justify-center lg:items-center lg:space-x-10">
-                        <a href="/#Home" className="text-base font-medium text-white hover:text-blue-600 transition-all"> Inicio </a>
-                        <a href="/about" className="text-base font-medium text-white hover:text-blue-600 transition-all"> Sobre mi </a>
+                        <Link to="/" className="text-base font-medium text-white hover:text-blue-600 transition-all"> Inicio </Link>
+                        <Link to="/about" className="text-base font-medium text-white hover:text-blue-600 transition-all"> Sobre mi </Link>
                         
+                        {/* Dropdown Colecciones con el mismo estilo */}
                         <div 
                             className="relative group"
                             onMouseEnter={() => setIsCollectionsOpen(true)}
@@ -58,7 +55,9 @@ export const Header = () => {
                         >
                             <button className="flex items-center text-base font-medium text-white hover:text-blue-600 transition-all focus:outline-none">
                                 Colecciones
-                                <svg className={`w-4 h-4 ml-1 transition-transform ${isCollectionsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                                <svg className={`w-4 h-4 ml-1 transition-transform ${isCollectionsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
                             </button>
 
                             <div className={`absolute left-0 w-48 pt-4 transition-all duration-200 ${isCollectionsOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
@@ -81,28 +80,30 @@ export const Header = () => {
                         <a href="/#Testimoneal" className="text-base font-medium text-white hover:text-blue-600 transition-all"> Testimonios </a>
                     </div>
 
-                    {/* Botón Contacto */}
+                    {/* Botón Contacto - Manteniendo el gradiente original */}
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                         <div className="relative inline-flex group">
                             <div className="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:shadow-lg group-hover:shadow-cyan-500/50"></div>
-                            <a href="#Contact" className="relative inline-flex items-center justify-center px-6 py-2 text-base font-normal text-white bg-black border border-transparent rounded-full"> Contacto </a>
+                            <a href="#Contact" className="relative inline-flex items-center justify-center px-6 py-2 text-base font-normal text-white bg-black border border-transparent rounded-full"> 
+                                Contacto 
+                            </a>
                         </div>
                     </div>
 
-                    {/* Botón menú móvil */}
+                    {/* Hamburguesa Móvil */}
                     <div className="flex items-center lg:hidden">
-                        <button onClick={toggleMenu} className="inline-flex p-2 text-white hover:bg-gray-800 rounded-md">
+                        <button onClick={toggleMenu} className="inline-flex p-2 text-white hover:bg-gray-800 rounded-md transition-colors">
                             <svg className={`${isMenuOpen ? 'hidden' : 'block'} w-6 h-6`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" /></svg>
                             <svg className={`${isMenuOpen ? 'block' : 'hidden'} w-6 h-6`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                         </button>
                     </div>
                 </nav>
 
-                {/* MENÚ MÓVIL */}
+                {/* Menú Móvil - Estilo original con fondo negro y bordes */}
                 <nav className={`${isMenuOpen ? 'flex' : 'hidden'} flex-col pt-2 pb-6 mb-4 bg-black border border-gray-800 rounded-md lg:hidden`}>
                     <div className="flex flex-col items-center space-y-2">
-                        <Link to="/" onClick={toggleMenu} className="py-2 text-base font-medium text-white hover:text-blue-600"> Inicio </Link>
-                        <a href="/about" onClick={toggleMenu} className="py-2 text-base font-medium text-white hover:text-blue-600"> Sobre mi </a>
+                        <Link to="/" className="py-2 text-base font-medium text-white hover:text-blue-600"> Inicio </Link>
+                        <Link to="/about" className="py-2 text-base font-medium text-white hover:text-blue-600"> Sobre mi </Link>
                         
                         <button 
                             onClick={() => setIsCollectionsOpen(!isCollectionsOpen)}
