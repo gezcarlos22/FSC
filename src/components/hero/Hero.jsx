@@ -78,7 +78,7 @@ const Hero = () => {
             animate={{ x: 0, 
                     opacity: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.1 : 1,
                     scale: 1 }}
-            transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+            transition={{ duration: 2, delay: 0.5 , ease: "easeOut" }}
 
             className="pointer-events-none fixed w-screen h-full top-3/5 z-1 flex -translate-y-1/2 opacity"
         >
