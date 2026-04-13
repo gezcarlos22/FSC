@@ -62,7 +62,7 @@ const Contact = () => {
                                 </form>
                             </div>
 
-                            <div className='flex justify-center lg:justify-start mt-8'>
+                            <div className='flex w-full justify-center lg:justify-start'>
                                 <SocialButtons/>
                             </div>
                         </motion.div>
