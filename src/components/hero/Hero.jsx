@@ -75,7 +75,7 @@ const Hero = () => {
             initial={{ x: -100, opacity: 0, scale: 1 }}
             animate={{ 
                 x: 0, 
-                opacity: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.2 : 1,
+                opacity: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.1 : 1,
                 scale: 1 
             }}
             transition={{ duration: 2, delay: 0.5 , ease: "easeOut" }}
