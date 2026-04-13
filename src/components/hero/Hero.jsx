@@ -87,7 +87,7 @@ const Hero = () => {
         </motion.div>
 
         {/* SECCIÓN 1: HOME - Reducido h-screen en mobile */}
-        <section id="Home" className="relative pt-20 pb-10 md:py-10 min-h-[80vh] md:h-screen flex items-center">
+        <section id="Home" className="relative pt-30 md:py-10 min-h-[80vh] md:h-screen flex items-center">
             <div className="px-4 mx-auto relative sm:px-6 lg:px-8 max-w-7xl w-full">
                 <div className="grid grid-cols-1 gap-y-8 md:grid-cols-2 md:gap-x-30 items-center justify-center">            
                     <motion.div 
@@ -98,7 +98,7 @@ const Hero = () => {
                     >
                         <h1 className="text-5xl font-goldman font-extrabold text-white sm:text-5xl lg:text-6xl xl:text-7xl">FSC</h1>
                         <h1 className="text-3xl font-extrabold text-white sm:text-3xl lg:text-4xl xl:text-4xl">AUDIOVISUAL</h1>
-                        <p className="mt-4 text-lg font-medium text-gray-200 md:text-gray-400 sm:mt-8">A través de mi lente, busco capturar la esencia de cada instante, combinando la espontaneidad con la técnica profesional.</p>
+                        <p className="mt-4 w-8/10 text-lg font-medium text-gray-200 md:text-gray-400 sm:mt-8">A través de mi lente, busco capturar la esencia de cada instante, combinando la espontaneidad con la técnica profesional.</p>
                         <SocialButtons/>
                     </motion.div>
                     <div className="hidden md:block"></div>
