@@ -116,14 +116,19 @@ const Hero = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-12 items-start">
                     
                     <motion.div 
-                        initial={{ x: -100, opacity: 0 }}
-                        whileInView={{ x: 0, opacity: 1 }}
+                        // Condicional de animación: si es mobile usa 'y', si es desktop usa 'x'
+                        initial={{ 
+                            x: window.innerWidth < 1024 ? 0 : -100, 
+                            y: window.innerWidth < 1024 ? 50 : 0, 
+                            opacity: 0 
+                        }}
+                        whileInView={{ x: 0, y: 0, opacity: 1 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 2, delay: 0.5 }}
+                        transition={{ duration: 1.5, delay: 0.2 }} // Reduje un poco el tiempo para que se sienta más fluido
                         className="lg:col-span-2 flex flex-col items-start"
                     >
-                        {/* 1. Las Fotos */}
-                        <div className="relative z-20 w-full flex justify-center lg:justify-start items-center">
+                        {/* 1. Las Fotos - Ajuste de tamaño con escala en mobile */}
+                        <div className="relative z-20 w-full flex justify-center lg:justify-start items-center transition-transform">
                             <PolaroidGallery images={sampleImages} />
                         </div>
 
@@ -137,7 +142,10 @@ const Hero = () => {
                             <div className="flex justify-center lg:justify-start mt-6 px-6 lg:px-0">
                                 <div className="relative inline-flex group w-full max-w-xs">
                                     <div className="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:shadow-lg group-hover:shadow-cyan-500/50"></div>
-                                    <Link href="/about" className="relative inline-flex items-center justify-center w-full px-2 py-4 text-base font-bold text-white bg-black rounded-full"> Conocé mi historia </Link>
+                                    {/* Cambié href por 'to' si usas React Router Link */}
+                                    <Link to="/about" className="relative inline-flex items-center justify-center w-full px-2 py-4 text-base font-bold text-white bg-black rounded-full"> 
+                                        Conocé mi historia 
+                                    </Link>
                                 </div>
                             </div>
                         </div>

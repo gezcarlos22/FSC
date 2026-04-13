@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Camera, Focus, Layers, Monitor, Aperture } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Equipament() {
   const [activeIdx, setActiveIdx] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const equipData = [
     {
@@ -38,6 +39,12 @@ export default function Equipament() {
     },
   ];
 
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const itemVariant = {
     hidden: { opacity: 0, scale: 0.95 },
     visible: (i) => ({
@@ -57,19 +64,19 @@ export default function Equipament() {
         transition={{ duration: 1 }}
         className="text-center px-4"
       >
+        <h2 className="mt-4 pb-4 text-3xl font-bold text-white sm:text-4xl xl:text-5xl font-pj">
+          Tecnología de vanguardia para resultados impecables.
+        </h2>
         <p className="text-lg font-medium text-gray-400 font-pj">
           Desde el disparo con cámaras de alta gama hasta el revelado digital avanzado.
         </p>
-        <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl xl:text-5xl font-pj">
-          Tecnología de vanguardia para resultados impecables.
-        </h2>
       </motion.div>
 
       <div className="flex flex-row items-center gap-2 h-[500px] md:h-[450px] w-full max-w-6xl mt-10 px-4 overflow-hidden">
         {equipData.map((item, idx) => {
           const isActiveMobile = activeIdx === idx;
-          // Lógica para mostrar solo el actual y los 2 de al lado en móvil
-          const isNearby = Math.abs(activeIdx - idx) <= 1;
+          // Lógica para mostrar todos en desktop, en móvil solo el actual y los 2 de al lado
+          const isNearby = !isMobile || Math.abs(activeIdx - idx) <= 1;
           
           return (
             <motion.div

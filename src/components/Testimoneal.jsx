@@ -41,8 +41,9 @@ export const Testimoneal = () => {
                         transition={{ duration: 1 }}
                         className="text-center"
                     >
+                        <h2 className="mt-4 pb-4 text-3xl font-bold text-white sm:text-4xl xl:text-5xl font-pj">Historias de quienes ya pasaron por nuestro lente.</h2>
                         <p className="text-lg font-medium text-gray-400 font-pj">Una comunidad entera coincide en lo especial que es nuestro trabajo.</p>
-                        <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl xl:text-5xl font-pj">Historias de quienes ya pasaron por nuestro lente.</h2>
+
                     </motion.div>
 
                     {/* Contenedor principal con overflow visible para no cortar las cards laterales */}
@@ -62,7 +63,7 @@ export const Testimoneal = () => {
                             // Limitamos el arrastre para que no se pierdan las cards
                             dragConstraints={scrollRef}
                             dragElastic={0.2}
-                            className="flex flex-nowrap gap-6 lg:gap-10 cursor-grab active:cursor-grabbing py-10"
+                            className="flex flex-nowrap gap-6 lg:gap-10 cursor-grab active:cursor-grabbing"
                             style={{ width: "max-content" }}
                         >
                             {testimonials.map((item, index) => (
