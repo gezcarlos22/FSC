@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion'; // Importamos motion
+import { motion } from 'framer-motion'; 
 import Scene3D from '../Scene3D';
 import SocialButtons from './Social';
 import PolaroidGallery from './PolaroidGallery';
@@ -33,9 +33,8 @@ const Hero = () => {
     return (
     <div className="relative bg-black overflow-hidden">
         
-        {/* FONDO ÚNICO COMPARTIDO con movimiento de entrada */}
+        {/* FONDO ÚNICO COMPARTIDO */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            {/* SVG 1: Cyan/Purple - Viene desde arriba a la izquierda */}
             <motion.div 
                 initial={{ x: -200, y: -200, opacity: 0 }}
                 animate={{ x: 0, y: 0, opacity: 0.7 }}
@@ -53,7 +52,6 @@ const Hero = () => {
                 </svg>     
             </motion.div>
 
-            {/* SVG 2: Rosa/Naranja - Viene desde abajo a la derecha */}
             <motion.div 
                 initial={{ x: 200, y: 200, opacity: 0 }}
                 animate={{ x: 0, y: 0, opacity: 0.6 }}
@@ -72,27 +70,26 @@ const Hero = () => {
             </motion.div>
         </div>
 
-        {/* ESCENA 3D con aparición paulatina (Fade-in) */}
+        {/* ESCENA 3D */}
         <motion.div
-            // En móviles (si decides mostrarlo), podrías querer que empiece de forma estática
             initial={{ x: -100, opacity: 0, scale: 1 }}
-            animate={{ x: 0, 
-                    opacity: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.1 : 1,
-                    scale: 1 }}
+            animate={{ 
+                x: 0, 
+                opacity: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.2 : 1,
+                scale: 1 
+            }}
             transition={{ duration: 2, delay: 0.5 , ease: "easeOut" }}
-
-            className="pointer-events-none fixed w-screen h-full top-3/5 z-1 flex -translate-y-1/2 opacity"
+            className="pointer-events-none fixed w-screen h-full top-1/2 md:top-3/5 z-1 flex -translate-y-1/2"
         >
             <Scene3D 
                 scrollProgress={typeof window !== 'undefined' && window.innerWidth < 768 ? 0 : scrollProgress} 
             />
         </motion.div>
 
-        {/* SECCIÓN 1: De Derecha a Izquierda */}
-        <section id="Home" className="relative py-10 h-screen flex items-center">
+        {/* SECCIÓN 1: HOME - Reducido h-screen en mobile */}
+        <section id="Home" className="relative pt-20 pb-10 md:py-10 min-h-[80vh] md:h-screen flex items-center">
             <div className="px-4 mx-auto relative sm:px-6 lg:px-8 max-w-7xl w-full">
-                <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 gap-x-30 items-center justify-center">            
-                    
+                <div className="grid grid-cols-1 gap-y-8 md:grid-cols-2 md:gap-x-30 items-center justify-center">            
                     <motion.div 
                         initial={{ x: 100, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
@@ -102,39 +99,37 @@ const Hero = () => {
                         <h1 className="text-5xl font-goldman font-extrabold text-white sm:text-5xl lg:text-6xl xl:text-7xl">FSC</h1>
                         <h1 className="text-3xl font-extrabold text-white sm:text-3xl lg:text-4xl xl:text-4xl">AUDIOVISUAL</h1>
                         <p className="mt-4 text-lg font-medium text-gray-200 md:text-gray-400 sm:mt-8">A través de mi lente, busco capturar la esencia de cada instante, combinando la espontaneidad con la técnica profesional.</p>
-
                         <SocialButtons/>
                     </motion.div>
-                    <div></div>
+                    <div className="hidden md:block"></div>
                 </div>
             </div>
         </section>
 
-        {/* SECCIÓN 2: De Izquierda a Derecha (On Scroll) */}
-        <section id="Aboutme" className="relative z-10 py-20 lg:py-40 flex items-center min-h-screen">
+        {/* SECCIÓN 2: ABOUT ME - Acercada en mobile */}
+        <section id="Aboutme" className="relative z-10 py-10 md:py-20 lg:py-40 flex items-center min-h-screen">
             <div className="px-4 mx-auto relative sm:px-6 lg:px-8 max-w-7xl w-full">
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-12 items-start">
                     
                     <motion.div 
-                        // Condicional de animación: si es mobile usa 'y', si es desktop usa 'x'
                         initial={{ 
-                            x: window.innerWidth < 1024 ? 0 : -100, 
-                            y: window.innerWidth < 1024 ? 50 : 0, 
+                            x: typeof window !== 'undefined' && window.innerWidth < 1024 ? 0 : -100, 
+                            y: typeof window !== 'undefined' && window.innerWidth < 1024 ? 30 : 0, 
                             opacity: 0 
                         }}
                         whileInView={{ x: 0, y: 0, opacity: 1 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 1.5, delay: 0.2 }} // Reduje un poco el tiempo para que se sienta más fluido
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ duration: 1.2, delay: 0.1 }}
                         className="lg:col-span-2 flex flex-col items-start"
                     >
-                        {/* 1. Las Fotos - Ajuste de tamaño con escala en mobile */}
-                        <div className="relative z-20 w-full flex justify-center lg:justify-start items-center transition-transform">
+                        {/* 1. Las Fotos */}
+                        <div className="relative z-20 w-full flex justify-center lg:justify-start items-center">
                             <PolaroidGallery images={sampleImages} />
                         </div>
 
                         {/* 2. La Información */}
-                        <div className="relative z-10 w-full text-left">
-                            <p className="mt-6 text-lg font-medium text-gray-200 md:text-gray-400 leading-relaxed sm:mt-8 max-w-2xl">
+                        <div className="relative z-10 w-full text-left mt-2 md:mt-0">
+                            <p className="mt-4 md:mt-6 text-lg font-medium text-gray-200 md:text-gray-400 leading-relaxed max-w-2xl">
                                 Como fotógrafo y creador visual, entiendo que cada imagen es un fragmento de una historia mayor. 
                                 Me defino como una persona que valora la autenticidad por sobre la pose.
                             </p>
@@ -142,7 +137,6 @@ const Hero = () => {
                             <div className="flex justify-center lg:justify-start mt-6 px-6 lg:px-0">
                                 <div className="relative inline-flex group w-full max-w-xs">
                                     <div className="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:shadow-lg group-hover:shadow-cyan-500/50"></div>
-                                    {/* Cambié href por 'to' si usas React Router Link */}
                                     <Link to="/about" className="relative inline-flex items-center justify-center w-full px-2 py-4 text-base font-bold text-white bg-black rounded-full"> 
                                         Conocé mi historia 
                                     </Link>
