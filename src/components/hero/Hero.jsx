@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion'; // Importamos motion
 import Scene3D from '../Scene3D';
 import SocialButtons from './Social';
@@ -136,7 +137,7 @@ const Hero = () => {
                             <div className="flex justify-center lg:justify-start mt-6 px-6 lg:px-0">
                                 <div className="relative inline-flex group w-full max-w-xs">
                                     <div className="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:shadow-lg group-hover:shadow-cyan-500/50"></div>
-                                    <a href="#" className="relative inline-flex items-center justify-center w-full px-2 py-4 text-base font-bold text-white bg-black rounded-full"> Conocé mi historia </a>
+                                    <Link href="#" className="relative inline-flex items-center justify-center w-full px-2 py-4 text-base font-bold text-white bg-black rounded-full"> Conocé mi historia </Link>
                                 </div>
                             </div>
                         </div>
