@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Camera, Focus, Layers, Monitor, Aperture } from "lucide-react";
+import { Camera, Focus, Layers, Monitor, Aperture, ArrowLeft, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Equipament() {
@@ -72,7 +72,7 @@ export default function Equipament() {
         </p>
       </motion.div>
 
-      <div className="flex flex-row items-center gap-2 h-[500px] md:h-[450px] w-full max-w-6xl mt-10 px-4 overflow-hidden">
+      <div className="flex flex-row items-center gap-2 h-[400px] md:h-[450px] w-full max-w-6xl mt-10 px-4 overflow-hidden">
         {equipData.map((item, idx) => {
           const isActiveMobile = activeIdx === idx;
           // Lógica para mostrar todos en desktop, en móvil solo el actual y los 2 de al lado
@@ -140,15 +140,36 @@ export default function Equipament() {
         })}
       </div>
 
-      {/* Puntos de navegación */}
-      <div className="flex gap-2 mt-6 md:hidden">
-        {equipData.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setActiveIdx(i)}
-            className={`h-1.5 rounded-full transition-all duration-300 ${activeIdx === i ? "w-8 bg-cyan-500" : "w-2 bg-gray-700"}`}
-          />
-        ))}
+      {/* Controles de Navegación (Móvil) */}
+      <div className="flex items-center gap-6 mt-8 md:hidden">
+        {/* Flecha Izquierda */}
+        <button
+          onClick={() => setActiveIdx((prev) => (prev - 1 + equipData.length) % equipData.length)}
+          className="p-3 border border-white/10 text-white rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-md group active:scale-90"
+        >
+          <ArrowLeft size={18} className="group-active:-translate-x-1 transition-transform" />
+        </button>
+
+        {/* Puntos de navegación */}
+        <div className="flex gap-2">
+          {equipData.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActiveIdx(i)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                activeIdx === i ? "w-8 bg-cyan-500" : "w-2 bg-gray-700"
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Flecha Derecha */}
+        <button
+          onClick={() => setActiveIdx((prev) => (prev + 1) % equipData.length)}
+          className="p-3 border border-white/10 text-white rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-md group active:scale-90"
+        >
+          <ArrowRight size={18} className="group-active:translate-x-1 transition-transform" />
+        </button>
       </div>
     </section>
   );
