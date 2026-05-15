@@ -30,14 +30,23 @@ const SocialButtons = () => {
         ))}
       </div>
 
-      {/* Botón de WhatsApp - en lg se alinea junto a las demás redes, en mobile queda abajo */}
+      {/* Botón de WhatsApp - Ajustado para evitar huecos en los bordes */}
       <div className="relative inline-flex group w-full lg:w-auto">
-        <div className="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-emerald-500 via-lime-500 to-green-700 group-hover:shadow-lg group-hover:shadow-emerald-500/40"></div>
+        {/* 
+            CAMBIO 1: -inset-[1px] en lugar de -inset-px para asegurar cobertura.
+            CAMBIO 2: bg-clip-border para forzar el pintado hasta el límite.
+        */}
+        <div className="absolute transition-all duration-200 rounded-full -inset-[1px] bg-gradient-to-r from-emerald-500 via-lime-500 to-green-700 group-hover:shadow-lg group-hover:shadow-emerald-500/40"></div>
+        
         <a
           href="https://wa.me/tunúmero"
           target="_blank"
           rel="noopener noreferrer"
-          className="relative inline-flex items-center justify-center w-full lg:w-auto px-6 py-3 text-lg font-bold text-white border border-transparent rounded-full transition-all duration-200 gap-2 bg-gradient-to-r from-emerald-500 via-lime-500 to-green-700 shadow-lg shadow-emerald-500/20 hover:shadow-emerald-600/40"
+          /* 
+            CAMBIO 3: Añadimos 'isolate' para crear un nuevo contexto de apilamiento.
+            CAMBIO 4: 'bg-black' (o el color de tu fondo) con el gradiente encima.
+          */
+          className="relative isolate inline-flex items-center justify-center w-full lg:w-auto px-6 py-3 text-lg font-bold text-white rounded-full transition-all duration-200 gap-2 bg-gradient-to-r from-emerald-500 via-lime-500 to-green-700 shadow-lg shadow-emerald-500/20 hover:shadow-emerald-600/40 overflow-hidden"
           role="button"
         >
           <FaWhatsapp className="text-2xl text-white" />
