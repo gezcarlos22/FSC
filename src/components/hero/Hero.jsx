@@ -94,12 +94,21 @@ const Hero = () => {
                         initial={{ x: 100, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         transition={{ duration: 2, delay: 0.5 }}
-                        className="md:order-last relative z-10"
+                        // Añadimos flex y centrado para mobile, volvemos a block en md
+                        className="md:order-last relative z-10 flex flex-col items-center md:items-start"
                     >
-                        <h1 className="text-5xl font-goldman font-extrabold text-white sm:text-5xl lg:text-6xl xl:text-7xl">FSC</h1>
-                        <h1 className="text-3xl font-extrabold text-white sm:text-3xl lg:text-4xl xl:text-4xl">AUDIOVISUAL</h1>
-                        <p className="mt-4 w-8/10 text-lg font-medium text-gray-200 md:text-gray-400 sm:mt-8">A través de mi lente, busco capturar la esencia de cada instante, combinando la espontaneidad con la técnica profesional.</p>
-                        <SocialButtons/>
+                        {/* mx-auto centra la imagen en mobile, md:mx-0 la alinea a la izquierda en desktop */}
+                        <img className="w-auto h-18 lg:h-26 mx-auto md:mx-0" src="/logo.png" alt="Logo" />
+                        
+                        {/* text-center para mobile, md:text-left para desktop */}
+                        <p className="mt-4 md:w-8/10 text-lg font-medium text-gray-200 md:text-gray-400 sm:mt-8 text-center md:text-left">
+                            A través de mi lente, busco capturar la esencia de cada instante, combinando la espontaneidad con la técnica profesional.
+                        </p>
+
+                        {/* Contenedor para los botones sociales si necesitan centrado */}
+                        <div className="w-full flex justify-center md:justify-start">
+                            <SocialButtons/>
+                        </div>
                     </motion.div>
                     <div className="hidden md:block"></div>
                 </div>
@@ -129,7 +138,7 @@ const Hero = () => {
 
                         {/* 2. La Información */}
                         <div className="relative z-10 w-full text-left mt-2 md:mt-0">
-                            <p className="mt-4 md:mt-6 text-lg font-medium text-gray-200 md:text-gray-400 leading-relaxed max-w-2xl px-2 md:px-0">
+                            <p className="mt-4 md:mt-6 text-lg font-medium text-gray-200 md:text-gray-400 text-center md:text-left leading-relaxed max-w-2xl px-2 md:px-0">
                                 Como fotógrafo y creador visual, entiendo que cada imagen es un fragmento de una historia mayor. 
                                 Me defino como una persona que valora la autenticidad por sobre la pose.
                             </p>

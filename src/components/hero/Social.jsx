@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaXTwitter, FaInstagram, FaTiktok, FaFacebookF } from "react-icons/fa6";
+import { FaXTwitter, FaInstagram, FaTiktok, FaFacebookF, FaWhatsapp } from "react-icons/fa6";
 
 const SocialButtons = () => {
   const socialLinks = [
@@ -10,25 +10,40 @@ const SocialButtons = () => {
   ];
 
   return (
-    <div className="flex items-center justify-center md:justify-start gap-6 py-10">
-      {socialLinks.map((social) => (
-        <div key={social.name} className="relative inline-flex group">
-          {/* El borde con degradado y efecto Glow al hacer hover */}
-          <div className={`absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r ${social.color} group-hover:shadow-lg group-hover:shadow-cyan-500/50`}></div>
-          
-          {/* El botón circular */}
-          <a
-            href={social.url}
-            title={social.name}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative inline-flex items-center justify-center w-12 h-12 text-xl text-white bg-black border border-transparent rounded-full transition-all duration-200"
-            role="button"
-          >
-            {social.icon}
-          </a>
-        </div>
-      ))}
+    <div className="flex flex-col items-center md:items-start gap-4 py-10 max-w-fit lg:flex-row lg:items-center">
+      {/* Fila de Redes Sociales */}
+      <div className="flex items-center justify-center md:justify-start gap-6">
+        {socialLinks.map((social) => (
+          <div key={social.name} className="relative inline-flex group">
+            <div className={`absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r ${social.color} group-hover:shadow-lg group-hover:shadow-cyan-500/50`}></div>
+            <a
+              href={social.url}
+              title={social.name}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative inline-flex items-center justify-center w-12 h-12 text-xl text-white bg-black border border-transparent rounded-full transition-all duration-200"
+              role="button"
+            >
+              {social.icon}
+            </a>
+          </div>
+        ))}
+      </div>
+
+      {/* Botón de WhatsApp - en lg se alinea junto a las demás redes, en mobile queda abajo */}
+      <div className="relative inline-flex group w-full lg:w-auto">
+        <div className="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-emerald-500 via-lime-500 to-green-700 group-hover:shadow-lg group-hover:shadow-emerald-500/40"></div>
+        <a
+          href="https://wa.me/tunúmero"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative inline-flex items-center justify-center w-full lg:w-auto px-6 py-3 text-lg font-bold text-white border border-transparent rounded-full transition-all duration-200 gap-2 bg-gradient-to-r from-emerald-500 via-lime-500 to-green-700 shadow-lg shadow-emerald-500/20 hover:shadow-emerald-600/40"
+          role="button"
+        >
+          <FaWhatsapp className="text-2xl text-white" />
+          <span className='uppercase font-medium'>Contactame</span>
+        </a>
+      </div>
     </div>
   );
 };
