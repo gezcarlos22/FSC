@@ -89,7 +89,7 @@ const Hero = () => {
         {/* SECCIÓN 1: HOME - Reducido h-screen en mobile */}
         <section id="Home" className="relative pt-30 md:py-10 min-h-[80vh] md:h-screen flex items-center">
             <div className="px-4 mx-auto relative sm:px-6 lg:px-8 max-w-7xl w-full">
-                <div className="grid grid-cols-1 gap-y-8 md:grid-cols-2 md:gap-x-30 items-center justify-center">            
+                <div className="grid grid-cols-1 gap-y-8 md:grid-cols-2 md:gap-x-30 items-center justify-center px-2">            
                     <motion.div 
                         initial={{ x: 100, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
@@ -129,7 +129,7 @@ const Hero = () => {
 
                         {/* 2. La Información */}
                         <div className="relative z-10 w-full text-left mt-2 md:mt-0">
-                            <p className="mt-4 md:mt-6 text-lg font-medium text-gray-200 md:text-gray-400 leading-relaxed max-w-2xl">
+                            <p className="mt-4 md:mt-6 text-lg font-medium text-gray-200 md:text-gray-400 leading-relaxed max-w-2xl px-2 md:px-0">
                                 Como fotógrafo y creador visual, entiendo que cada imagen es un fragmento de una historia mayor. 
                                 Me defino como una persona que valora la autenticidad por sobre la pose.
                             </p>

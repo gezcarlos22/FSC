@@ -94,13 +94,13 @@ export const CategoryContent = ({ category }) => {
         <h2 className="text-3xl font-bold border-l-4 border-white pl-6 uppercase tracking-widest">
           Detalles de Colección
         </h2>
-        <p className="pt-5 text-lg text-white/70 leading-8 max-w-4xl">
+        <p className="pt-5 text-lg text-white/70 leading-8">
           {category.extra}
         </p>
       </div>
 
       {/* CORE FEATURES */}
-      <div className="reveal-text rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] p-8 backdrop-blur-xl">
+      <div className="reveal-text rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] p-4 md:p-8 backdrop-blur-xl mb-10">
         <h2 className="text-2xl font-semibold mb-8 text-white/90">Características principales</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {category.highlights.map((item, i) => (

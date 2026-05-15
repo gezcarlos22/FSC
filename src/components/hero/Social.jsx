@@ -10,7 +10,7 @@ const SocialButtons = () => {
   ];
 
   return (
-    <div className="flex items-center gap-6 py-10">
+    <div className="flex items-center justify-center md:justify-start gap-6 py-10">
       {socialLinks.map((social) => (
         <div key={social.name} className="relative inline-flex group">
           {/* El borde con degradado y efecto Glow al hacer hover */}

@@ -100,13 +100,13 @@ export const Collection = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
-            className="max-w-6xl"
+            
           >
             <p className="inline-block px-5 py-1.5 mb-6 text-xs font-bold tracking-[0.4em] uppercase bg-white text-black rounded-full shadow-lg">
               {currentCategory.subtitle}
             </p>
 
-            <h1 className="text-6xl md:text-[10rem] lg:text-[13rem] font-black uppercase leading-[0.8] tracking-tighter select-none">
+            <h1 className="w-full text-6xl md:text-[10rem] lg:text-[12rem] font-black uppercase leading-[0.8] tracking-tighter select-none">
               <span 
                 className="block text-transparent stroke-white" 
                 style={{ WebkitTextStroke: '2px white' }}

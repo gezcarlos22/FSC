@@ -7,20 +7,25 @@ export const Images = ({ isModalOpen, setIsModalOpen }) => {
 
   const allImages = [
     // Columna 1
-    "https://images.unsplash.com/photo-1432462770865-65b70566d673?auto=format&fit=crop&w=1950&q=80",
-    "https://images.unsplash.com/photo-1629367494173-c78a56567877?auto=format&fit=crop&w=927&q=80",
-    "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=2940&q=80",
+    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/P18_vf6btm.jpg',  
+    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/A18_hfvmk3.jpg',
+    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773968/C15_mjsjk7.jpg",
+    
+    
     // Columna 2
-    "https://images.unsplash.com/photo-1552960562-daf630e9278b?auto=format&fit=crop&w=687&q=80",
-    "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?auto=format&fit=crop&w=800&q=80",
-    "https://docs.material-tailwind.com/img/team-3.jpg",
+    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P13_sa6ghf.jpg',
+    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/P24_lcwnot.jpg',
+    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773966/C24_rcgjjg.jpg',
+  
+    
     // Columna 3
-    "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=2940&q=80",
-    "https://docs.material-tailwind.com/img/team-3.jpg",
-    "https://images.unsplash.com/photo-1552960562-daf630e9278b?auto=format&fit=crop&w=687&q=80",
+    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/C18_rkbyps.jpg',
+    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A1_eoz6p2.jpg',
+    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P9_dwhkye.jpg',
+
     // Columna 4
-    "https://images.unsplash.com/photo-1552960562-daf630e9278b?auto=format&fit=crop&w=687&q=80",
-    "https://images.unsplash.com/photo-1629367494173-c78a56567877?auto=format&fit=crop&w=927&q=80",
+    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773958/P21_ofdwev.jpg',
+    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/P19_x7medm.jpg',
   ];
 
   const openModalAt = (index) => {

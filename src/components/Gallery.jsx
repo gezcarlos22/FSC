@@ -2,15 +2,13 @@ import React, { useRef, useEffect, useState } from "react";
 import { VideoModal } from "./Modal";
 
 const videos = [
-  "https://res.cloudinary.com/dmixd7wpb/video/upload/v1771504070/WhatsApp_Video_2026-02-17_at_22.33.55_2_xyw05h.mp4",
-  "https://res.cloudinary.com/dmixd7wpb/video/upload/v1771504007/WhatsApp_Video_2026-02-17_at_22.33.46_2_pj72ft.mp4",
-  "https://res.cloudinary.com/dmixd7wpb/video/upload/v1771359844/WhatsApp_Video_2026-02-17_at_14.18.11_g4xire.mp4",
-  "https://res.cloudinary.com/dmixd7wpb/video/upload/v1771503987/WhatsApp_Video_2026-02-17_at_22.33.44_1_nvpkf4.mp4",
-  "https://res.cloudinary.com/dmixd7wpb/video/upload/v1771503914/WhatsApp_Video_2026-02-17_at_22.33.44_bftote.mp4",
-  "https://res.cloudinary.com/dmixd7wpb/video/upload/v1771503945/WhatsApp_Video_2026-02-17_at_22.33.45_kfkmhu.mp4",
-  "https://res.cloudinary.com/dmixd7wpb/video/upload/v1771503995/WhatsApp_Video_2026-02-17_at_22.33.46_1_oqtruw.mp4",
-  "https://res.cloudinary.com/dmixd7wpb/video/upload/v1771503959/WhatsApp_Video_2026-02-17_at_22.33.45_1_aenkxb.mp4",
-  "https://res.cloudinary.com/dmixd7wpb/video/upload/v1771359823/WhatsApp_Video_2026-02-17_at_14.18.08_tnnffj.mp4"
+  "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/P4_ksukqg.jpg",
+  "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/P4_ksukqg.jpg",
+  "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/P4_ksukqg.jpg",
+  "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/P4_ksukqg.jpg",
+  "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/P4_ksukqg.jpg",
+  "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/P4_ksukqg.jpg",
+  "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/P4_ksukqg.jpg",
 ];
 
 export default function VideoSection({ setIsModalOpen: setGlobalModalOpen }) {
@@ -84,3 +82,4 @@ export default function VideoSection({ setIsModalOpen: setGlobalModalOpen }) {
     </section>
   );
 }
+

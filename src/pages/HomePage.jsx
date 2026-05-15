@@ -9,6 +9,7 @@ import { Images } from '../components/Images';
 import Equipament from '../components/Equipment';
 import Programs from '../components/Programs';
 import Contact from '../components/Contact';
+import TiktokSection from '../components/Tiktok';
 
 const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -24,7 +25,7 @@ const HomePage = () => {
       {/* Ambos componentes ahora controlan el mismo estado global */}
       <Images isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
       
-      <VideoSection setIsModalOpen={setIsModalOpen} />
+      {/*<VideoSection setIsModalOpen={setIsModalOpen} />*/}
       
       <Equipament />
       <Programs />
