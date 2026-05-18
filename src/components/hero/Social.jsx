@@ -10,7 +10,7 @@ const SocialButtons = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center md:items-start gap-4 py-10 max-w-fit lg:flex-row lg:items-center">
+    <div className="flex flex-col items-center md:items-start gap-6 py-10 max-w-fit lg:flex-row lg:items-center">
       {/* Fila de Redes Sociales */}
       <div className="flex items-center justify-center md:justify-start gap-6">
         {socialLinks.map((social) => (

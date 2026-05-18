@@ -170,7 +170,7 @@ const AboutPage = () => {
                     {/* Renderizado dinámico del icono */}
                     {item.icon}
                     
-                    <h3 className="font-bold text-lg text-white mb-2 group-hover:text-blue-600 transition-colors">
+                    <h3 className="font-bold text-lg text-white mb-2 transition-colors">
                     {item.title}
                     </h3>
                     

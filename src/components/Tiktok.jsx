@@ -1,108 +1,128 @@
-import React, { useRef, useState} from "react";
-import { TiktokModal } from "./Modal";
+import React, { useEffect, useState } from "react";
+import { InstagramEmbed } from "react-social-media-embed";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
-const tiktokUrls = [
-  "https://www.tiktok.com/@fedesosacristiani/video/7375192622358449414",
-  "https://www.tiktok.com/@fedesosacristiani/video/7375192622358449414",
-  "https://www.tiktok.com/@fedesosacristiani/video/7375192622358449414",
-  "https://www.tiktok.com/@fedesosacristiani/video/7375192622358449414",
-  "https://www.tiktok.com/@fedesosacristiani/video/7375192622358449414",
+const instagramPosts = [
+  { id: 1, url: "https://www.instagram.com/p/CUbHfhpswxt/", caption: "Momentos inspiradores..." },
+  { id: 2, url: "https://www.instagram.com/p/CUbHfhpswxt/", caption: "Detalles suaves..." },
+  { id: 3, url: "https://www.instagram.com/p/CUbHfhpswxt/", caption: "Street style..." },
+  { id: 4, url: "https://www.instagram.com/p/CUbHfhpswxt/", caption: "Momentos inspiradores 2..." },
+  { id: 5, url: "https://www.instagram.com/p/CUbHfhpswxt/", caption: "Detalles suaves 2..." },
 ];
 
-export default function TiktokSection({ setIsModalOpen: setGlobalModalOpen }) {
-  const scrollRef = useRef(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  
-  // Estados para el arrastre (drag)
-  const [isDown, setIsDown] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-  const [moved, setMoved] = useState(false);
+export default function InstagramSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(3);
 
-  const getTiktokId = (url) => {
-    const parts = url.split('/');
-    return parts[parts.length - 1] || parts[parts.length - 2];
+  // Detectar el tamaño de la pantalla para ajustar cuántos posts se ven en pantalla
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setItemsPerPage(3); // Pantalla grande (lg)
+      } else if (window.innerWidth >= 768) {
+        setItemsPerPage(2); // Pantalla mediana (md)
+      } else {
+        setItemsPerPage(1); // Pantalla pequeña / móvil
+      }
+    };
+
+    handleResize(); // Ejecutar al montar
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Total de pasos posibles en el carrusel
+  const maxIndex = Math.max(0, instagramPosts.length - itemsPerPage);
+
+  const previous = () => {
+    setActiveIndex((current) => (current === 0 ? maxIndex : current - 1));
   };
 
-  // Manejadores de eventos para el arrastre
-  const handleMouseDown = (e) => {
-    setIsDown(true);
-    setMoved(false);
-    setStartX(e.pageX - scrollRef.current.offsetLeft);
-    setScrollLeft(scrollRef.current.scrollLeft);
+  const next = () => {
+    setActiveIndex((current) => (current >= maxIndex ? 0 : current + 1));
   };
 
-  const handleMouseMove = (e) => {
-    if (!isDown) return;
-    setMoved(true);
-    e.preventDefault();
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 2; 
-    scrollRef.current.scrollLeft = scrollLeft - walk;
-  };
+  // Autoplay (opcional, ajustado al maxIndex)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((current) => (current >= maxIndex ? 0 : current + 1));
+    }, 6000);
 
-  const handleMouseUp = () => setIsDown(false);
+    return () => clearInterval(interval);
+  }, [maxIndex]);
 
-  const handleOpenModal = (index) => {
-    // Si hubo mucho movimiento, no abrimos el modal (fue un drag, no un click)
-    if (moved) return;
-    setSelectedIndex(index);
-    setIsModalOpen(true);
-    if (setGlobalModalOpen) setGlobalModalOpen(true);
+  const goTo = (index) => {
+    setActiveIndex(index);
   };
 
   return (
-    <section className="relative w-full z-20 h-[70vh] md:h-[85vh] bg-black flex items-center overflow-hidden">
-      {/* Contenedor del Carrusel Centrado */}
-      <div 
-        ref={scrollRef}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={() => setIsDown(false)}
-        className={`flex gap-6 overflow-x-auto no-scrollbar py-10 px-[15%] md:px-[40%] w-full h-full items-center snap-x snap-mandatory ${isDown ? 'cursor-grabbing' : 'cursor-grab'}`}
-      >
-        {tiktokUrls.map((url, idx) => {
-          const videoId = getTiktokId(url);
-          // URL de la miniatura oficial de TikTok (Thumbnail)
-          const thumbnailUrl = `https://www.tiktok.com/api/v2/video/proxy?format=webp&video_id=${videoId}`;
+    <section className="relative w-full z-20 overflow-hidden bg-black pt-12">
+      <div className=" mx-auto text-white justify-center items-center flex">
+        <div className="relative max-w-6xl overflow-hidden rounded-2xl">
+          <div className="absolute inset-0 pointer-events-none" />
 
-          return (
-            <div 
-              key={idx}
-              onClick={() => handleOpenModal(idx)}
-              className="flex-none aspect-[9/16] h-[50vh] md:h-[65vh] lg:h-[75vh] snap-center rounded-2xl overflow-hidden bg-zinc-900 shadow-2xl transition-transform duration-300 hover:scale-105 relative group"
+          {/* Contenedor Enmascarado para el deslizamiento */}
+          <div className="overflow-hidden w-full">
+            <motion.div
+              animate={{ x: `-${activeIndex * (100 / itemsPerPage)}%` }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="flex w-full"
             >
-              {/* Imagen de Previsualización */}
-              <img 
-                src={thumbnailUrl} 
-                alt="TikTok Preview"
-                className="w-full h-full object-cover pointer-events-none select-none"
-                loading="lazy"
-              />
-              
-              {/* Overlay de Play Icon */}
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 flex items-center justify-center transition-colors">
-                 <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30">
-                    <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-white border-b-[10px] border-b-transparent ml-1" />
-                 </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+              {instagramPosts.map((post) => (
+                <div
+                  key={post.id}
+                  className="w-full shrink-0 px-3 md:w-1/2 lg:w-1/3"
+                >
+                  <div className="relative md:rounded-[1rem] md:border md:border-white/10 md:bg-slate-950/85 md:p-4 md:shadow-2xl md:shadow-cyan-500/10 md:backdrop-blur-2xl">
+                    <div className="overflow-hidden border border-white/10 bg-black/80 rounded-lg">
+                      <InstagramEmbed url={post.url} captioned placeholderDisabled />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
 
-      <TiktokModal
-        isOpen={isModalOpen}
-        onClose={() => {
-          setIsModalOpen(false);
-          if (setGlobalModalOpen) setGlobalModalOpen(false);
-        }}
-        videos={tiktokUrls} 
-        currentIndex={selectedIndex}
-        setCurrentIndex={setSelectedIndex}
-      />
+          {/* Controles e Indicadores */}
+          <div className="mt-8 flex flex-col gap-6 md:flex-row items-center justify-center">
+            <div className="flex items-center gap-6">
+              
+              {/* Botón Izquierdo */}
+              <button
+                onClick={previous}
+                className="p-3 border border-white/10 text-white rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-md group active:scale-90"
+                aria-label="Anterior"
+              >
+                <ArrowLeft size={18} className="group-active:-translate-x-1 transition-transform" />
+              </button>
+
+              {/* Dots Dinámicos basados en la cantidad de páginas/desplazamientos reales */}
+              <div className="flex gap-2 items-center">
+                {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => goTo(i)}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      activeIndex === i ? "w-8 bg-cyan-500" : "w-2 bg-gray-700 hover:bg-gray-500"
+                    }`}
+                    aria-label={`Ir al bloque ${i + 1}`}
+                  />
+                ))}
+              </div>
+
+              {/* Botón Derecho */}
+              <button
+                onClick={next}
+                className="p-3 border border-white/10 text-white rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-md group active:scale-90"
+                aria-label="Siguiente"
+              >
+                <ArrowRight size={18} className="group-active:translate-x-1 transition-transform" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
