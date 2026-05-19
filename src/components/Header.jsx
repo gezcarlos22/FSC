@@ -75,9 +75,6 @@ export const Header = () => {
                                 </div>
                             </div>
                         </div>
-
-                        <a href="/#Equipment" className="text-base font-medium text-white hover:text-blue-600 transition-all"> Equipo </a>
-                        <a href="/#Testimoneal" className="text-base font-medium text-white hover:text-blue-600 transition-all"> Testimonios </a>
                     </div>
 
                     {/* Botón Contacto - Manteniendo el gradiente original */}
@@ -125,9 +122,6 @@ export const Header = () => {
                                 </Link>
                             ))}
                         </div>
-
-                        <a href="/#Equipment" onClick={toggleMenu} className="py-2 text-base font-medium text-white hover:text-blue-600"> Equipo </a>
-                        <a href="/#Testimoneal" onClick={toggleMenu} className="py-2 text-base font-medium text-white hover:text-blue-600"> Testimonios </a>
                     </div>
                 </nav>
             </div>

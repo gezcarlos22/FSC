@@ -263,13 +263,13 @@ export const PostInstagramModal = ({ isOpen, onClose, posts, currentIndex, setCu
             <div className="flex flex-col h-[45vh] md:h-full bg-white text-zinc-900 p-6 md:p-8">
               
               {/* Header: Info del Perfil */}
-              <div className="flex items-center justify-between pb-3">
-                <div className="flex items-center gap-3">
+              <div className="flex items-center justify-between border-b border-zinc-100 pb-4">
+                <div className="flex items-center gap-3 ">
                   <div className="h-10 w-10 rounded-full object-cover border border-zinc-200 bg-black justify-center items-center flex">
                     <img 
                       src={currentPost.avatarUrl} 
                       alt={currentPost.username} 
-                      className="scale-100"
+                      className="scale-100 rounded-full"
                     />
                   </div>
                   
@@ -301,7 +301,7 @@ export const PostInstagramModal = ({ isOpen, onClose, posts, currentIndex, setCu
               </div>
 
               {/* Botón de Acción: Ver Publicación (Cierra la sección superior con borde inferior) */}
-              <div className="border-b border-zinc-100 pb-4">
+              <div className="">
                 <a
                   href={currentPost.url}
                   target="_blank"

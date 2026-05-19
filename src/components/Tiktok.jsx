@@ -20,7 +20,7 @@ const companyTabs = [
   {
     id: "brand-two",
     name: "Empresa B",
-    logo: "/logo.png",
+    logo: "/logos/riiing/riiing_png.png",
     posts: [
       { id: 5, url: "https://www.instagram.com/p/CUbHfhpswxt/", caption: "Publicación clave Empresa B" },
       { id: 6, url: "https://www.instagram.com/p/CUbHfhpswxt/", caption: "Estilo elegante B" },
@@ -235,40 +235,40 @@ export function InstagramSection2() {
   },
   {
     id: "brand-two",
-    name: "Empresa B",
-    logo: "/logo.png",
+    name: "Riiing",
+    logo: "/logos/riiing/riiing_png.png",
     posts: [
       { 
         id: 5, 
         url: "https://www.instagram.com/p/CUbHfhpswxt/", 
         caption: "Publicación clave Empresa B",
-        mediaUrl: "/images/posts/empresa-b-1.jpg",
+        mediaUrl: 'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/P7_txsl0u.jpg',
         username: "empresa.b",
-        avatarUrl: "/logos/empresa-b.png",
+        avatarUrl: "/logos/riiing/riiing.png",
         date: "Hace 3 días"
       },
-      { id: 6, url: "https://www.instagram.com/p/CUbHfhpswxt/", caption: "Estilo elegante B", mediaUrl: "/images/posts/empresa-b-2.jpg", username: "empresa.b", avatarUrl: "/logos/empresa-b.png", date: "Hace 5 días" },
-      { id: 7, url: "https://www.instagram.com/p/CUbHfhpswxt/", caption: "Atmósfera B", mediaUrl: "/images/posts/empresa-b-3.jpg", username: "empresa.b", avatarUrl: "/logos/empresa-b.png", date: "Hace 2 semanas" },
-      { id: 8, url: "https://www.instagram.com/p/CUbHfhpswxt/", caption: "Atmósfera B", mediaUrl: "/images/posts/empresa-b-4.jpg", username: "empresa.b", avatarUrl: "/logos/empresa-b.png", date: "Hace 1 mes" },
+      { id: 6, url: "https://www.instagram.com/p/CUbHfhpswxt/", caption: "Estilo elegante B", mediaUrl: 'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P6_xqkxwq.jpg', username: "empresa.b", avatarUrl: "/logos/riiing/riiing.png", date: "Hace 5 días" },
+      { id: 7, url: "https://www.instagram.com/p/CUbHfhpswxt/", caption: "Atmósfera B", mediaUrl: 'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/P11_u7jxlk.jpg', username: "empresa.b", avatarUrl: "/logos/riiing/riiing.png", date: "Hace 2 semanas" },
+      { id: 8, url: "https://www.instagram.com/p/CUbHfhpswxt/", caption: "Atmósfera B", mediaUrl: 'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/P14_l9hry3.jpg', username: "empresa.b", avatarUrl: "/logos/riiing/riiing.png", date: "Hace 1 mes" },
     ],
   },
   {
     id: "brand-three",
-    name: "Empresa C",
-    logo: "/logo.png",
+    name: "He Mod",
+    logo: "/logos/he-mod/he-mod_png.png",
     posts: [
       { 
         id: 9, 
         url: "https://www.instagram.com/p/CUbHfhpswxt/", 
         caption: "Inspiración Empresa C",
-        mediaUrl: "/images/posts/empresa-c-1.jpg",
+        mediaUrl: 'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/C8_qtcrpa.jpg',
         username: "branding.c",
-        avatarUrl: "/logos/empresa-c.png",
+        avatarUrl: "/logos/he-mod/he-mod.jpg",
         date: "Hace 1 día"
       },
-      { id: 10, url: "https://www.instagram.com/p/CUbHfhpswxt/", caption: "Detalles dinámicos C", mediaUrl: "/images/posts/empresa-c-2.jpg", username: "branding.c", avatarUrl: "/logos/empresa-c.png", date: "Hace 4 días" },
-      { id: 11, url: "https://www.instagram.com/p/CUbHfhpswxt/", caption: "Energía creativa C", mediaUrl: "/images/posts/empresa-c-3.jpg", username: "branding.c", avatarUrl: "/logos/empresa-c.png", date: "Hace 1 semana" },
-      { id: 12, url: "https://www.instagram.com/p/CUbHfhpswxt/", caption: "Energía creativa C", mediaUrl: "/images/posts/empresa-c-4.jpg", username: "branding.c", avatarUrl: "/logos/empresa-c.png", date: "Hace 2 meses" },
+      { id: 10, url: "https://www.instagram.com/p/CUbHfhpswxt/", caption: "Detalles dinámicos C", mediaUrl: 'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773967/C23_ay3nuq.jpg', username: "branding.c", avatarUrl: "/logos/he-mod/he-mod.jpg", date: "Hace 4 días" },
+      { id: 11, url: "https://www.instagram.com/p/CUbHfhpswxt/", caption: "Energía creativa C", mediaUrl: "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773968/C22_bjojlf.jpg", username: "branding.c", avatarUrl: "/logos/he-mod/he-mod.jpg", date: "Hace 1 semana" },
+      { id: 12, url: "https://www.instagram.com/p/CUbHfhpswxt/", caption: "Energía creativa C", mediaUrl: 'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773965/C19_go6tu3.jpg', username: "branding.c", avatarUrl: "/logos/he-mod/he-mod.jpg", date: "Hace 2 meses" },
     ],
   },
 ];
@@ -398,7 +398,7 @@ export function InstagramSection2() {
                     <img 
                       src={post.avatarUrl || "/default-avatar.jpg"} 
                       alt={post.username} 
-                      className="scale-100"
+                      className="scale-100 rounded-full"
                     />
                   </div>
               {/* Textos */}
