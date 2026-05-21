@@ -107,6 +107,8 @@ export const VideoModal = ({ isOpen, onClose, videos, currentIndex, setCurrentIn
     setCurrentIndex((prev) => (prev - 1 + videos.length) % videos.length);
   };
 
+  
+
   return createPortal(
     <AnimatePresence>
       <motion.div
@@ -188,6 +190,29 @@ export const VideoModal = ({ isOpen, onClose, videos, currentIndex, setCurrentIn
 };
 
 export const PostInstagramModal = ({ isOpen, onClose, posts, currentIndex, setCurrentIndex }) => {
+
+  const renderCaptionConHashtags = (text) => {
+    if (!text) return "";
+    
+    // Usamos el flag 'u' (Unicode) y \p{L} que detecta cualquier tipo de letra en cualquier idioma (incluye ñ y tildes)
+    const regex = /(#[_\p{L}\p{N}]+)/gu;
+    
+    // Dividimos el texto usando la nueva expresión regular
+    const parts = text.split(regex);
+    
+    return parts.map((part, index) => {
+      // Verificamos si la parte actual es efectivamente un hashtag
+      if (part.startsWith('#')) {
+        return (
+          <span key={index} className="text-blue-500 hover:underline cursor-pointer">
+            {part}
+          </span>
+        );
+      }
+      // Si no es un hashtag, lo dejamos como texto normal
+      return part;
+    });
+  };
   
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'unset';
@@ -252,68 +277,80 @@ export const PostInstagramModal = ({ isOpen, onClose, posts, currentIndex, setCu
           >
             {/* COLUMNA IZQUIERDA: Visualizador de Imagen */}
             <div className="relative flex items-center justify-center bg-zinc-900 overflow-hidden h-[40vh] md:h-full">
+            {/* Renderizado condicional para el Modal: Video o Imagen */}
+            {currentPost.mediaUrl && (currentPost.mediaUrl.endsWith('.mp4') || currentPost.mediaUrl.endsWith('.webm') || currentPost.mediaUrl.includes('video')) ? (
+              <video 
+                src={currentPost.mediaUrl} 
+                controls
+                autoPlay
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            ) : (
               <img
                 src={currentPost.mediaUrl}
                 alt={currentPost.caption}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-            </div>
+            )}
+          </div>
 
             {/* COLUMNA DERECHA: Contenido y Descripciones */}
-            <div className="flex flex-col h-[45vh] md:h-full bg-white text-zinc-900 p-6 md:p-8">
-              
-              {/* Header: Info del Perfil */}
-              <div className="flex items-center justify-between border-b border-zinc-100 pb-4">
-                <div className="flex items-center gap-3 ">
-                  <div className="h-10 w-10 rounded-full object-cover border border-zinc-200 bg-black justify-center items-center flex">
-                    <img 
-                      src={currentPost.avatarUrl} 
-                      alt={currentPost.username} 
-                      className="scale-100 rounded-full"
-                    />
-                  </div>
-                  
-                  <div className="flex flex-col">
-                    <span className="font-bold text-base text-zinc-900 tracking-wide leading-tight">
-                      {currentPost.username}
-                    </span>
-                    <span className="text-xs text-zinc-400 mt-0.5">
-                      {currentPost.date}
-                    </span>
-                  </div>
-                </div>
+            <div className="flex flex-col h-[45vh] md:h-[60vh] lg:h-[70vh] xl:h-full max-h-full bg-white text-zinc-900 p-6 md:p-8 overflow-hidden">
+  
+  {/* Header: Info del Perfil */}
+  <div className="flex items-center justify-between border-b border-zinc-100 pb-4 flex-shrink-0">
+    <div className="flex items-center gap-3">
+      <div className="h-10 w-10 rounded-full object-cover border border-zinc-200 bg-black justify-center items-center flex">
+        <img 
+          src={currentPost.avatarUrl} 
+          alt={currentPost.username} 
+          className="scale-100 rounded-full"
+        />
+      </div>
+      
+      <div className="flex flex-col">
+        <span className="font-bold text-base text-zinc-900 tracking-wide leading-tight">
+          {currentPost.username}
+        </span>
+        <span className="text-xs text-zinc-400 mt-0.5">
+          {currentPost.date}
+        </span>
+      </div>
+    </div>
 
-                <a 
-                  href={currentPost.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-zinc-400 hover:text-[#ee2a7b] transition-colors p-1"
-                >
-                  <FaInstagram size={26} />
-                </a>
-              </div>
+    <a 
+      href={currentPost.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-zinc-400 hover:text-[#ee2a7b] transition-colors p-1"
+    >
+      <FaInstagram size={26} />
+    </a>
+  </div>
 
-              {/* Body: Descripción Larga con Scroll Autónomo */}
-              <div className="flex-1 overflow-y-auto pt-4 pr-2 text-zinc-700 leading-relaxed text-[15px] space-y-4 font-normal tracking-wide">
-                <p className="whitespace-pre-line">
-                  {currentPost.caption}
-                </p>
-              </div>
+  {/* Body: Descripción Larga con Scroll Autónomo */}
+  {/* Nota: renderCaptionConHashtags() es la función que creamos en el paso anterior */}
+  <div className="flex-1 overflow-y-auto pt-4 pr-2 text-zinc-700 leading-relaxed text-[15px] space-y-4 font-normal tracking-wide">
+    <p className="whitespace-pre-line">
+      {renderCaptionConHashtags(currentPost.caption)}
+    </p>
+  </div>
 
-              {/* Botón de Acción: Ver Publicación (Cierra la sección superior con borde inferior) */}
-              <div className="">
-                <a
-                  href={currentPost.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-zinc-900 to-zinc-800 hover:from-zinc-800 hover:to-zinc-700 active:scale-[0.99] transition-all shadow-md shadow-zinc-950/10 tracking-wide text-center"
-                >
-                  <FaInstagram size={16} />
-                  Ver publicación
-                </a>
-              </div>
+  {/* Botón de Acción: Ver Publicación (Fijo abajo gracias a flex-shrink-0) */}
+  <div className="pt-4 mt-auto border-t border-zinc-100 flex-shrink-0">
+    <a
+      href={currentPost.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-zinc-900 to-zinc-800 hover:from-zinc-800 hover:to-zinc-700 active:scale-[0.99] transition-all shadow-md shadow-zinc-950/10 tracking-wide text-center"
+    >
+      <FaInstagram size={16} />
+      Ver publicación
+    </a>
+  </div>
 
-            </div>
+</div>
           </motion.div>
 
           {/* Flecha Derecha */}
