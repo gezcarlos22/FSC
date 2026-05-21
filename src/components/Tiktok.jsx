@@ -641,10 +641,10 @@ export function InstagramSection2() {
 </div>
 
           <div className="mt-8 flex flex-col gap-6 md:flex-row items-center justify-center w-full px-4">
-  {/* Contenedor principal: usando w-full y max-w para que no rompa el viewport en móviles */}
-  <div className="flex items-center justify-between md:justify-center gap-4 w-full max-w-md mx-auto">
+  {/* Agregamos max-w-full para contener todo en pantallas chicas */}
+  <div className="flex items-center gap-6 max-w-full justify-center">
     
-    {/* Botón Anterior: flex-shrink-0 evita que la flecha se achique o desaparezca */}
+    {/* Botón Anterior: flex-shrink-0 evita que desaparezca o se deforme */}
     <button
       onClick={previous}
       className="p-3 border border-white/10 text-white rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-md group active:scale-90 flex-shrink-0"
@@ -653,24 +653,21 @@ export function InstagramSection2() {
       <ArrowLeft size={18} className="group-active:-translate-x-1 transition-transform" />
     </button>
 
-    {/* Contenedor de Puntitos con Scroll Inteligente */}
-    {/* Explicación: En móvil limitamos el ancho máximo (max-w-[160px] o el que prefieras) y activamos scroll horizontal ocultando la barra */}
-    <div className="flex-1 max-w-[180px] sm:max-w-xs md:max-w-none overflow-x-auto no-scrollbar py-2 flex justify-start md:justify-center items-center dynamic-dots-container">
-      <div className="flex gap-2 items-center mx-auto">
-        {Array.from({ length: maxIndex + 1 }).map((_, i) => (
-          <button
-            key={i}
-            onClick={() => goTo(i)}
-            className={`h-1.5 rounded-full transition-all duration-300 flex-shrink-0 ${
-              displayIndex === i ? "w-8 bg-cyan-500" : "w-2 bg-gray-700 hover:bg-gray-500"
-            }`}
-            aria-label={`Ir al bloque ${i + 1}`}
-          />
-        ))}
-      </div>
+    {/* Contenedor de señalizadores: flex-wrap permite múltiples filas y justify-center las centra */}
+    <div className="flex flex-wrap gap-2 items-center justify-center max-w-[60vw] sm:max-w-none">
+      {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+        <button
+          key={i}
+          onClick={() => goTo(i)}
+          className={`h-1.5 rounded-full transition-all duration-300 flex-shrink-0 ${
+            displayIndex === i ? "w-8 bg-cyan-500" : "w-2 bg-gray-700 hover:bg-gray-500"
+          }`}
+          aria-label={`Ir al bloque ${i + 1}`}
+        />
+      ))}
     </div>
 
-    {/* Botón Siguiente: flex-shrink-0 asegura su visibilidad permanente */}
+    {/* Botón Siguiente: flex-shrink-0 asegura que siempre esté visible en pantalla */}
     <button
       onClick={next}
       className="p-3 border border-white/10 text-white rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-md group active:scale-90 flex-shrink-0"
