@@ -6,6 +6,8 @@ export const CategoryGallery = ({ images }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
+  if (!images?.length) return null;
+
   // Manejador para cuando hacen click en una imagen
   const handleImageClick = (index) => {
     setSelectedIndex(index);
@@ -13,9 +15,9 @@ export const CategoryGallery = ({ images }) => {
   };
 
   return (
-    <section>
+    <section className="mb-10">
       <div className="space-y-10">
-        <h2 className="text-3xl font-bold border-l-4 border-white pl-6 uppercase tracking-widest reveal-text">
+        <h2 className="text-xl md:text-2xl font-bold border-l-4 border-white pl-6 uppercase tracking-widest reveal-text">
           Galería
         </h2>
         <div className="grid grid-cols-2 gap-3 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">

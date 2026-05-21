@@ -63,7 +63,7 @@ export const Collection = () => {
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center"
             style={{
-              backgroundImage: `url(${currentCategory.image ?? currentCategory.images[0]})`,
+              backgroundImage: `url(${currentCategory.image ?? currentCategory.covers[0]})`,
             }}
           >
             <div className="absolute inset-0 bg-black/40" />

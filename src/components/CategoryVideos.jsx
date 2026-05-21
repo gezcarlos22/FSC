@@ -15,10 +15,10 @@ export const CategoryVideos = ({ videos }) => {
   };
 
   return (
-    <section>
+    <section className="mb-10">
       {/* --- GRILLA DE VIDEOS --- */}
       <div className="space-y-10">
-        <h2 className="text-3xl font-bold border-l-4 border-white pl-6 uppercase tracking-widest reveal-text">
+        <h2 className="text-xl md:text-2xl font-bold border-l-4 border-white pl-6 uppercase tracking-widest reveal-text">
           Videos
         </h2>
         <div className="grid gap-6 lg:grid-cols-2">

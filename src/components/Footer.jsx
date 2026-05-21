@@ -97,9 +97,7 @@ export const Footer = () => {
                     >
                         <p className="text-sm font-semibold tracking-widest text-white uppercase">Colecciones</p>
                         <ul className="mt-6 space-y-4">
-                            <li>
-                                <Link to="/categoria/paisajes" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Paisajes </Link>
-                            </li>
+                            
                             <li>
                                 <Link to="/categoria/animales" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Animales </Link>
                             </li>
@@ -107,7 +105,13 @@ export const Footer = () => {
                                 <Link to="/categoria/productos" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Productos </Link>
                             </li>
                             <li>
-                                <Link to="/categoria/arquitectura" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Arquitectura </Link>
+                                <Link to="/categoria/empresas" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Empresas </Link>
+                            </li>
+                            <li>
+                                <Link to="/categoria/eventos" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Eventos </Link>
+                            </li>
+                            <li>
+                                <Link to="/categoria/drone" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Drone </Link>
                             </li>
                         </ul>
                     </motion.div>

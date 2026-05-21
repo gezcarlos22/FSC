@@ -21,7 +21,6 @@ export const Header = () => {
 
     // Cierra el menú al navegar
     const colecciones = [
-        { name: 'Paisajes', href: '/categoria/paisajes' },
         { name: 'Animales', href: '/categoria/animales' },
         { name: 'Productos', href: '/categoria/productos' },
         { name: 'Empresas', href: '/categoria/empresas' },

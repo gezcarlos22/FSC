@@ -42,10 +42,10 @@ const CategoryHero = ({ category }) => {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
 
   useEffect(() => {
-    if (!category?.images?.length) return;
+    if (!category?.covers?.length) return;
 
     const interval = setInterval(() => {
-      setCurrentImgIndex((prev) => (prev + 1) % category.images.length);
+      setCurrentImgIndex((prev) => (prev + 1) % category.covers.length);
     }, 5000);
 
     return () => clearInterval(interval);
@@ -63,7 +63,7 @@ const CategoryHero = ({ category }) => {
           exit={{ opacity: 0 }}
           transition={{ duration: 2, ease: "easeOut" }}
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${category.images[currentImgIndex]})` }}
+          style={{ backgroundImage: `url(${category.covers[currentImgIndex]})` }}
         >
           <div className="absolute inset-0 bg-black/30" />
         </motion.div>

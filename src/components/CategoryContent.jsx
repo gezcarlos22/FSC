@@ -3,9 +3,11 @@ import { X } from 'lucide-react';
 import { CategoryDetails } from './CategoryDetails';
 import { CategoryGallery } from './CategoryGallery';
 import { CategoryVideos } from './CategoryVideos';
+import { CategoryPosts } from './CategoryPosts';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from '@studio-freight/lenis';
+import { CategorySection } from './CategorySection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -87,9 +89,11 @@ export const CategoryContent = ({ category }) => {
 
       <CategoryGallery images={category.images} />
 
-      <CategoryVideos
-        videos={category.videos}
-      />
+      <CategoryVideos videos={category.videos} />
+
+      <CategoryPosts posts={category.posts} />
+
+      <CategorySection section={category.section} />
 
     </section>
   );
