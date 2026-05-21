@@ -4,12 +4,11 @@ import { Header } from '../components/Header';
 import Hero from '../components/hero/Hero';
 import { Testimoneal } from '../components/Testimoneal';
 import { Footer } from '../components/Footer';
-import VideoSection from '../components/Gallery';
 import { Images } from '../components/Images';
 import Equipament from '../components/Equipment';
 import Programs from '../components/Programs';
 import Contact from '../components/Contact';
-import{ InstagramSection2 } from '../components/Tiktok';
+import{ InstagramSection } from '../components/Tiktok';
 
 
 const HomePage = () => {
@@ -25,10 +24,9 @@ const HomePage = () => {
       
       {/* Ambos componentes ahora controlan el mismo estado global */}
       <Images isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
-      <InstagramSection2 />
+      <InstagramSection />
       <Equipament />
       <Programs />
-      
       <Testimoneal />
       <Contact />
       <Footer />

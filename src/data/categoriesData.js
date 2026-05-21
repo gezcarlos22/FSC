@@ -121,47 +121,116 @@ export const categories = [
     extra: 'Este servicio está optimizado para ecosistemas de e-commerce de alta gama, lanzamientos estratégicos en redes sociales y campañas de publicidad impresa. A través de una dirección de arte meticulosa, ayudamos a que las marcas proyecten autoridad y profesionalismo mediante una estética visual limpia, moderna y cinematográfica, transformando cada producto en una pieza de comunicación visual de alto impacto que conecta directamente con el consumidor.'
   },
   {
-    "slug": "arquitectura",
-    "title": "Arquitectura",
-    "subtitle": "Espacios con alma",
-    "description": "Transformamos la estructura en narrativa. A través de una visión cinematográfica, capturamos la interacción de la luz, las texturas y la habitabilidad de cada hogar. Documentamos la arquitectura no solo como construcción, sino como un escenario de vida, destacando el diseño y la armonía de cada espacio.",
+    "slug": "empresas",
+    "title": "Empresas",
+    "subtitle": "Identidad en movimiento",
+    "description": "Traducimos los valores y la fuerza de tu marca en una narrativa visual impactante. A través de una estética cinematográfica y fotografía corporativa de vanguardia, capturamos la esencia de tu equipo, la innovación en tus procesos y la infraestructura de tu negocio. Documentamos la cultura empresarial no solo como un espacio de trabajo, sino como un motor de éxito y evolución.",
     "images": [
       "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773969/C20_gbxukl.jpg",
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/C18_rkbyps.jpg', 
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/C18_rkbyps.jpg", 
       "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773968/C15_mjsjk7.jpg", 
       "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773969/C29_vphlc1.jpg", 
       "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773968/C21_xaxguy.jpg", 
       "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773967/C16_fsxnph.jpg", 
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773966/C28_coefxc.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773966/C28_coefxc.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773966/C24_rcgjjg.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773966/C25_vgqdoi.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773965/C3_vrtclo.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773965/C19_go6tu3.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773965/C1_wixxvs.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773965/C2_wdjo7r.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773964/C7_v0sxux.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773964/C4_fanqee.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/C8_qtcrpa.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/C5_howqst.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/C14_micn3e.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/C11_raekto.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/C13_hkxuhc.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/C9_kazqwj.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/C10_kttvzo.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/C12_wkkouq.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/C6_cgw1yk.jpg',
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773966/C28_coefxc.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773966/C28_coefxc.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773966/C24_rcgjjg.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773966/C25_vgqdoi.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773965/C3_vrtclo.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773965/C19_go6tu3.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773965/C1_wixxvs.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773965/C2_wdjo7r.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773964/C7_v0sxux.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773964/C4_fanqee.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/C8_qtcrpa.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/C5_howqst.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/C14_micn3e.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/C11_raekto.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/C13_hkxuhc.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/C9_kazqwj.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/C10_kttvzo.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/C12_wkkouq.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/C6_cgw1yk.jpg",
       "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773968/C22_bjojlf.jpg",
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773967/C23_ay3nuq.jpg',
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773967/C23_ay3nuq.jpg"
     ],
     "highlights": [
-      "Composiciones que resaltan el equilibrio geométrico",
-      "Uso de luz natural para realzar materiales y texturas",
-      "Recorridos de video fluidos con estética cinematográfica",
-      "Enfoque en la integración del paisaje con la vivienda"
+      "Retratos corporativos auténticos que humanizan tu marca",
+      "Fotografía industrial y de producto con enfoque publicitario",
+      "Contenido dinámico optimizado para LinkedIn y canales corporativos",
+      "Documentación detallada de procesos, tecnología y plantas operativas"
     ],
-    "extra": "Diseñado para arquitectos y estudios de interiorismo que buscan transformar sus obras en narrativas visuales. Combinamos fotografía editorial y cine para crear portafolios de alto impacto, ideales para concursos, publicaciones de lujo y plataformas digitales. Nuestra estética sofisticada garantiza una presentación impecable, orientada a cautivar a los clientes más exigentes del mercado inmobiliario y del diseño."
-}
+    "extra": "Diseñado para corporaciones, startups y negocios tradicionales que buscan elevar su posicionamiento en el mercado. Combinamos técnicas de iluminación avanzadas y narrativa documental para crear un banco de imágenes exclusivo y de alta fidelidad, ideal para reportes anuales, sitios web institucionales y campañas de comunicación interna. Potenciamos tu propuesta de valor frente a clientes e inversores."
+  },
+  {
+    "slug": "eventos",
+    "title": "Eventos",
+    "subtitle": "Momentos únicos, recuerdos eternos",
+    "description": "Inmortalizamos la energía, las emociones y los instantes clave de tus celebraciones más significativas. Desde la magia de un casamiento y la ilusión de unos 15 años, hasta la calidez de un cumpleaños o la distinción de un evento empresarial. Capturamos tanto la imponencia de la ambientación como los gestos espontáneos que le dan vida y autenticidad a cada acontecimiento.",
+    "images": [ 
+    ],
+    "videos": [
+      {
+        "title": "Ale y Marian - 25/10/2025",
+        "url": "https://drive.google.com/file/d/11D4msb_IVWZjJBB3Pt7fhdPck9X9QpvL/preview"
+      },
+      {
+        "title": "Ale y Marian - Hotel Yacanto",
+        "url": "https://drive.google.com/file/d/1o0lg4SL97_LqvRBLPT-_S9SYl1JSsbsm/preview"
+      },
+      {
+        "title": "Ale y Marian - Inti Waka",
+        "url": "https://drive.google.com/file/d/1sKgpLRm1uvJzL3pGOEfGW-NdHk68-qZ2/preview"
+      },
+      {
+        "title": "Ale y Marian - Short",
+        "url": "https://drive.google.com/file/d/1nuLF1X4FceAgniVlKuZywzFBc84ujfNX/preview"
+      },
+      {
+        "title": "Ale y Marian - Video de fotos",
+        "url": "https://drive.google.com/file/d/13hUIOCa4Kb3loVn7AyPpJ2KKIQPNIxj2/preview"
+      },
+    ],
+    "highlights": [
+      "Cobertura fotoperiodística discreta, atenta a cada detalle y emoción",
+      "Dominio técnico en iluminación de pistas de baile, salones y escenarios",
+      "Videos resumen dinámicos (Reels/TikTok) listos para compartir",
+      "Enfoque en los protagonistas, los invitados clave y los momentos más emotivos"
+    ],
+    "extra": "El servicio definitivo para quienes buscan un registro profesional de primer nivel en sus momentos más importantes. Entendemos el valor de estos encuentros, por lo que entregamos piezas visuales impactantes y perfectamente editadas, diseñadas para revivir la emoción de tus fiestas familiares o potenciar la imagen y el alcance de tus eventos corporativos."
+  },
+  {
+    "slug": "dron",
+    "title": "Dron",
+    "subtitle": "Perspectivas sin límites",
+    "description": "Elevamos la mirada para descubrir patrones, escalas y trayectorias invisibles desde el suelo. Con tecnología aérea de última generación, capturamos planos generales dinámicos, secuencias de seguimiento cinematográficas y perspectivas geométricas perfectas. Redefinimos la forma de mostrar el entorno, aportando un valor estético de gran presupuesto a cualquier proyecto.",
+    "images": [
+      "https://images.pexels.com/photos/6726812/pexels-photo-6726812.jpeg", 
+      "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg",  
+      "https://images.pexels.com/photos/572897/pexels-photo-572897.jpeg",   
+      "https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg",   
+      "https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg",   
+      "https://images.pexels.com/photos/1032650/pexels-photo-1032650.jpeg"  
+    ],
+    "videos": [
+      {
+        "title": "Reel Aéreo Cinematográfico 4K",
+        "url": "https://www.youtube.com/embed/ScMzIvxBSi4"
+      },
+      {
+        "title": "Planos Secuencia FPV",
+        "url": "https://www.youtube.com/embed/ScMzIvxBSi4"
+      }
+    ],
+    "highlights": [
+      "Tomas aéreas en resolución 4K y perfiles de color profesional",
+      "Vuelos de precisión para seguimiento de acción e infraestructura",
+      "Ortofotografía y composiciones cenitales de gran impacto visual",
+      "Operación bajo estrictas normas de seguridad y pilotos certificados"
+    ],
+    "extra": "Una herramienta audiovisual indispensable para desarrollos inmobiliarios, producciones de cine, turismo de lujo y seguimiento de macroobras. Nuestras filmaciones y fotografías aéreas enriquecen el hilo conductor de cualquier pieza audiovisual, otorgando una sensación de inmensidad y prestigio técnico que destaca de manera inmediata en el mercado digital actual."
+  }
+
 ];
 
 export const getCategoryBySlug = (slug) => categories.find((category) => category.slug === slug);

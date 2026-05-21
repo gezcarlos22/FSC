@@ -24,7 +24,9 @@ export const Header = () => {
         { name: 'Paisajes', href: '/categoria/paisajes' },
         { name: 'Animales', href: '/categoria/animales' },
         { name: 'Productos', href: '/categoria/productos' },
-        { name: 'Arquitectura', href: '/categoria/arquitectura' },
+        { name: 'Empresas', href: '/categoria/empresas' },
+        { name: 'Eventos', href: '/categoria/eventos' },
+        { name: 'Dron', href: '/categoria/dron' },
     ];
 
     return (

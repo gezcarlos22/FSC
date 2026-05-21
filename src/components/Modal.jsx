@@ -81,7 +81,7 @@ export const ImageModal = ({ isOpen, onClose, images, currentIndex, setCurrentIn
 };
 
 export const VideoModal = ({ isOpen, onClose, videos, currentIndex, setCurrentIndex }) => {
-
+  
   // Bloquear scroll del body
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'unset';
@@ -107,8 +107,6 @@ export const VideoModal = ({ isOpen, onClose, videos, currentIndex, setCurrentIn
     setCurrentIndex((prev) => (prev - 1 + videos.length) % videos.length);
   };
 
-  
-
   return createPortal(
     <AnimatePresence>
       <motion.div
@@ -127,7 +125,7 @@ export const VideoModal = ({ isOpen, onClose, videos, currentIndex, setCurrentIn
         </button>
 
         {/* Visualizador Principal de Video */}
-        <div className="relative flex items-center justify-center w-full max-w-5xl h-[60vh] md:h-[65vh]">
+        <div className="relative flex items-center justify-center w-full max-w-5xl h-[90vh] md:h-[90vh]">
           
           <button 
             onClick={prevVideo} 
@@ -140,16 +138,22 @@ export const VideoModal = ({ isOpen, onClose, videos, currentIndex, setCurrentIn
             key={currentIndex}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="w-full h-full flex items-center justify-center"
+            className="w-full h-full flex flex-col items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <video
-              src={videos[currentIndex]}
-              className="max-w-full max-h-full rounded-lg shadow-2xl"
-              controls
-              autoPlay
-              playsInline
-            />
+            {/* Adaptado a Iframe para soportar las URLs de YouTube/Drive dinámicas de tu JSON */}
+            <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl bg-black">
+              <iframe
+                src={videos[currentIndex].url}
+                title={videos[currentIndex].title}
+                className="w-full h-full"
+                allow="autoplay; fullscreen"
+                allowFullScreen
+              />
+            </div>
+            
+            {/* Título opcional abajo del video para guiar al usuario */}
+            <p className="text-white/60 mt-4 text-sm tracking-wide">{videos[currentIndex].title}</p>
           </motion.div>
 
           <button 
@@ -158,30 +162,6 @@ export const VideoModal = ({ isOpen, onClose, videos, currentIndex, setCurrentIn
           >
             <ChevronRight size={48} />
           </button>
-        </div>
-
-        {/* Carrusel de Miniaturas */}
-        <div 
-          className="mt-8 flex gap-3 overflow-x-auto p-2 max-w-full no-scrollbar justify-center"
-          onClick={(e) => e.stopPropagation()}
-        >
-          {videos.map((src, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentIndex(idx)}
-              className={`relative flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-md overflow-hidden border-2 transition-all duration-300 ${
-                idx === currentIndex 
-                  ? "border-cyan-500 scale-110 shadow-[0_0_15px_rgba(6,182,212,0.5)] opacity-100" 
-                  : "border-transparent opacity-40 hover:opacity-100"
-              }`}
-            >
-              <video 
-                src={src} 
-                className="w-full h-full object-cover" 
-                muted
-              />
-            </button>
-          ))}
         </div>
       </motion.div>
     </AnimatePresence>,

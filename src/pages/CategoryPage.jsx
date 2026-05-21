@@ -22,12 +22,6 @@ const CategoryPage = () => {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Header />
-
-      {/* Usar 'key={categoria}' es la clave: 
-          Cuando cambias de "paisajes" a "bodas", React desmonta el Hero viejo 
-          y monta uno nuevo, reseteando el índice de imágenes a 0 automáticamente 
-          y evitando el error de renderizado sincrónico.
-      */}
       <CategoryHero key={categoria} category={category} />
 
       {/* CONTENIDO POST-SCROLL */}
