@@ -106,12 +106,15 @@ export const Collection = () => {
               {currentCategory.subtitle}
             </p>
 
-            <h1 className="text-5xl md:text-[12rem] font-black uppercase leading-normal md:leading-none tracking-wide md:tracking-tighter transition-all duration-700 select-none">
-            {/* Usamos clases arbitrarias de Tailwind para controlar el grosor del stroke por pantalla */}
-            <span className="text-transparent block [-webkit-text-stroke:1px_white] md:[-webkit-text-stroke:2px_white]">
-              {currentCategory.title}
-            </span>
-          </h1>
+            <h1 className="text-6xl md:text-[12rem] font-black uppercase leading-tight md:leading-none tracking-normal md:tracking-tighter transition-all duration-700 select-none">
+              {/* En móvil el texto es blanco sólido. En escritorio (md) se vuelve transparente y activa el borde */}
+              <span 
+                className="text-white md:text-transparent block" 
+                style={{ WebkitTextStroke: '2px white' }} 
+              >
+                {currentCategory.title}
+              </span>
+            </h1>
 
             <div className="mt-10 flex flex-col items-center gap-8">
               <button
