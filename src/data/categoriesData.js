@@ -737,7 +737,40 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
       "Operación bajo estrictas normas de seguridad y pilotos certificados"
     ],
     "extra": "Una herramienta audiovisual indispensable para desarrollos inmobiliarios, producciones de cine, turismo de lujo y seguimiento de macroobras. Nuestras filmaciones y fotografías aéreas enriquecen el hilo conductor de cualquier pieza audiovisual, otorgando una sensación de inmensidad y prestigio técnico que destaca de manera inmediata en el mercado digital actual."
+  },
+  {
+  "slug": "produccion",
+  "title": "Producción",
+  "subtitle": "Sonido e imagen en perfecta sintonía",
+  "description": "Fusionamos la narrativa cinematográfica con la potencia del diseño sonoro. Nos encargamos de la captura técnica en rodaje, la grabación de audio profesional y el minucioso proceso de edición, montaje y postproducción musical. Traducimos conceptos artísticos en piezas audiovisuales de alto impacto, donde el ritmo del montaje y la fidelidad sonora caminan de la mano para dar vida a videoclips, proyectos de cine y contenidos de calidad premium.",
+  "covers": [
+    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773969/C20_gbxukl.jpg",
+    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/C18_rkbyps.jpg", 
+    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773968/C15_mjsjk7.jpg", 
+    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773969/C29_vphlc1.jpg"
+  ],
+  "videos":[
+  {
+    "title":"HECHA PA MI - ES-T - (video oficial)",
+    "url":"https://www.youtube.com/embed/qE8m1hTTfk8"
+  },
+  {
+    "title":"ES-T - QUIÉN ME VA A PARAR |Video Oficial|",
+    "url":"https://www.youtube.com/embed/0FZKCk85At0"
+  },
+  {
+    "title":"ES-T - QUE SERIA DE MI |Video Oficial|",
+    "url":"https://www.youtube.com/embed/JPaWQy067IA"
   }
+],
+  "highlights": [
+    "Grabación y captura de audio profesional directo y mezcla en estudio",
+    "Edición de video rítmica y montaje cinematográfico estructurado",
+    "Postproducción integral, corrección de color y diseño sonoro envolvente",
+    "Dirección técnica adaptada a proyectos musicales, cine independiente y publicidad"
+  ],
+  "extra": "El puente definitivo entre la música y el cine. Una producción de nivel profesional requiere un control absoluto tanto de lo que se ve como de lo que se escucha; por eso nos involucramos en todo el proceso técnico, desde el primer plano grabado en el set hasta el corte final de edición y el master de audio. Entregamos un producto pulido, con estética cinematográfica y un sonido impecable que potencia la identidad del artista o proyecto en la industria actual."
+}
 ];
 
 export const getCategoryBySlug = (slug) => categories.find((category) => category.slug === slug);

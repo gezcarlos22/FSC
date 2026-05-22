@@ -163,7 +163,7 @@ export const VideoModal = ({ isOpen, onClose, videos, currentIndex, setCurrentIn
             {/* Contenedor del Iframe: Solo se usará realmente en computadoras */}
             <div className="relative w-full aspect-video rounded-md md:rounded-2xl overflow-hidden shadow-2xl bg-black z-50">
               <iframe
-                src={`${videos[currentIndex].url}${videos[currentIndex].url.includes('?') ? '&' : '?'}rm=minimal`} 
+                src={videos[currentIndex].url} 
                 title={videos[currentIndex].title}
                 className="absolute top-0 left-0 w-full h-full z-50"
                 allowFullScreen
