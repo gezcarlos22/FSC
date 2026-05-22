@@ -76,7 +76,7 @@ export const Posts = ({
                     setModalIndex(idx);
                     setIsModalOpen(true);
                   }}
-                  className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-white/10 bg-slate-950 shadow-2xl group cursor-pointer"
+                  className="relative aspect-[4/6] w-full overflow-hidden rounded-2xl border border-white/10 bg-slate-950 shadow-2xl group cursor-pointer"
                 >
                   {isVideo ? (
                     <video

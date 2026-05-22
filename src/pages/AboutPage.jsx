@@ -206,51 +206,12 @@ const AboutPage = () => {
                   <h4 className="font-bold text-xl">Artes Audiovisuales</h4>
                   <p className="text-sm text-white/50 tracking-widest uppercase mt-1">Univ. Nacional de Artes | 2018-2021</p>
                 </div>
-              </div>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold uppercase tracking-[0.2em] flex items-center gap-3 mb-8">
-                <Briefcase className="text-cyan-500" /> Experiencia
-              </h2>
-              <div className="space-y-4">
                 <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition">
-                  <h4 className="font-bold text-xl">Senior Videographer</h4>
-                  <p className="text-sm text-white/50 tracking-widest uppercase mt-1">Studio Nova | 2023 - Presente</p>
-                </div>
-                <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition">
-                  <h4 className="font-bold text-xl">Senior Videographer</h4>
-                  <p className="text-sm text-white/50 tracking-widest uppercase mt-1">Studio Nova | 2023 - Presente</p>
+                  <h4 className="font-bold text-xl">Artes Audiovisuales</h4>
+                  <p className="text-sm text-white/50 tracking-widest uppercase mt-1">Univ. Nacional de Artes | 2018-2021</p>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="col-span-12 space-y-12">
-              <h2 className="text-3xl font-bold border-l-4 border-white pl-6 uppercase tracking-widest reveal-text">
-                  Mi Galería
-              </h2>
-
-              {/* Agregamos grid-cols-2 para móvil por defecto */}
-              <div className="grid grid-cols-2 gap-3 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                  {aboutData.images.map((src, i) => (
-                      <div 
-                          key={i} 
-                          className="group relative h-48 md:h-72 overflow-hidden rounded-2xl md:rounded-3xl cursor-pointer shadow-xl reveal-text" 
-                          onClick={() => { setSelectedIndex(i); setIsModalOpen(true); }}
-                      >
-                          {/* IMAGEN: Mantiene su efecto de escala al hacer hover */}
-                          <img
-                              src={src}
-                              className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                              alt={`Gallery ${i}`}
-                          />
-
-                          {/* OVERLAY: Gradiente elegante */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      </div>
-                  ))}
-              </div>
           </div>
 
         </section>

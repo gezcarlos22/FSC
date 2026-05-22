@@ -1,35 +1,5 @@
 export const categories = [
   {
-    slug: 'paisajes',
-    title: 'Paisajes',
-    subtitle: 'Naturaleza abierta',
-    description: 'Una inmersión visual en la inmensidad del mundo natural. Esta colección captura la serenidad de los horizontes infinitos, desde cumbres nevadas hasta la calma de lagos cristalinos, bajo condiciones de luz cuidadosamente seleccionadas.',
-    "covers":[
-      'https://images.pexels.com/photos/6726812/pexels-photo-6726812.jpeg', 
-      'https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg',  
-      'https://images.pexels.com/photos/572897/pexels-photo-572897.jpeg',   
-      'https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg',   
-      'https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg',   
-      'https://images.pexels.com/photos/1032650/pexels-photo-1032650.jpeg'
-    ],
-    images: [
-      'https://images.pexels.com/photos/6726812/pexels-photo-6726812.jpeg', // Montaña
-      'https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg',  // Pico nevado
-      'https://images.pexels.com/photos/572897/pexels-photo-572897.jpeg',   // Lago
-      'https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg',   // Bosque neblina
-      'https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg',   // Valle
-      'https://images.pexels.com/photos/1032650/pexels-photo-1032650.jpeg'  // Atardecer mar
-    ],
-    "posts":[], 
-    highlights: [
-      'Capturas en "Golden Hour" para calidez extrema',
-      'Fotografía de larga exposición en cuerpos de agua',
-      'Composiciones de gran angular para máxima amplitud',
-      'Dominio de la profundidad de campo en rutas abiertas'
-    ],
-    extra: 'Este material constituye la base narrativa ideal para producciones cinematográficas, agencias de viajes de lujo y aplicaciones de bienestar que buscan una inmersión total. A través de una captura meticulosa de la luz y la escala, proporcionamos a las campañas ambientales un impacto visual inmediato, diseñado para transmitir una sensación de libertad absoluta y una conexión profunda con la naturaleza en su estado más puro.'
-  },
-  {
     slug: 'animales',
     title: 'Animales',
     subtitle: 'Retratos animales',
@@ -632,8 +602,8 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
     "extra": "El servicio definitivo para quienes buscan un registro profesional de primer nivel en sus momentos más importantes. Entendemos el valor de estos encuentros, por lo que entregamos piezas visuales impactantes y perfectamente editadas, diseñadas para revivir la emoción de tus fiestas familiares o potenciar la imagen y el alcance de tus eventos corporativos."
   },
   {
-    "slug": "dron",
-    "title": "Dron",
+    "slug": "drone",
+    "title": "Drone",
     "subtitle": "Perspectivas sin límites",
     "description": "Elevamos la mirada para descubrir patrones, escalas y trayectorias invisibles desde el suelo. Con tecnología aérea de última generación, capturamos planos generales dinámicos, secuencias de seguimiento cinematográficas y perspectivas geométricas perfectas. Redefinimos la forma de mostrar el entorno, aportando un valor estético de gran presupuesto a cualquier proyecto.",
     "covers":[

@@ -8,33 +8,33 @@ export default function Equipament() {
 
   const equipData = [
     {
-      src: "https://photolari.com/wp-content/uploads/2019/03/Nikon-D3500-6.jpg",
+      src: "https://cdn.mos.cms.futurecdn.net/v2/t:0,l:0,cw:1923,ch:1081,q:80,w:1923/qxjJwosgxxgJ2gJiGTHibW.jpg",
       label: "Cuerpo",
-      title: "Nikon D7500",
+      title: "Sony A7III",
       icon: <Camera className="w-6 h-6 text-white" />
     },
     {
-      src: "https://efd-studios.com/wp-content/uploads/sites/4/fly-images/2348/GUIA_OBJETIVOS_DE_CAMARA_1-1440x1200-c.jpg",
+      src: "https://photolari.com/wp-content/uploads/2024/11/sony-28-70-mm-f2-gm-3.jpg",
       label: "Óptica",
-      title: "Lentes de Cine",
+      title: "Lentes 28-70",
       icon: <Aperture className="w-6 h-6 text-white" />
     },
     {
-      src: "https://i0.wp.com/clubdefotografia.net/wp-content/uploads/2020/06/tipos-de-objetivos-fotograficos.jpg?resize=720%2C480&ssl=1",
-      label: "Enfoque",
-      title: "Objetivos Prime",
+      src: "https://ulanzi.cl/catalogo/wp-content/uploads/2024/05/70Y5gtu8-jpg.webp",
+      label: "Luces",
+      title: "Ulanzi",
       icon: <Focus className="w-6 h-6 text-white" />
     },
     {
-      src: "https://cdn.mos.cms.futurecdn.net/mGxqeuzhjUJ3bgnMTk9oqT.jpg",
+      src: "https://i.blogs.es/8f9301/dji-mini-3-pro/1366_2000.jpeg",
       label: "Drone",
-      title: "DJI mini 4 pro",
+      title: "DJI mini 3 pro",
       icon: <Layers className="w-6 h-6 text-white" />
     },
     {
-      src: "https://m.media-amazon.com/images/S/aplus-media-library-service-media/6cfe17f5-b36b-4793-9b4d-6dde12f4b415.__CR0,0,1464,600_PT0_SX1464_V1___.jpg",
+      src: "https://i.blogs.es/6d1348/zhiyun-weebill-2-01/1366_2000.webp",
       label: "Gimbal",
-      title: "DJI Ronin-S",
+      title: "Zhiyun Weebill 2 pro",
       icon: <Monitor className="w-6 h-6 text-white" />
     },
   ];

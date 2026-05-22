@@ -25,18 +25,19 @@ export const CategoryVideos = ({ videos }) => {
           {videos.map((video, i) => (
             <div
               key={video.title}
-              className="reveal-text rounded-3xl overflow-hidden border border-white/10 bg-black/40 backdrop-blur-xl cursor-pointer hover:border-white/30 transition-colors"
+              className="reveal-text rounded-2xl lg:rounded-3xl overflow-hidden border border-white/10 bg-black/40 backdrop-blur-xl cursor-pointer hover:border-white/30 transition-colors"
               onClick={() => handleVideoClick(i)}
             >
-              <div className="aspect-video pointer-events-none">
+              {/* 1. Agregamos "relative" al contenedor padre */}
+              <div className="relative aspect-video pointer-events-none">
                 <iframe 
                   src={video.url} 
                   title={video.title} 
-                  className="w-full h-full" 
+                  className="absolute top-0 left-0 w-full h-full" 
                   allowFullScreen 
                 />
               </div>
-              <div className="p-6">
+              <div className="p-4 md:p-6">
                 <p className="text-white/80 font-medium">{video.title}</p>
               </div>
             </div>

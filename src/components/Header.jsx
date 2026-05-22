@@ -25,7 +25,7 @@ export const Header = () => {
         { name: 'Productos', href: '/categoria/productos' },
         { name: 'Empresas', href: '/categoria/empresas' },
         { name: 'Eventos', href: '/categoria/eventos' },
-        { name: 'Dron', href: '/categoria/dron' },
+        { name: 'Drone', href: '/categoria/drone' },
     ];
 
     return (
@@ -98,7 +98,7 @@ export const Header = () => {
                 </nav>
 
                 {/* Menú Móvil - Estilo original con fondo negro y bordes */}
-                <nav className={`${isMenuOpen ? 'flex' : 'hidden'} flex-col pt-2 pb-6 mb-4 bg-black border border-gray-800 rounded-md lg:hidden`}>
+                <nav className={`${isMenuOpen ? 'flex' : 'hidden'} flex-col pt-2 pb-2 mb-4 bg-black border border-gray-800 rounded-md lg:hidden`}>
                     <div className="flex flex-col items-center space-y-2">
                         <Link to="/" className="py-2 text-base font-medium text-white hover:text-blue-600"> Inicio </Link>
                         <Link to="/about" className="py-2 text-base font-medium text-white hover:text-blue-600"> Sobre mi </Link>

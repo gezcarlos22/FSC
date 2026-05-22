@@ -82,13 +82,13 @@ export const ImageModal = ({ isOpen, onClose, images, currentIndex, setCurrentIn
 
 export const VideoModal = ({ isOpen, onClose, videos, currentIndex, setCurrentIndex }) => {
   
-  // Bloquear scroll del body
+  // Bloquear scroll del body cuando el modal está abierto
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'unset';
     return () => { document.body.style.overflow = 'unset'; };
   }, [isOpen]);
 
-  // Cerrar con Escape
+  // Cerrar el modal al presionar la tecla Escape
   useEffect(() => {
     const handleEsc = (e) => e.key === 'Escape' && onClose();
     window.addEventListener('keydown', handleEsc);
@@ -116,51 +116,54 @@ export const VideoModal = ({ isOpen, onClose, videos, currentIndex, setCurrentIn
         className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black/95 backdrop-blur-sm p-4"
         onClick={onClose}
       >
-        {/* Botón Cerrar */}
+        {/* Botón Cerrar - Tamaño adaptativo para que no estorbe en móviles */}
         <button 
           onClick={onClose} 
-          className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-[100]"
+          className="absolute top-4 right-4 md:top-6 md:right-6 text-white/70 hover:text-white transition-colors z-[20]"
         >
-          <X size={40} />
+          <X className="w-8 h-8 md:w-10 md:h-10" />
         </button>
 
         {/* Visualizador Principal de Video */}
-        <div className="relative flex items-center justify-center w-full max-w-5xl h-[90vh] md:h-[90vh]">
+        <div className="relative flex items-center justify-center w-full">
           
+          {/* Flecha Izquierda - Oculta en móvil (hidden), visible desde tablet/desktop (md:flex) */}
           <button 
             onClick={prevVideo} 
-            className="absolute left-0 md:-left-16 p-2 text-white/50 hover:text-white transition-all z-[100]"
+            className="hidden md:flex absolute md:-left-16 p-2 text-white/50 hover:text-white transition-all z-[100]"
           >
-            <ChevronLeft size={48} />
+            <ChevronLeft className="w-12 h-12" />
           </button>
 
           <motion.div
             key={currentIndex}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="w-full h-full flex flex-col items-center justify-center"
+            className="w-full max-w-[95vw] md:max-w-5xl flex flex-col items-center justify-center" 
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Adaptado a Iframe para soportar las URLs de YouTube/Drive dinámicas de tu JSON */}
-            <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl bg-black">
+            {/* Contenedor del Iframe: Proporción estricta en móvil para corregir los controles gigantes */}
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black z-50">
               <iframe
-                src={videos[currentIndex].url}
+                src={`${videos[currentIndex].url}${videos[currentIndex].url.includes('?') ? '&' : '?'}rm=minimal`} 
                 title={videos[currentIndex].title}
-                className="w-full h-full"
-                allow="autoplay; fullscreen"
+                className="absolute top-0 left-0 w-full h-full z-50"
                 allowFullScreen
               />
             </div>
             
-            {/* Título opcional abajo del video para guiar al usuario */}
-            <p className="text-white/60 mt-4 text-sm tracking-wide">{videos[currentIndex].title}</p>
+            {/* Título del video */}
+            <p className="text-white/60 mt-4 text-sm tracking-wide text-center px-4">
+              {videos[currentIndex].title}
+            </p>
           </motion.div>
 
+          {/* Flecha Derecha - Oculta en móvil (hidden), visible desde tablet/desktop (md:flex) */}
           <button 
             onClick={nextVideo} 
-            className="absolute right-0 md:-right-16 p-2 text-white/50 hover:text-white transition-all z-[100]"
+            className="hidden md:flex absolute md:-right-16 p-2 text-white/50 hover:text-white transition-all z-[20]"
           >
-            <ChevronRight size={48} />
+            <ChevronRight className="w-12 h-12" />
           </button>
         </div>
       </motion.div>
@@ -237,7 +240,7 @@ export const PostInstagramModal = ({ isOpen, onClose, posts, currentIndex, setCu
         </button>
 
         {/* Contenedor del Navegador + Tarjeta */}
-        <div className="relative flex items-center justify-center w-full max-w-5xl h-full max-h-[85vh]">
+        <div className="relative flex items-center justify-center w-full max-w-3xl h-full md:h-[85vh]">
           
           {/* Flecha Izquierda */}
           <button 
@@ -256,7 +259,7 @@ export const PostInstagramModal = ({ isOpen, onClose, posts, currentIndex, setCu
             onClick={(e) => e.stopPropagation()}
           >
             {/* COLUMNA IZQUIERDA: Visualizador de Imagen */}
-            <div className="relative flex items-center justify-center bg-zinc-900 overflow-hidden h-[40vh] md:h-full">
+            <div className="relative flex items-center justify-center bg-zinc-900 overflow-hidden h-[60vh] md:h-full">
             {/* Renderizado condicional para el Modal: Video o Imagen */}
             {currentPost.mediaUrl && (currentPost.mediaUrl.endsWith('.mp4') || currentPost.mediaUrl.endsWith('.webm') || currentPost.mediaUrl.includes('video')) ? (
               <video 
@@ -276,7 +279,7 @@ export const PostInstagramModal = ({ isOpen, onClose, posts, currentIndex, setCu
           </div>
 
             {/* COLUMNA DERECHA: Contenido y Descripciones */}
-            <div className="flex flex-col h-[45vh] md:h-[60vh] lg:h-[70vh] xl:h-full max-h-full bg-white text-zinc-900 p-6 md:p-8 overflow-hidden">
+            <div className="flex flex-col h-[35vh] md:h-[60vh] lg:h-[70vh] xl:h-full max-h-full bg-white text-zinc-900 p-4 md:p-8 overflow-hidden">
   
   {/* Header: Info del Perfil */}
   <div className="flex items-center justify-between border-b border-zinc-100 pb-4 flex-shrink-0">
