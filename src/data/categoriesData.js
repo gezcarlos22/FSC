@@ -525,7 +525,7 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
             @tedequim  @centrosbz  @pabloramirez__3  @ds.argentina  @dentsplysironaarg  @emmanuel.sarria  @tissum.biomateriales  @ultradentarg  @joaquin.gimenez.ud  @rosterdent_oficial
             `,
             mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779393686/2_nxicjt.mp4',
-            username: "circulo_odontologico_cordoba",
+            username: "circulo_odontologico_cba",
             avatarUrl: "/logos/odont.jpg",
             date: "15 de diciembre de 2025"
           },

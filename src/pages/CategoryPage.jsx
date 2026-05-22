@@ -26,7 +26,7 @@ const CategoryPage = () => {
 
       {/* CONTENIDO POST-SCROLL */}
       <section className="relative bg-black">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4">
           <CategoryContent category={category} />
         </div>
       </section>
@@ -98,9 +98,9 @@ const CategoryHero = ({ category }) => {
             {category.subtitle}
           </p>
           
-          <h1 className="text-7xl md:text-[12rem] font-black uppercase leading-none tracking-tighter transition-all duration-700 select-none">
-            <span className="block text-transparent stroke-white" 
-                  style={{ WebkitTextStroke: '2px white' }}>
+          <h1 className="text-5xl md:text-[12rem] font-black uppercase leading-normal md:leading-none tracking-wide md:tracking-tighter transition-all duration-700 select-none">
+            {/* Usamos clases arbitrarias de Tailwind para controlar el grosor del stroke por pantalla */}
+            <span className="text-transparent block [-webkit-text-stroke:1px_white] md:[-webkit-text-stroke:2px_white]">
               {category.title}
             </span>
           </h1>

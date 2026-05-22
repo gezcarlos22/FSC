@@ -70,7 +70,7 @@ export const Posts = ({
                 post.mediaUrl.includes('video'));
 
             return (
-              <div key={post.id} className="w-full shrink-0 px-3 md:w-1/2 lg:w-1/3">
+              <div key={post.id} className="w-full shrink-0 md:px-3 md:w-1/2 lg:w-1/3">
                 <div
                   onClick={() => {
                     setModalIndex(idx);

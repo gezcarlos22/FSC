@@ -10,6 +10,7 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { ImageModal } from '../components/Modal';
 import Contact from '../components/Contact';
+import { EducacionSeccion } from '../components/Training';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,7 +22,7 @@ const AboutPage = () => {
   const aboutData = {
     title: "Sobre Mí",
     subtitle: "Visual Storyteller",
-    extra: "Soy un apasionado creador visual con más de 5 años de experiencia capturando momentos únicos y narrativas poderosas a través de la lente. Mi enfoque combina la precisión técnica de la ingeniería con una sensibilidad artística innovadora, permitiéndome abordar cada proyecto desde una perspectiva dual: la estructura y la emoción. Creo firmemente que cada imagen es un fragmento de una historia mayor, y mi misión es asegurar que esa historia se cuente con la máxima fidelidad visual y un impacto emocional duradero, utilizando tecnología de vanguardia para romper los límites de lo convencional.",
+    extra: "Soy un apasionado creador visual con años de experiencia capturando momentos únicos y narrativas poderosas a través de la lente. Mi enfoque combina la precisión técnica de la ingeniería con una sensibilidad artística innovadora, permitiéndome abordar cada proyecto desde una perspectiva dual: la estructura y la emoción. Creo firmemente que cada imagen es un fragmento de una historia mayor, y mi misión es asegurar que esa historia se cuente con la máxima fidelidad visual y un impacto emocional duradero, utilizando tecnología de vanguardia para romper los límites de lo convencional.",
   
   // Highlights con iconos específicos y texto extendido
   highlights: [
@@ -197,20 +198,7 @@ const AboutPage = () => {
               <h2 className="text-2xl font-bold uppercase tracking-[0.2em] flex items-center gap-3 mb-8">
                 <GraduationCap className="text-purple-500" /> Formación
               </h2>
-              <div className="space-y-4">
-                <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition">
-                  <h4 className="font-bold text-xl">Artes Audiovisuales</h4>
-                  <p className="text-sm text-white/50 tracking-widest uppercase mt-1">Univ. Nacional de Artes | 2018-2021</p>
-                </div>
-                <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition">
-                  <h4 className="font-bold text-xl">Artes Audiovisuales</h4>
-                  <p className="text-sm text-white/50 tracking-widest uppercase mt-1">Univ. Nacional de Artes | 2018-2021</p>
-                </div>
-                <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition">
-                  <h4 className="font-bold text-xl">Artes Audiovisuales</h4>
-                  <p className="text-sm text-white/50 tracking-widest uppercase mt-1">Univ. Nacional de Artes | 2018-2021</p>
-                </div>
-              </div>
+              <EducacionSeccion/>
             </div>
           </div>
 
@@ -293,9 +281,9 @@ const AboutHero = ({ category }) => {
             {category.subtitle}
           </p>
           
-          <h1 className="text-7xl md:text-[12rem] font-black uppercase leading-none tracking-tighter transition-all duration-700 select-none">
-            <span className="block text-transparent stroke-white" 
-                  style={{ WebkitTextStroke: '2px white' }}>
+          <h1 className="text-5xl md:text-[12rem] font-black uppercase leading-normal md:leading-none tracking-wide md:tracking-tighter transition-all duration-700 select-none">
+            {/* Usamos clases arbitrarias de Tailwind para controlar el grosor del stroke por pantalla */}
+            <span className="text-transparent block [-webkit-text-stroke:1px_white] md:[-webkit-text-stroke:2px_white]">
               {category.title}
             </span>
           </h1>

@@ -21,7 +21,7 @@ export const CategoryVideos = ({ videos }) => {
         <h2 className="text-xl md:text-2xl font-bold border-l-4 border-white pl-6 uppercase tracking-widest reveal-text">
           Videos
         </h2>
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           {videos.map((video, i) => (
             <div
               key={video.title}

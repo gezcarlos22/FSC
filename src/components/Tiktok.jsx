@@ -17,7 +17,7 @@ export function InstagramSection() {
   return (
     <section className="relative w-full z-20 overflow-hidden bg-black pt-12">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 text-white">
-        <div className="w-full">
+        <div className="w-full px-4">
           <motion.div 
                                   initial={{ opacity: 0, y: 40 }}
                                   whileInView={{ opacity: 1, y: 0 }}
@@ -56,10 +56,10 @@ export function InstagramSection() {
               );
             })}
           </div>
-
-          <Posts
+            <Posts
             currentPosts={currentPosts}
           />
+          
         </div>
       </div>
     </section>
