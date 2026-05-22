@@ -1,4 +1,4 @@
-import React, { useEffect, useState  } from 'react';
+import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -80,276 +80,112 @@ export const ImageModal = ({ isOpen, onClose, images, currentIndex, setCurrentIn
   );
 };
 
-export const VideoModal = ({
-  isOpen,
-  onClose,
-  videos,
-  currentIndex,
-  setCurrentIndex,
-}) => {
-
-  const [isMobile, setIsMobile] = useState(false);
-  const [isPortrait, setIsPortrait] = useState(false);
-
-  // Detectar orientación y tamaño
+export const VideoModal = ({ isOpen, onClose, videos, currentIndex, setCurrentIndex }) => {
+  
+  // Efecto para controlar la redirección a Google Drive solo en dispositivos móviles
   useEffect(() => {
+    if (isOpen) {
+      const isMobile = window.innerWidth < 768; // Detecta si es pantalla mobile (menor a md)
+      
+      if (isMobile) {
+        // Obtenemos la URL original (limpiando posibles parámetros de embebido si hiciera falta)
+        const driveUrl = videos[currentIndex].url;
+        
+        // Redirige al usuario en la misma pestaña (o usa window.open si prefieres pestaña nueva)
+        window.location.href = driveUrl;
+        
+        // Cerramos el modal inmediatamente para que no se quede colgado en el fondo
+        onClose();
+      }
+    }
+  }, [isOpen, currentIndex, videos, onClose]);
 
-    const checkDevice = () => {
-      setIsMobile(window.innerWidth < 768);
-      setIsPortrait(window.innerHeight > window.innerWidth);
-    };
-
-    checkDevice();
-
-    window.addEventListener('resize', checkDevice);
-    window.addEventListener('orientationchange', checkDevice);
-
-    return () => {
-      window.removeEventListener('resize', checkDevice);
-      window.removeEventListener('orientationchange', checkDevice);
-    };
-
-  }, []);
-
-  // Bloquear scroll cuando el modal está abierto
+  // Bloquear scroll del body cuando el modal está abierto (solo aplicará en desktop)
   useEffect(() => {
-
     document.body.style.overflow = isOpen ? 'hidden' : 'unset';
-
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-
+    return () => { document.body.style.overflow = 'unset'; };
   }, [isOpen]);
 
-  // Cerrar modal con ESC
+  // Cerrar el modal al presionar la tecla Escape
   useEffect(() => {
-
-    const handleEsc = (e) => {
-      if (e.key === 'Escape') onClose();
-    };
-
+    const handleEsc = (e) => e.key === 'Escape' && onClose();
     window.addEventListener('keydown', handleEsc);
-
-    return () => {
-      window.removeEventListener('keydown', handleEsc);
-    };
-
+    return () => window.removeEventListener('keydown', handleEsc);
   }, [onClose]);
 
   if (!isOpen) return null;
 
   const nextVideo = (e) => {
-
     e?.stopPropagation();
-
     setCurrentIndex((prev) => (prev + 1) % videos.length);
-
   };
 
   const prevVideo = (e) => {
-
     e?.stopPropagation();
-
-    setCurrentIndex((prev) =>
-      (prev - 1 + videos.length) % videos.length
-    );
-
+    setCurrentIndex((prev) => (prev - 1 + videos.length) % videos.length);
   };
 
   return createPortal(
-
     <AnimatePresence>
-
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
+        className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black/95 backdrop-blur-sm"
         onClick={onClose}
-        className="
-          fixed
-          inset-0
-          z-[9999]
-          flex
-          items-center
-          justify-center
-          bg-black/95
-          backdrop-blur-sm
-          p-4
-        "
       >
-
-        {/* Botón cerrar */}
-        <button
-          onClick={onClose}
-          className="
-            absolute
-            top-4
-            right-4
-            md:top-6
-            md:right-6
-            z-[200]
-            text-white/70
-            hover:text-white
-            transition-colors
-          "
+        {/* Botón Cerrar - Tamaño adaptativo */}
+        <button 
+          onClick={onClose} 
+          className="absolute top-4 right-4 md:top-6 md:right-6 text-white/70 hover:text-white transition-colors z-[20]"
         >
           <X className="w-8 h-8 md:w-10 md:h-10" />
         </button>
 
-        {/* MENSAJE GIRAR CELULAR */}
-        {isMobile && isPortrait ? (
+        {/* Visualizador Principal de Video */}
+        <div className="relative flex items-center justify-center w-full">
+          
+          {/* Flecha Izquierda - Oculta en móvil (hidden), visible desde tablet/desktop (md:flex) */}
+          <button 
+            onClick={prevVideo} 
+            className="hidden md:flex absolute md:-left-16 p-2 text-white/50 hover:text-white transition-all z-[100]"
+          >
+            <ChevronLeft className="w-12 h-12" />
+          </button>
 
-          <div
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="w-full max-w-[95vw] md:max-w-7xl flex flex-col items-center justify-center" 
             onClick={(e) => e.stopPropagation()}
-            className="
-              flex
-              flex-col
-              items-center
-              justify-center
-              text-center
-              text-white
-              px-6
-            "
           >
-
-            {/* Ícono animado */}
-            <div className="animate-spin-slow text-6xl mb-6">
-              📱
+            {/* Contenedor del Iframe: Solo se usará realmente en computadoras */}
+            <div className="relative w-full aspect-video rounded-md md:rounded-2xl overflow-hidden shadow-2xl bg-black z-50">
+              <iframe
+                src={`${videos[currentIndex].url}${videos[currentIndex].url.includes('?') ? '&' : '?'}rm=minimal`} 
+                title={videos[currentIndex].title}
+                className="absolute top-0 left-0 w-full h-full z-50"
+                allowFullScreen
+              />
             </div>
-
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-              Girá tu dispositivo
-            </h2>
-
-            <p className="text-white/60 max-w-sm text-sm md:text-base">
-              Para una mejor experiencia de visualización,
-              colocá tu celular en horizontal.
+            
+            {/* Título del video */}
+            <p className="text-white/60 mt-4 text-sm tracking-wide text-center px-4">
+              {videos[currentIndex].title}
             </p>
+          </motion.div>
 
-          </div>
-
-        ) : (
-
-          /* CONTENEDOR VIDEO */
-          <div
-            className="
-              relative
-              flex
-              items-center
-              justify-center
-              w-full
-            "
+          {/* Flecha Derecha - Oculta en móvil (hidden), visible desde tablet/desktop (md:flex) */}
+          <button 
+            onClick={nextVideo} 
+            className="hidden md:flex absolute md:-right-16 p-2 text-white/50 hover:text-white transition-all z-[20]"
           >
-
-            {/* Flecha izquierda */}
-            <button
-              onClick={prevVideo}
-              className="
-                hidden
-                md:flex
-                absolute
-                -left-16
-                z-[150]
-                p-2
-                text-white/50
-                hover:text-white
-                transition-all
-              "
-            >
-              <ChevronLeft className="w-12 h-12" />
-            </button>
-
-            {/* Video */}
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.25 }}
-              onClick={(e) => e.stopPropagation()}
-              className="
-                flex
-                flex-col
-                items-center
-                justify-center
-                w-full
-              "
-            >
-
-              {/* Contenedor iframe */}
-              <div
-                className="
-                  relative
-                  w-full
-                  max-w-6xl
-                  aspect-video
-                  rounded-2xl
-                  overflow-hidden
-                  shadow-2xl
-                  bg-black
-                "
-              >
-
-                <iframe
-                  src={`${videos[currentIndex].url}${
-                    videos[currentIndex].url.includes('?') ? '&' : '?'
-                  }rm=minimal`}
-                  title={videos[currentIndex].title}
-                  allow="autoplay; fullscreen"
-                  allowFullScreen
-                  className="
-                    absolute
-                    inset-0
-                    w-full
-                    h-full
-                    border-0
-                  "
-                />
-
-              </div>
-
-              {/* Título */}
-              <p
-                className="
-                  text-white/60
-                  mt-4
-                  text-sm
-                  tracking-wide
-                  text-center
-                  px-4
-                "
-              >
-                {videos[currentIndex].title}
-              </p>
-
-            </motion.div>
-
-            {/* Flecha derecha */}
-            <button
-              onClick={nextVideo}
-              className="
-                hidden
-                md:flex
-                absolute
-                -right-16
-                z-[150]
-                p-2
-                text-white/50
-                hover:text-white
-                transition-all
-              "
-            >
-              <ChevronRight className="w-12 h-12" />
-            </button>
-
-          </div>
-
-        )}
-
+            <ChevronRight className="w-12 h-12" />
+          </button>
+        </div>
       </motion.div>
-
     </AnimatePresence>,
-
     document.body
   );
 };
