@@ -106,7 +106,7 @@ export const Collection = () => {
               {currentCategory.subtitle}
             </p>
 
-            <h1 className="text-6xl md:text-[12rem] font-black uppercase leading-tight md:leading-none tracking-normal md:tracking-tighter transition-all duration-700 select-none">
+            <h1 className="text-5xl md:text-[10rem] font-black uppercase leading-tight md:leading-none tracking-normal md:tracking-tighter transition-all duration-700 select-none">
               {/* En móvil el texto es blanco sólido. En escritorio (md) se vuelve transparente y activa el borde */}
               <span 
                 className="text-white md:text-transparent block" 

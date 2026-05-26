@@ -738,7 +738,7 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
   {
   "slug": "recibidas",
   "title": "Graduaciones",
-  "subtitle": "El fin de una etapa, el inicio de una leyenda",
+  "subtitle": "El instante exacto de la victoria",
   "description": "Capturamos el clímax de años de esfuerzo, traducido en pura euforia y alivio. Desde la mirada fija en el cartel de 'Soy Ingeniero/a' hasta el estallido de espuma, pintura y harina con amigos y familia, nos infiltramos en el festejo para congelar la emoción en su estado más salvaje y genuino. No hacemos fotos posadas de protocolo; buscamos la lágrima cómplice de un padre, el abrazo grupal que corta la respiración y los detalles de una fiesta inolvidable. Documentamos el logro de tu vida con la estética vibrante y profesional que se merece.",
   "covers": [
     "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755081/RECB_44_soji8i.jpg",
@@ -964,7 +964,7 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
   {
   "slug": "produccion",
   "title": "Producción",
-  "subtitle": "Sonido e imagen en perfecta sintonía",
+  "subtitle": "Cine y sonido profesional",
   "description": "Fusionamos la narrativa cinematográfica con la potencia del diseño sonoro. Nos encargamos de la captura técnica en rodaje, la grabación de audio profesional y el minucioso proceso de edición, montaje y postproducción musical. Traducimos conceptos artísticos en piezas audiovisuales de alto impacto, donde el ritmo del montaje y la fidelidad sonora caminan de la mano para dar vida a videoclips, proyectos de cine y contenidos de calidad premium.",
   "covers": [
     "https://imesvl.ar/wp-content/uploads/2021/03/CINE-FOTO-7-scaled.jpg",
