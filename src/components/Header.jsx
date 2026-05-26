@@ -26,6 +26,7 @@ export const Header = () => {
         { name: 'Empresas', href: '/categoria/empresas' },
         { name: 'Eventos', href: '/categoria/eventos' },
         { name: 'Drone', href: '/categoria/drone' },
+        { name: 'Producción', href: '/categoria/produccion' },
     ];
 
     return (

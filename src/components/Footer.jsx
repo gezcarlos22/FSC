@@ -113,6 +113,9 @@ export const Footer = () => {
                             <li>
                                 <Link to="/categoria/drone" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Drone </Link>
                             </li>
+                            <li>
+                                <Link to="/categoria/produccion" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Produccion </Link>
+                            </li>
                         </ul>
                     </motion.div>
 

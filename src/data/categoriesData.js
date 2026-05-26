@@ -181,6 +181,15 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
           "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394991/I7_weeyxw.jpg",
           "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394991/I6_edegyr.jpg",
           "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394990/I5_hky3cz.jpg",
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P40_cjpmsf.jpg',
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P41_xpni9x.jpg',
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P39_ypci5x.jpg',
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P37_z8clyj.jpg',
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P38_lvlsxc.jpg',
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P34_pgqkcp.jpg',
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751281/P33_vs0g38.jpg',
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751281/P36_dg8xyg.jpg',
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751281/P35_ncvaba.jpg',
         ],
         "videos": [
           {
@@ -467,7 +476,6 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
     ], 
       },
       {
-        "title": "Weline",
         "logo":"/logos/weline/weline-png.png",
         "desc":"",
         "images": [
@@ -491,7 +499,6 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
         ]
       },
       {
-        "title": "Humand",
         "logo":"/logos/humand/humand-png.png",
         "desc":"",
         "videos":[
@@ -947,10 +954,9 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
   "subtitle": "Sonido e imagen en perfecta sintonía",
   "description": "Fusionamos la narrativa cinematográfica con la potencia del diseño sonoro. Nos encargamos de la captura técnica en rodaje, la grabación de audio profesional y el minucioso proceso de edición, montaje y postproducción musical. Traducimos conceptos artísticos en piezas audiovisuales de alto impacto, donde el ritmo del montaje y la fidelidad sonora caminan de la mano para dar vida a videoclips, proyectos de cine y contenidos de calidad premium.",
   "covers": [
-    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773969/C20_gbxukl.jpg",
-    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/C18_rkbyps.jpg", 
-    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773968/C15_mjsjk7.jpg", 
-    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773969/C29_vphlc1.jpg"
+    "https://imesvl.ar/wp-content/uploads/2021/03/CINE-FOTO-7-scaled.jpg",
+    "https://imesvl.ar/wp-content/uploads/2021/03/CINE-FOTO-11-scaled.jpg", 
+    "https://imesvl.ar/wp-content/uploads/2021/03/CINE-FOTO-0-scaled.jpg"
   ],
   "videos":[
   {
