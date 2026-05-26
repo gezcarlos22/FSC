@@ -3,9 +3,9 @@ import { FaXTwitter, FaInstagram, FaTiktok, FaFacebookF, FaWhatsapp } from "reac
 
 const SocialButtons = () => {
   const socialLinks = [
-    { name: "Instagram", icon: <FaInstagram />, url: "#", color: "from-cyan-500 to-purple-500" },
+    { name: "Instagram", icon: <FaInstagram />, url: "https://www.instagram.com/ph.fedesosa/", color: "from-cyan-500 to-purple-500" },
     { name: "Twitter (X)", icon: <FaXTwitter />, url: "#", color: "from-cyan-500 to-purple-500" },
-    { name: "TikTok", icon: <FaTiktok />, url: "#", color: "from-cyan-500 to-purple-500" },
+    { name: "TikTok", icon: <FaTiktok />, url: "https://www.tiktok.com/@fedesosacristiani", color: "from-cyan-500 to-purple-500" },
     { name: "Facebook", icon: <FaFacebookF />, url: "#", color: "from-cyan-500 to-purple-500" },
   ];
 

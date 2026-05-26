@@ -42,21 +42,6 @@ export const Footer = () => {
                         <p className="text-base leading-relaxed text-gray-600 mt-7">
                             A través de mi lente, busco capturar la esencia de cada instante, combinando la espontaneidad con la técnica profesional.
                         </p>
-
-                        <ul className="flex items-center space-x-3 mt-9">
-                            {[
-                                { icon: <FaTwitter className="w-4 h-4" />, color: "#1DA1F2", label: "Twitter" },
-                                { icon: <FaInstagram className="w-4 h-4" />, color: "#E1306C", label: "Instagram" },
-                                { icon: <FaTiktok className="w-3.5 h-3.5" />, color: "#000000", label: "TikTok" },
-                                { icon: <FaFacebookF className="w-4 h-4" />, color: "#4267B2", label: "Facebook" }
-                            ].map((social, index) => (
-                                <li key={index}>
-                                    <a href="#" title={social.label} className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600">
-                                        {social.icon}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
                     </motion.div>
 
                     {/* COLUMNA 2 y 3:
@@ -97,10 +82,6 @@ export const Footer = () => {
                     >
                         <p className="text-sm font-semibold tracking-widest text-white uppercase">Colecciones</p>
                         <ul className="mt-6 space-y-4">
-                            
-                            <li>
-                                <Link to="/categoria/productos" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Productos </Link>
-                            </li>
                             <li>
                                 <Link to="/categoria/empresas" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Empresas </Link>
                             </li>

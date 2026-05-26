@@ -9,7 +9,7 @@ export const EducacionSeccion = () => {
       id: 0,
       titulo: "Técnico en Comunicación Audiovisual",
       institucion: "La Metro | 2021-2025",
-      imagen: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800" // Cambia por tus URLs reales
+      imagen: "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779762571/ANALITICO_LA_METRO_FEDERICO_SOSA_CRISTIANI_page-0001_bj5r1i.jpg" // Cambia por tus URLs reales
     },
     {
       id: 1,
