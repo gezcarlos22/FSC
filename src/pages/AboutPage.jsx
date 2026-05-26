@@ -183,7 +183,7 @@ const AboutPage = () => {
             </div>
 
           <div className={`${imageContBase} col-span-12 lg:col-span-5 h-[60vh] lg:h-full mt-12 lg:mt-0`}>
-             <img className={imgStyle} src={aboutData.images[2]} alt="Work 2" />
+             <img className={imgStyle} src={aboutData.images[0]} alt="Work 2" />
           </div>
 
 

@@ -182,6 +182,24 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
           "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394991/I6_edegyr.jpg",
           "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394990/I5_hky3cz.jpg",
         ],
+        "videos": [
+          {
+            "title": "Fiesta Riiing",
+            "url": "https://drive.google.com/file/d/1HzWjeAsjeNAMyiARf1FoksK_8S1qB6DK/preview"
+          },
+          {
+            "title": "Historia 1",
+            "url": "https://drive.google.com/file/d/1QVTL2lz3HrbqJ_C6nXo8wn-KcVOGUkL0/preview"
+          },
+          {
+            "title": "Historia 2",
+            "url": "https://drive.google.com/file/d/1K-j4oBOYlEedz-A4rnQcKrWtalrlZzEo/preview"
+          },
+          {
+            "title": "Historia 3",
+            "url": "https://drive.google.com/file/d/1A-mYW_MBZ9ew23NL4fbNOYsrMxwM3bb1/preview"
+          },
+        ],
         "posts": [
           { 
             id: 1, 
@@ -447,7 +465,42 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
         avatarUrl: "/logos/he-mod/he-mod.jpg", 
         date: "12 de marzo de 2024" },
     ], 
-      }
+      },
+      {
+        "title": "Weline",
+        "logo":"/logos/weline/weline-png.png",
+        "desc":"",
+        "images": [
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P15_suzrcq.jpg',
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P9_dwhkye.jpg',
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/P14_l9hry3.jpg',
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P8_wzpxjn.jpg',
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/P7_txsl0u.jpg',
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P6_xqkxwq.jpg',
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/P5_o3qmei.jpg',
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P10_bzklip.jpg',
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P13_sa6ghf.jpg',
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/P12_vg8bcb.jpg',
+          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/P11_u7jxlk.jpg',
+        ],
+        "videos":[
+          {
+            "title": "Weline",
+            "url": "https://drive.google.com/file/d/1MuzEDoZTOLoxoUh1qX01HplFH-1OJ25i/preview"
+          },
+        ]
+      },
+      {
+        "title": "Humand",
+        "logo":"/logos/humand/humand-png.png",
+        "desc":"",
+        "videos":[
+          {
+            "title": "Humand caso de exito",
+            "url": "https://drive.google.com/file/d/1gatw9xdayUDEQazlcU8BDgBfiq9S0BVv/preview"
+          },
+        ]
+      },
     ],
     "highlights": [
       "Retratos corporativos auténticos que humanizan tu marca",
@@ -463,10 +516,10 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
     "subtitle": "Momentos únicos, recuerdos eternos",
     "description": "Inmortalizamos la energía, las emociones y los instantes clave de tus celebraciones más significativas. Desde la magia de un casamiento y la ilusión de unos 15 años, hasta la calidez de un cumpleaños o la distinción de un evento empresarial. Capturamos tanto la imponencia de la ambientación como los gestos espontáneos que le dan vida y autenticidad a cada acontecimiento.",
     "covers":[
-      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773969/C20_gbxukl.jpg",
-      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/C18_rkbyps.jpg", 
-      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773968/C15_mjsjk7.jpg", 
-      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773969/C29_vphlc1.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755081/RECB_44_soji8i.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779753979/I18_xb6kkc.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754480/FUTBOL_1_ssc9cu.png",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754979/RECB_10_mpqlot.jpg",  
     ],
     "section":[
       {
@@ -493,6 +546,28 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
             "title": "Ale y Marian - Video de fotos",
             "url": "https://drive.google.com/file/d/13hUIOCa4Kb3loVn7AyPpJ2KKIQPNIxj2/preview"
           }, 
+        ],
+      },
+      {
+        "title": "Egresos",
+        "desc":"",
+        "videos": [
+          {
+            "title": "Egreso Merlo 1",
+            "url": "https://drive.google.com/file/d/1wgi5JFgjfM9dXXabazdUqkHgwBA0yTEk/preview"
+          },
+          {
+            "title": "Egreso Merlo 2",
+            "url": "https://drive.google.com/file/d/1n3rx8oCsMlaVMkJsbi1YNYGnX8IB_yg3/preview"
+          },
+          {
+            "title": "Egreso Merlo 3",
+            "url": "https://drive.google.com/file/d/1ICpwXyjLn75RSfqXCHjyCArUDfqqsR0i/preview"
+          },
+          {
+            "title": "Egreso Merlo 4",
+            "url": "https://drive.google.com/file/d/11qAUuiQVlsAXlHCv1uaMVe-1__zfreGZ/preview"
+          },
         ],
       },
       {
@@ -735,10 +810,10 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
     "subtitle": "Perspectivas sin límites",
     "description": "Elevamos la mirada para descubrir patrones, escalas y trayectorias invisibles desde el suelo. Con tecnología aérea de última generación, capturamos planos generales dinámicos, secuencias de seguimiento cinematográficas y perspectivas geométricas perfectas. Redefinimos la forma de mostrar el entorno, aportando un valor estético de gran presupuesto a cualquier proyecto.",
     "covers":[
-      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773969/C20_gbxukl.jpg",
-      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/C18_rkbyps.jpg", 
-      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773968/C15_mjsjk7.jpg", 
-      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773969/C29_vphlc1.jpg",
+      "https://adronespace.es/wp-content/uploads/2023/07/fotografia-aerea-y-videos-con-drones-publicidad.jpg",
+      "https://adronespace.es/wp-content/uploads/2022/07/fotografia-aerea-y-video-con-drones-empresa-adronespain-I.png", 
+      "https://adronespace.es/wp-content/uploads/2020/10/Fotografia-aerea-y-Video-corporativo-con-drones-aa.jpg", 
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773965/C3_vrtclo.jpg",
     ],
     "posts":[
       { 
