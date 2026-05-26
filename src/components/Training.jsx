@@ -15,13 +15,13 @@ export const EducacionSeccion = () => {
       id: 1,
       titulo: "Eléctrico para Cine y TV",
       institucion: "La Lumiere | 2023",
-      imagen: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800" 
+      imagen: "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754258/Certificado_1_uhdsoj.jpg" 
     },
     {
       id: 2,
       titulo: "Formación Profecional en KEY GRIP",
       institucion: "La Lumiere | 2023",
-      imagen: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800"
+      imagen: "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754257/Certificado_2_dr8cxr.jpg"
     }
   ];
 

@@ -68,12 +68,11 @@ const AboutPage = () => {
     }
   ],
     images: [
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=1200&q=80"
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754262/FEDE_2_svsasw.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754259/FEDE_1_kbakhk.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754260/FEDE_3_eqdmwn.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754261/FEDE_4_nxjlxx.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754259/FEDE_5_vqqqe4.jpg",
     ]
   };
 

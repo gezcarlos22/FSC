@@ -10,9 +10,10 @@ const Hero = () => {
     const [scrollProgress, setScrollProgress] = useState(0)
 
     const sampleImages = [
-        "https://images.pexels.com/photos/32195697/pexels-photo-32195697.jpeg",
-        "https://images.pexels.com/photos/32195697/pexels-photo-32195697.jpeg",
-        "https://images.pexels.com/photos/32195697/pexels-photo-32195697.jpeg",
+        
+        "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754259/FEDE_1_kbakhk.jpg",
+        "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754260/FEDE_3_eqdmwn.jpg",
+        "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754262/FEDE_2_svsasw.jpg",
     ];
 
     useEffect(() => {
