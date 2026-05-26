@@ -21,12 +21,15 @@ export const Header = () => {
 
     // Cierra el menú al navegar
     const colecciones = [
-        { name: 'Animales', href: '/categoria/animales' },
-        { name: 'Productos', href: '/categoria/productos' },
+        
         { name: 'Empresas', href: '/categoria/empresas' },
         { name: 'Eventos', href: '/categoria/eventos' },
-        { name: 'Drone', href: '/categoria/drone' },
+        { name: 'Productos', href: '/categoria/productos' },
+        { name: 'Graduaciones', href: '/categoria/recibidas' },
         { name: 'Producción', href: '/categoria/produccion' },
+        { name: 'Animales', href: '/categoria/animales' },
+        { name: 'Drone', href: '/categoria/drone' },
+        
     ];
 
     return (

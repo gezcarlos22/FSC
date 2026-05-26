@@ -99,9 +99,6 @@ export const Footer = () => {
                         <ul className="mt-6 space-y-4">
                             
                             <li>
-                                <Link to="/categoria/animales" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Animales </Link>
-                            </li>
-                            <li>
                                 <Link to="/categoria/productos" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Productos </Link>
                             </li>
                             <li>
@@ -111,11 +108,21 @@ export const Footer = () => {
                                 <Link to="/categoria/eventos" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Eventos </Link>
                             </li>
                             <li>
-                                <Link to="/categoria/drone" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Drone </Link>
+                                <Link to="/categoria/productos" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Productos </Link>
+                            </li>
+                            <li>
+                                <Link to="/categoria/recibidas" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Graduaciones </Link>
                             </li>
                             <li>
                                 <Link to="/categoria/produccion" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Produccion </Link>
                             </li>
+                            <li>
+                                <Link to="/categoria/animales" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Animales </Link>
+                            </li>
+                            <li>
+                                <Link to="/categoria/drone" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Drone </Link>
+                            </li>
+                            
                         </ul>
                     </motion.div>
 
