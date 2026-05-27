@@ -39,7 +39,7 @@ const SocialButtons = () => {
         <div className="absolute transition-all duration-200 rounded-full -inset-[1px] bg-gradient-to-r from-emerald-500 via-lime-500 to-green-700 group-hover:shadow-lg group-hover:shadow-emerald-500/40"></div>
         
         <a
-          href="https://wa.me/tunúmero"
+          href="https://api.whatsapp.com/send/?phone=5493544597078&text&type=phone_number&app_absent=0"
           target="_blank"
           rel="noopener noreferrer"
           /* 
