@@ -26,6 +26,7 @@ export const Header = () => {
         { name: 'Eventos', href: '/categoria/eventos' },
         { name: 'Productos', href: '/categoria/productos' },
         { name: 'Graduaciones', href: '/categoria/recibidas' },
+        { name: 'Deportes', href: '/categoria/deportes' },
         { name: 'Producción', href: '/categoria/produccion' },
         { name: 'Animales', href: '/categoria/animales' },
         { name: 'Drone', href: '/categoria/drone' },

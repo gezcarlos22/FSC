@@ -1,155 +1,5 @@
 export const categories = [
   {
-    slug: 'animales',
-    title: 'Animales',
-    subtitle: 'Retratos animales',
-    description: 'Más que simples fotografías, buscamos retratar la personalidad y el alma de cada especie. Capturamos la intensidad de la mirada salvaje y la delicadeza de los comportamientos naturales en su hábitat más auténtico.',
-    "covers":[
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/A9_v7t7sl.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/A11_wjqy7m.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A15_mcl6xz.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A8_huthw2.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A4_teyg5j.jpg',
-    ],
-    images: [
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/A9_v7t7sl.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/A11_wjqy7m.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A15_mcl6xz.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A8_huthw2.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A4_teyg5j.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A1_eoz6p2.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/A3_y8lqcg.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/A6_hejeir.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/A20_uxrzox.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/A2_w3rvwu.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/A10_ehotqy.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/A21_izntjz.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/A14_pabobq.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/A19_pbgjhe.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/A12_hmji73.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/A24_o8hy28.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/A18_hfvmk3.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/A26_tusvas.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/A5_ygeglq.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/A23_vuvrml.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/A22_m0y3lz.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/A13_ywbequ.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/A16_l1wubo.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/A17_fosi7g.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/A27_ubzngb.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/A25_nbd7tn.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/A28_jz4iqi.jpg'
-    ],
-    "posts":[
-      { 
-            id: 1, 
-            url: "https://www.instagram.com/p/CswV1e6Mg2E/", 
-            caption: `𝘾𝙊́𝙍𝘿𝙊𝘽𝘼♥️𝙃𝙀𝙍𝙈𝙊𝙎𝘼 🇦🇷 Proyecto Carayá La Cumbre Sierras de Córdoba ♥️ Argentina. 
-
-🎬 @ph.fedesosa
-
-  El @proyecto.caraya es un Centro argentino de rescate, rehabilitación y conservación de primates.
-
-  Proyecto Carayá es el primer y único centro de primates en Argentina . Es una ONG que desarrolla hace más de 20 años el programa de conservación ex –situ de la especie Argentina Alouatta Caraya (Mono Carayá).
-
-  Rescata animales salvajes que han sido víctimas del tráfico ilegal, del mascotismo y la destrucción de sus hábitats naturales. Muchos han vivido situaciones muy traumáticas y llegan al Santuario en condiciones alarmantes.
-
-  Allí comienza el trabajo de rehabilitación y una vez que los individuos se adaptaron al medio y a un grupo consolidado de primates, se procede a liberarlos en el Santuario.
-
-  En el mismo residen más de 10 grupos de primates en total libertad, siendo más de 170 ejemplares de Monos Carayá.
-
-  El Santuario esta abierto todos los días del año.
-Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
- Puedes conocer el lugar, a través de una visita guiada entre medio de bosques y montañas y aprender sobre flora y fauna.
-
-🌿 Aprecia y Preserva el Entorno Natural. 
-💧 Respeta y Cuida Los Cursos de Agua.
-♻️ Minimiza tu Impacto Ambiental.
-🚮 La Basura siempre donde corresponde.
-🔥 Fuego sólo en lugares habilitados.
-
-𝘾𝙊́𝙍𝘿𝙊𝘽𝘼♥️𝙃𝙀𝙍𝙈𝙊𝙎𝘼
-🔴 Aportando con lo más bello de tan linda Provincia ... 🇦🇷 de @sa.tap.ph
-
-#cordobahermosa #visitecordoba #traslasierracordoba #traslasierra #cordobaargentina #córdobaargentina #argentina #cordobaarg #altascumbres #sierrasdecordobaarg #sierrasdecordobaargentina #sierrasdecórdoba #sierrasdecordoba #lacumbre #lacumbrecordoba #proyectocaraya #proyectocarayá #monocaraya`,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779393715/1_jzxrf2.mp4',
-            username: "ph.fedesosa",
-            avatarUrl: "/feddesosa.jpg",
-            date: "27 de mayo de 2023"
-          },
-    ], 
-    highlights: [
-      'Enfoque crítico en la mirada (Eye-contact)',
-      'Uso de teleobjetivos para no alterar el comportamiento natural',
-      'Captura de texturas: pelajes, plumas y escamas en alta definición',
-      'Documentación de interacciones sociales entre especies'
-    ],
-    extra: 'Capturas diseñadas para generar una conexión emocional profunda con la audiencia. Es la herramienta ideal para campañas de rescate con impacto social, publicaciones científicas que exigen precisión técnica y marcas ecológicas que buscan transmitir autenticidad. Unimos sensibilidad artística y rigor visual para comunicar un compromiso real con la biodiversidad y la preservación natural.'
-  },
-  {
-    slug: 'productos',
-    title: 'Productos',
-    subtitle: 'Esencia de marcas',
-    description: 'Transformamos objetos cotidianos en piezas de deseo. Aplicamos técnicas de iluminación de estudio y composición editorial para resaltar los materiales, el diseño y la identidad única de cada producto.',
-    "covers":[
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P15_suzrcq.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P9_dwhkye.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/P14_l9hry3.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P8_wzpxjn.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/P7_txsl0u.jpg',
-    ],
-    images: [
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P15_suzrcq.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P9_dwhkye.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/P14_l9hry3.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P8_wzpxjn.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/P7_txsl0u.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P6_xqkxwq.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/P5_o3qmei.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P10_bzklip.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P13_sa6ghf.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/P12_vg8bcb.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/P11_u7jxlk.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P40_cjpmsf.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P41_xpni9x.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P39_ypci5x.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P37_z8clyj.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P38_lvlsxc.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P34_pgqkcp.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751281/P33_vs0g38.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751281/P36_dg8xyg.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751281/P35_ncvaba.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/P4_ksukqg.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/P32_mij7db.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773958/P31_tnyofg.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/P30_frfmir.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773958/P3_hkmgbg.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773958/P29_kjgljo.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/P28_eqpa5s.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/P27_crcnoa.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/P26_uovgdg.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/P25_gduvbk.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/P24_lcwnot.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773964/P23_lgllik.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773964/P22_nvtsxm.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/P2_vxadyz.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/P19_x7medm.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/P18_vf6btm.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773958/P17_zzydko.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P16_vtektq.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/P1_as2q0f.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773958/P21_ofdwev.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773964/P20_gorma8.jpg',
-    ],
-    highlights: [
-      'Iluminación controlada para evitar reflejos no deseados',
-      'Fotografía Macro para detalles imperceptibles al ojo humano',
-      'Composición minimalista alineada con el branding',
-      'Edición de color precisa para catálogos de alta fidelidad'
-    ],
-    extra: 'Este servicio está optimizado para ecosistemas de e-commerce de alta gama, lanzamientos estratégicos en redes sociales y campañas de publicidad impresa. A través de una dirección de arte meticulosa, ayudamos a que las marcas proyecten autoridad y profesionalismo mediante una estética visual limpia, moderna y cinematográfica, transformando cada producto en una pieza de comunicación visual de alto impacto que conecta directamente con el consumidor.'
-  },
-  {
     "slug": "empresas",
     "title": "Empresas",
     "subtitle": "Identidad en movimiento",
@@ -496,6 +346,18 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
             "title": "Weline",
             "url": "https://drive.google.com/file/d/1MuzEDoZTOLoxoUh1qX01HplFH-1OJ25i/preview"
           },
+        ],
+        "posts":[
+          { 
+            id: 1, 
+            url: "https://www.instagram.com/reels/C4yup6Nr6w5/", 
+            caption: `Paso 1, Paso 2, Paso… ⏱️ Siii en solo 2 pasos! Suuuuper fácil, anda corriendo 🏃🏻‍♀️ a tu odontólogo de confianza y unite al mundo de #AlineadoresInvisibles
+            `,
+            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1780104091/publi-sanja_kw7fun.mp4',
+            username: "weline.alineadores",
+            avatarUrl: "/logos/weline-inst.jpg",
+            date: "21 de marzo de 2024"
+          },
         ]
       },
       {
@@ -524,7 +386,9 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
     "description": "Inmortalizamos la energía, las emociones y los instantes clave de tus celebraciones más significativas. Desde la magia de un casamiento y la ilusión de unos 15 años, hasta la calidez de un cumpleaños o la distinción de un evento empresarial. Capturamos tanto la imponencia de la ambientación como los gestos espontáneos que le dan vida y autenticidad a cada acontecimiento.",
     "covers":[
       "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779753979/I18_xb6kkc.jpg",
-      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754480/FUTBOL_1_ssc9cu.png",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754589/TYM_9_cb7fup.jpg",
+      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754589/TYM_2_obmhbx.jpg",
+
     ],
     "section":[
       {
@@ -586,36 +450,6 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
         ],
       },
       {
-        "title": "Futbol",
-        "desc":"",
-        "images": [
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754501/FUTBOL_22_m8blpx.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754500/FUTBOL_23_ojgbym.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754500/FUTBOL_14_cuwmii.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754498/FUTBOL_19_dynasx.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754497/FUTBOL_21_w5ee6b.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754496/FUTBOL_20_cjoo19.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754494/FUTBOL_16_xkaroc.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754494/FUTBOL_17_qtuz3m.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754493/FUTBOL_12_gns9s0.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754492/FUTBOL_8_pto7gp.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754491/FUTBOL_9_d86mob.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754490/FUTBOL_7_vvlymo.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754489/FUTBOL_3_okyqvj.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754489/FUTBOL_11_yvp7xm.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754488/FUTBOL_6_fkjhkz.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754487/FUTBOL_13_qphxot.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754486/FUTBOL_18_mktq17.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754485/FUTBOL_4_vuc5jj.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754484/FUTBOL_10_bigj3i.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754484/FUTBOL_5_fzfbqf.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754482/FUTBOL_24_yplppt.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754481/FUTBOL_15_causcl.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754481/FUTBOL_2_jgiptz.png",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754480/FUTBOL_1_ssc9cu.png",
-        ],
-      },
-      {
         "title": "Eventos",
         "desc":"",
         "images": [
@@ -632,21 +466,6 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
         "posts":[
           { 
             id: 1, 
-            url: "https://www.instagram.com/p/DFvpcO1ARgR/", 
-            caption: `FINALES 2025 TORNEO CLAUSURA
-
-            📸 @matinahuelph @eze_aguero03 @ph.fedesosa 
-            🎬 @martibelveder1 
-
-            #modoucfa #somosucfa #ucfaok #ucfa #futboldeverdad #pasiónporelfútbol
-            `,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779393691/1_ed2wex.mp4',
-            username: "ucfaok",
-            avatarUrl: "/logos/UCFA.jpg",
-            date: "21 de diciembre de 2025"
-          },
-          { 
-            id: 2, 
             url: "https://www.instagram.com/p/DSSvcTbjryT/", 
             caption: `🎥 Dale play para ver el cierre 2025 de nuestra Escuela de Perfeccionamiento junto a sus Dictantes ✨
 
@@ -664,7 +483,89 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
             date: "15 de diciembre de 2025"
           },
           { 
+            id: 2, 
+            url: "https://www.instagram.com/reels/DWSFj-1j1jN/", 
+            caption: `Gracias gracias gracias a cada una de las personas, marcas, instituciones que hicieron posible Traslasierra Wine Fest🙌🙌🙌🙌🙌🙌
+
+            Por los vinos del valle, por el trabajo en conjunto y por potenciar el destino haciendo sinergia🤗🤗🤗, salud!!!! 🍷
+
+            @hotelyacanto
+            @turismocba
+            @dariocapitani
+            @sanjavieryacantoturismo
+            @sanjavieryacanto.muni
+            @municipalidadvilladolores
+            @munivilladelasrosas
+            @luyabaturismo
+            @camaradeturismodesanjavier
+            @capsecot_villadolores
+            @andigarciaok
+            @leorodrigueztur
+            @cabaniastantasinia
+            @el.boticario.traslasierra
+            @elobservadordeltiempo
+            @tiendadecozarite
+            @hotellomabola
+            @santadoma8071
+            @lajuanayvos
+            @allegretto.heladeria
+            @frutosdelpradotraslasierra
+            @mana.monte
+            @raiz_maderapura
+            @che.tostadores
+            @allegretto.heladeria
+            @acquapuradls
+            @integral_herramientas.stihl
+            @rito.trasla
+            @pasaportecaminosdelvinocordoba
+            @wine_booking
+            @lauradillon.art
+            @xgesculturas
+            @corogospelkumbaya
+            @sevasttos
+
+            Gracias al lindísimo equipo de trabajo
+            @cafedemontana.sanjavier
+            @cabaniastantasinia
+            📸@santioviedoo
+            📽️@ph.fedesosa
+            Vane y Stefy
+            `,
+            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1780104091/publi-sanja_kw7fun.mp4',
+            username: "traslasierrawinefest",
+            avatarUrl: "/logos/trasla-fest.jpg",
+            date: "24 de marzo de 2026"
+          },
+          { 
             id: 3, 
+            url: "https://www.instagram.com/reels/DWRssntEVUR/", 
+            caption: `🍷 Vivimos el Trasla Wine Fest en San Javier y Yacanto
+
+            Un gran evento donde bodegas del Camino del Vino Cordobés se hicieron presentes con sus stands, compartiendo y difundiendo sus vinos, junto a una propuesta de gastronomía KM 0, música en vivo, productores locales y artistas que expusieron sus obras.
+
+            Una experiencia que puso en valor el volumen, la potencia y la excelencia del vino de Traslasierra, destacando el crecimiento de nuestra región.
+
+            Contamos con el acompañamiento y la presencia de @dariocapitani @turismocba ¡Gracias por apoyar este tipo de iniciativas!
+
+            👏🏻 Felicitamos a la organización @cordobawinetravel @traslasierrawinefest por este gran evento. Estamos muy contentos, como Municipalidad, de poder acompañar y ser parte.
+
+            🍇 Este tipo de propuestas impulsan el enoturismo, una actividad en pleno desarrollo y con gran potencial para nuestro pueblo.
+
+            Municipalidad de San Javier y Yacanto
+            @sanjavieryacantoturismo
+            @martin.garciaok
+            @turismocba
+            @dariocapitani
+            @traslasierrawinefest
+            @cordobawinetravel
+            `,
+            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1780104091/publi-sanja_kw7fun.mp4',
+            username: "sanjavieryacantoturismo",
+            avatarUrl: "/logos/sanja.jpg",
+            date: "24 de marzo de 2026"
+          },
+          { 
+            id: 4, 
             url: "https://www.instagram.com/ph.fedesosa/reel/DCUa9bdxHlh/", 
             caption: `Mini resumen del cumpleaños de Claudia!!
             `,
@@ -734,6 +635,69 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
       "Enfoque en los protagonistas, los invitados clave y los momentos más emotivos"
     ],
     "extra": "El servicio definitivo para quienes buscan un registro profesional de primer nivel en sus momentos más importantes. Entendemos el valor de estos encuentros, por lo que entregamos piezas visuales impactantes y perfectamente editadas, diseñadas para revivir la emoción de tus fiestas familiares o potenciar la imagen y el alcance de tus eventos corporativos."
+  },
+  {
+    slug: 'productos',
+    title: 'Productos',
+    subtitle: 'Esencia de marcas',
+    description: 'Transformamos objetos cotidianos en piezas de deseo. Aplicamos técnicas de iluminación de estudio y composición editorial para resaltar los materiales, el diseño y la identidad única de cada producto.',
+    "covers":[
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P15_suzrcq.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P9_dwhkye.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/P14_l9hry3.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P8_wzpxjn.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/P7_txsl0u.jpg',
+    ],
+    images: [
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P15_suzrcq.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P9_dwhkye.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/P14_l9hry3.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P8_wzpxjn.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/P7_txsl0u.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P6_xqkxwq.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/P5_o3qmei.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P10_bzklip.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P13_sa6ghf.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/P12_vg8bcb.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/P11_u7jxlk.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P40_cjpmsf.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P41_xpni9x.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P39_ypci5x.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P37_z8clyj.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P38_lvlsxc.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P34_pgqkcp.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751281/P33_vs0g38.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751281/P36_dg8xyg.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751281/P35_ncvaba.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/P4_ksukqg.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/P32_mij7db.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773958/P31_tnyofg.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/P30_frfmir.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773958/P3_hkmgbg.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773958/P29_kjgljo.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/P28_eqpa5s.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/P27_crcnoa.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/P26_uovgdg.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/P25_gduvbk.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/P24_lcwnot.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773964/P23_lgllik.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773964/P22_nvtsxm.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/P2_vxadyz.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/P19_x7medm.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/P18_vf6btm.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773958/P17_zzydko.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P16_vtektq.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/P1_as2q0f.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773958/P21_ofdwev.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773964/P20_gorma8.jpg',
+    ],
+    highlights: [
+      'Iluminación controlada para evitar reflejos no deseados',
+      'Fotografía Macro para detalles imperceptibles al ojo humano',
+      'Composición minimalista alineada con el branding',
+      'Edición de color precisa para catálogos de alta fidelidad'
+    ],
+    extra: 'Este servicio está optimizado para ecosistemas de e-commerce de alta gama, lanzamientos estratégicos en redes sociales y campañas de publicidad impresa. A través de una dirección de arte meticulosa, ayudamos a que las marcas proyecten autoridad y profesionalismo mediante una estética visual limpia, moderna y cinematográfica, transformando cada producto en una pieza de comunicación visual de alto impacto que conecta directamente con el consumidor.'
   },
   {
   "slug": "recibidas",
@@ -824,6 +788,186 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
   ],
   "extra": "Cada recibida tiene su propia mística. Nuestro objetivo como fotógrafos es que, cuando mires estas fotos dentro de diez años, vuelvas a sentir el olor a pintura, la adrenalina del bocinazo, el peso de tus amigos encima tuyo y esa libertad absoluta de decir '¡Lo logré!'. Un título universitario se gana una sola vez en la vida; nos aseguramos de que los recuerdos estén a la altura de semejante victoria."
 },
+{
+  "slug": "deportes",
+  "title": "Deportes",
+  "subtitle": "Cobertura masiva y análisis táctico profesional",
+  "description": "Fusionamos la pasión del juego con la precisión del análisis deportivo de alta competencia. Nos encargamos de la transmisión en vivo de eventos, el seguimiento técnico de atletas en tiempo real y el minucioso proceso de análisis de datos, edición de jugadas destacadas y preparación táctica audiovisual. Traducimos el esfuerzo en el campo en piezas de alto impacto visual, donde la adrenalina del juego y el rigor estadístico caminan de la mano para potenciar el rendimiento de equipos, resúmenes de ligas y contenidos premium para televisión y streaming.",
+  "covers": [
+    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754480/FUTBOL_1_ssc9cu.png",
+    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754500/FUTBOL_23_ojgbym.jpg",
+    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754492/FUTBOL_8_pto7gp.jpg",
+  ],
+        "images": [
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754501/FUTBOL_22_m8blpx.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754500/FUTBOL_23_ojgbym.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754500/FUTBOL_14_cuwmii.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754498/FUTBOL_19_dynasx.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754497/FUTBOL_21_w5ee6b.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754496/FUTBOL_20_cjoo19.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754494/FUTBOL_16_xkaroc.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754494/FUTBOL_17_qtuz3m.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754493/FUTBOL_12_gns9s0.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754492/FUTBOL_8_pto7gp.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754491/FUTBOL_9_d86mob.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754490/FUTBOL_7_vvlymo.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754489/FUTBOL_3_okyqvj.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754489/FUTBOL_11_yvp7xm.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754488/FUTBOL_6_fkjhkz.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754487/FUTBOL_13_qphxot.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754486/FUTBOL_18_mktq17.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754485/FUTBOL_4_vuc5jj.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754484/FUTBOL_10_bigj3i.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754484/FUTBOL_5_fzfbqf.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754482/FUTBOL_24_yplppt.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754481/FUTBOL_15_causcl.jpg",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754481/FUTBOL_2_jgiptz.png",
+          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754480/FUTBOL_1_ssc9cu.png",
+        ],
+  "posts":[
+          { 
+            id: 1, 
+            url: "https://www.instagram.com/p/DFvpcO1ARgR/", 
+            caption: `FINALES 2025 TORNEO CLAUSURA
+
+            📸 @matinahuelph @eze_aguero03 @ph.fedesosa 
+            🎬 @martibelveder1 
+
+            #modoucfa #somosucfa #ucfaok #ucfa #futboldeverdad #pasiónporelfútbol
+            `,
+            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779393691/1_ed2wex.mp4',
+            username: "ucfaok",
+            avatarUrl: "/logos/UCFA.jpg",
+            date: "21 de diciembre de 2025"
+          },
+        ],
+  "highlights": [
+    "Transmisión en vivo y captura multimedia en campos de juego de alta competencia",
+    "Edición dinámica de resúmenes de partidos y videonálisis táctico estructurado",
+    "Postproducción audiovisual integral, gráficos interactivos en pantalla y telemetría",
+    "Dirección técnica de contenidos adaptada a clubes profesionales, atletas de élite y marcas deportivas"
+  ],
+  "extra": "El puente definitivo entre la estrategia y la pasión en la cancha. Una cobertura de nivel profesional requiere un control absoluto tanto de la acción física como de los datos del juego; por eso nos involucramos en todo el proceso técnico, desde el pitazo inicial en el estadio hasta el desglose de jugadas en el estudio. Entregamos un producto pulido, con estética televisiva premium y un ritmo dinámico que potencia la identidad del club, la liga o el deportista en la industria competitiva actual."
+},
+{
+  "slug": "produccion",
+  "title": "Producción",
+  "subtitle": "Cine y sonido profesional",
+  "description": "Fusionamos la narrativa cinematográfica con la potencia del diseño sonoro. Nos encargamos de la captura técnica en rodaje, la grabación de audio profesional y el minucioso proceso de edición, montaje y postproducción musical. Traducimos conceptos artísticos en piezas audiovisuales de alto impacto, donde el ritmo del montaje y la fidelidad sonora caminan de la mano para dar vida a videoclips, proyectos de cine y contenidos de calidad premium.",
+  "covers": [
+    "https://imesvl.ar/wp-content/uploads/2021/03/CINE-FOTO-7-scaled.jpg",
+    "https://imesvl.ar/wp-content/uploads/2021/03/CINE-FOTO-11-scaled.jpg", 
+    "https://imesvl.ar/wp-content/uploads/2021/03/CINE-FOTO-0-scaled.jpg"
+  ],
+  "videos":[
+  {
+    "title":"HECHA PA MI - ES-T - (video oficial)",
+    "url":"https://www.youtube.com/embed/qE8m1hTTfk8"
+  },
+  {
+    "title":"ES-T - QUIÉN ME VA A PARAR |Video Oficial|",
+    "url":"https://www.youtube.com/embed/0FZKCk85At0"
+  },
+  {
+    "title":"ES-T - QUE SERIA DE MI |Video Oficial|",
+    "url":"https://www.youtube.com/embed/JPaWQy067IA"
+  }
+],
+  "highlights": [
+    "Grabación y captura de audio profesional directo y mezcla en estudio",
+    "Edición de video rítmica y montaje cinematográfico estructurado",
+    "Postproducción integral, corrección de color y diseño sonoro envolvente",
+    "Dirección técnica adaptada a proyectos musicales, cine independiente y publicidad"
+  ],
+  "extra": "El puente definitivo entre la música y el cine. Una producción de nivel profesional requiere un control absoluto tanto de lo que se ve como de lo que se escucha; por eso nos involucramos en todo el proceso técnico, desde el primer plano grabado en el set hasta el corte final de edición y el master de audio. Entregamos un producto pulido, con estética cinematográfica y un sonido impecable que potencia la identidad del artista o proyecto en la industria actual."
+},
+{
+    slug: 'animales',
+    title: 'Animales',
+    subtitle: 'Retratos animales',
+    description: 'Más que simples fotografías, buscamos retratar la personalidad y el alma de cada especie. Capturamos la intensidad de la mirada salvaje y la delicadeza de los comportamientos naturales en su hábitat más auténtico.',
+    "covers":[
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/A9_v7t7sl.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/A11_wjqy7m.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A15_mcl6xz.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A8_huthw2.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A4_teyg5j.jpg',
+    ],
+    images: [
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/A9_v7t7sl.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/A11_wjqy7m.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A15_mcl6xz.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A8_huthw2.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A4_teyg5j.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A1_eoz6p2.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/A3_y8lqcg.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/A6_hejeir.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/A20_uxrzox.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/A2_w3rvwu.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/A10_ehotqy.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/A21_izntjz.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/A14_pabobq.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/A19_pbgjhe.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/A12_hmji73.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/A24_o8hy28.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/A18_hfvmk3.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/A26_tusvas.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/A5_ygeglq.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/A23_vuvrml.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/A22_m0y3lz.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/A13_ywbequ.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/A16_l1wubo.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/A17_fosi7g.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/A27_ubzngb.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/A25_nbd7tn.jpg',
+      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/A28_jz4iqi.jpg'
+    ],
+    "posts":[
+      { 
+            id: 1, 
+            url: "https://www.instagram.com/p/CswV1e6Mg2E/", 
+            caption: `𝘾𝙊́𝙍𝘿𝙊𝘽𝘼♥️𝙃𝙀𝙍𝙈𝙊𝙎𝘼 🇦🇷 Proyecto Carayá La Cumbre Sierras de Córdoba ♥️ Argentina. 
+
+🎬 @ph.fedesosa
+
+  El @proyecto.caraya es un Centro argentino de rescate, rehabilitación y conservación de primates.
+
+  Proyecto Carayá es el primer y único centro de primates en Argentina . Es una ONG que desarrolla hace más de 20 años el programa de conservación ex –situ de la especie Argentina Alouatta Caraya (Mono Carayá).
+
+  Rescata animales salvajes que han sido víctimas del tráfico ilegal, del mascotismo y la destrucción de sus hábitats naturales. Muchos han vivido situaciones muy traumáticas y llegan al Santuario en condiciones alarmantes.
+
+  Allí comienza el trabajo de rehabilitación y una vez que los individuos se adaptaron al medio y a un grupo consolidado de primates, se procede a liberarlos en el Santuario.
+
+  En el mismo residen más de 10 grupos de primates en total libertad, siendo más de 170 ejemplares de Monos Carayá.
+
+  El Santuario esta abierto todos los días del año.
+Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
+ Puedes conocer el lugar, a través de una visita guiada entre medio de bosques y montañas y aprender sobre flora y fauna.
+
+🌿 Aprecia y Preserva el Entorno Natural. 
+💧 Respeta y Cuida Los Cursos de Agua.
+♻️ Minimiza tu Impacto Ambiental.
+🚮 La Basura siempre donde corresponde.
+🔥 Fuego sólo en lugares habilitados.
+
+𝘾𝙊́𝙍𝘿𝙊𝘽𝘼♥️𝙃𝙀𝙍𝙈𝙊𝙎𝘼
+🔴 Aportando con lo más bello de tan linda Provincia ... 🇦🇷 de @sa.tap.ph
+
+#cordobahermosa #visitecordoba #traslasierracordoba #traslasierra #cordobaargentina #córdobaargentina #argentina #cordobaarg #altascumbres #sierrasdecordobaarg #sierrasdecordobaargentina #sierrasdecórdoba #sierrasdecordoba #lacumbre #lacumbrecordoba #proyectocaraya #proyectocarayá #monocaraya`,
+            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779393715/1_jzxrf2.mp4',
+            username: "ph.fedesosa",
+            avatarUrl: "/feddesosa.jpg",
+            date: "27 de mayo de 2023"
+          },
+    ], 
+    highlights: [
+      'Enfoque crítico en la mirada (Eye-contact)',
+      'Uso de teleobjetivos para no alterar el comportamiento natural',
+      'Captura de texturas: pelajes, plumas y escamas en alta definición',
+      'Documentación de interacciones sociales entre especies'
+    ],
+    extra: 'Capturas diseñadas para generar una conexión emocional profunda con la audiencia. Es la herramienta ideal para campañas de rescate con impacto social, publicaciones científicas que exigen precisión técnica y marcas ecológicas que buscan transmitir autenticidad. Unimos sensibilidad artística y rigor visual para comunicar un compromiso real con la biodiversidad y la preservación natural.'
+  },
   {
     "slug": "drone",
     "title": "Drone",
@@ -961,38 +1105,8 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
     ],
     "extra": "Una herramienta audiovisual indispensable para desarrollos inmobiliarios, producciones de cine, turismo de lujo y seguimiento de macroobras. Nuestras filmaciones y fotografías aéreas enriquecen el hilo conductor de cualquier pieza audiovisual, otorgando una sensación de inmensidad y prestigio técnico que destaca de manera inmediata en el mercado digital actual."
   },
-  {
-  "slug": "produccion",
-  "title": "Producción",
-  "subtitle": "Cine y sonido profesional",
-  "description": "Fusionamos la narrativa cinematográfica con la potencia del diseño sonoro. Nos encargamos de la captura técnica en rodaje, la grabación de audio profesional y el minucioso proceso de edición, montaje y postproducción musical. Traducimos conceptos artísticos en piezas audiovisuales de alto impacto, donde el ritmo del montaje y la fidelidad sonora caminan de la mano para dar vida a videoclips, proyectos de cine y contenidos de calidad premium.",
-  "covers": [
-    "https://imesvl.ar/wp-content/uploads/2021/03/CINE-FOTO-7-scaled.jpg",
-    "https://imesvl.ar/wp-content/uploads/2021/03/CINE-FOTO-11-scaled.jpg", 
-    "https://imesvl.ar/wp-content/uploads/2021/03/CINE-FOTO-0-scaled.jpg"
-  ],
-  "videos":[
-  {
-    "title":"HECHA PA MI - ES-T - (video oficial)",
-    "url":"https://www.youtube.com/embed/qE8m1hTTfk8"
-  },
-  {
-    "title":"ES-T - QUIÉN ME VA A PARAR |Video Oficial|",
-    "url":"https://www.youtube.com/embed/0FZKCk85At0"
-  },
-  {
-    "title":"ES-T - QUE SERIA DE MI |Video Oficial|",
-    "url":"https://www.youtube.com/embed/JPaWQy067IA"
-  }
-],
-  "highlights": [
-    "Grabación y captura de audio profesional directo y mezcla en estudio",
-    "Edición de video rítmica y montaje cinematográfico estructurado",
-    "Postproducción integral, corrección de color y diseño sonoro envolvente",
-    "Dirección técnica adaptada a proyectos musicales, cine independiente y publicidad"
-  ],
-  "extra": "El puente definitivo entre la música y el cine. Una producción de nivel profesional requiere un control absoluto tanto de lo que se ve como de lo que se escucha; por eso nos involucramos en todo el proceso técnico, desde el primer plano grabado en el set hasta el corte final de edición y el master de audio. Entregamos un producto pulido, con estética cinematográfica y un sonido impecable que potencia la identidad del artista o proyecto en la industria actual."
-}
+  
+
 ];
 
 export const getCategoryBySlug = (slug) => categories.find((category) => category.slug === slug);

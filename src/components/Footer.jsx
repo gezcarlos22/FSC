@@ -95,6 +95,9 @@ export const Footer = () => {
                                 <Link to="/categoria/recibidas" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Graduaciones </Link>
                             </li>
                             <li>
+                                <Link to="/categoria/Deportes" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Deportes </Link>
+                            </li>
+                            <li>
                                 <Link to="/categoria/produccion" className="flex text-base text-gray-400 transition-all duration-200 hover:text-blue-600"> Produccion </Link>
                             </li>
                             <li>
