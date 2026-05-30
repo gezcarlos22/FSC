@@ -353,7 +353,7 @@ export const categories = [
             url: "https://www.instagram.com/reels/C4yup6Nr6w5/", 
             caption: `Paso 1, Paso 2, Paso… ⏱️ Siii en solo 2 pasos! Suuuuper fácil, anda corriendo 🏃🏻‍♀️ a tu odontólogo de confianza y unite al mundo de #AlineadoresInvisibles
             `,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1780104091/publi-sanja_kw7fun.mp4',
+            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1780104087/publi-weline_pa6tx1.mp44',
             username: "weline.alineadores",
             avatarUrl: "/logos/weline-inst.jpg",
             date: "21 de marzo de 2024"
@@ -531,7 +531,7 @@ export const categories = [
             📽️@ph.fedesosa
             Vane y Stefy
             `,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1780104091/publi-sanja_kw7fun.mp4',
+            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1780104088/publi-trasla-fest_qy4esf.mp4',
             username: "traslasierrawinefest",
             avatarUrl: "/logos/trasla-fest.jpg",
             date: "24 de marzo de 2026"
