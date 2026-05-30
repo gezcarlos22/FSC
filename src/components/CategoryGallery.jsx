@@ -24,12 +24,12 @@ export const CategoryGallery = ({ images }) => {
           {images.map((src, i) => (
             <div
               key={i}
-              className="reveal-text group relative h-48 md:h-80 overflow-hidden rounded-2xl md:rounded-3xl cursor-pointer shadow-2xl"
+              className="group relative h-48 md:h-80 overflow-hidden rounded-2xl md:rounded-3xl cursor-pointer shadow-2xl"
               onClick={() => handleImageClick(i)} // 2. Usamos el manejador local
             >
               <img
                 src={src}
-                className="parallax-img absolute inset-0 w-full h-[130%] object-cover -top-[15%]"
+                className="absolute inset-0 w-full h-[130%] object-cover -top-[15%]"
                 alt={`Imagen de galería ${i + 1}`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
