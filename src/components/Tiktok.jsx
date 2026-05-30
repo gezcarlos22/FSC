@@ -46,7 +46,7 @@ export function InstagramSection() {
                   }`}
                 >
                   <div className="flex h-12 w-16 md:w-26 items-center justify-center">
-                    <img src={company.logo} alt={`${company.name} logo`} className="object-cover" />
+                    <img src={company.logo} alt={`${company.name} logo`} loading="lazy" decoding="async" className="object-cover" />
                   </div>
                   <div className="hidden md:block text-left">
                     <p className="text-sm font-semibold text-white">{company.name}</p>

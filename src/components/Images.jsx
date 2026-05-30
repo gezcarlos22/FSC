@@ -82,7 +82,7 @@ export const Images = ({ isModalOpen, setIsModalOpen }) => {
                 className="cursor-pointer group overflow-hidden rounded-lg" 
                 onClick={() => openModalAt(idx)}
               >
-                <img className="h-auto max-w-full rounded-lg object-cover object-center transition-transform duration-500 group-hover:scale-110" src={allImages[idx]} alt="gallery" />
+                <img loading="lazy" decoding="async" className="h-auto max-w-full rounded-lg object-cover object-center transition-transform duration-500 group-hover:scale-110" src={allImages[idx]} alt="gallery" />
               </motion.div>
             ))}
           </div>
@@ -100,7 +100,7 @@ export const Images = ({ isModalOpen, setIsModalOpen }) => {
                 className="cursor-pointer group overflow-hidden rounded-lg" 
                 onClick={() => openModalAt(idx)}
               >
-                <img className="h-auto max-w-full rounded-lg object-cover object-center transition-transform duration-500 group-hover:scale-110" src={allImages[idx]} alt="gallery" />
+                <img loading="lazy" decoding="async" className="h-auto max-w-full rounded-lg object-cover object-center transition-transform duration-500 group-hover:scale-110" src={allImages[idx]} alt="gallery" />
               </motion.div>
             ))}
           </div>
@@ -118,7 +118,7 @@ export const Images = ({ isModalOpen, setIsModalOpen }) => {
                 className="cursor-pointer group overflow-hidden rounded-lg" 
                 onClick={() => openModalAt(idx)}
               >
-                <img className="h-auto max-w-full rounded-lg object-cover object-center transition-transform duration-500 group-hover:scale-110" src={allImages[idx]} alt="gallery" />
+                <img loading="lazy" decoding="async" className="h-auto max-w-full rounded-lg object-cover object-center transition-transform duration-500 group-hover:scale-110" src={allImages[idx]} alt="gallery" />
               </motion.div>
             ))}
           </div>
@@ -136,7 +136,7 @@ export const Images = ({ isModalOpen, setIsModalOpen }) => {
                 className="cursor-pointer group overflow-hidden rounded-lg" 
                 onClick={() => openModalAt(idx)}
               >
-                <img className="h-auto max-w-full rounded-lg object-cover object-center transition-transform duration-500 group-hover:scale-110" src={allImages[idx]} alt="gallery" />
+                <img loading="lazy" decoding="async" className="h-auto max-w-full rounded-lg object-cover object-center transition-transform duration-500 group-hover:scale-110" src={allImages[idx]} alt="gallery" />
               </motion.div>
             ))}
           </div>

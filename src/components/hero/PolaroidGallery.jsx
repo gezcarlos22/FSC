@@ -99,6 +99,8 @@ const PolaroidGallery = ({ images }) => {
             <div className="relative overflow-hidden bg-black aspect-square pointer-events-none">
               <img
                 src={img}
+                loading="lazy"
+                decoding="async"
                 alt={`FSC Proyect ${index}`}
                 className={`w-full h-full object-cover transition-transform duration-700 ${isActive ? 'scale-110' : 'scale-100'}`}
               />

@@ -183,13 +183,13 @@ const AboutPage = () => {
             </div>
 
           <div className={`${imageContBase} col-span-12 lg:col-span-5 h-[60vh] lg:h-full mt-12 lg:mt-0`}>
-             <img className={imgStyle} src={aboutData.images[0]} alt="Work 2" />
+             <img loading="lazy" decoding="async" className={imgStyle} src={aboutData.images[0]} alt="Work 2" />
           </div>
 
 
           {/* BLOQUE 4: Imagen Desplazada + Info Trayectoria */}
           <div className={`${imageContBase} col-span-12 lg:col-span-6 h-[70vh]`}>
-             <img className={imgStyle} src={aboutData.images[4]} alt="Work 3" />
+             <img loading="lazy" decoding="async" className={imgStyle} src={aboutData.images[4]} alt="Work 3" />
           </div>
 
           <div className="col-span-12 lg:col-span-6 flex flex-col justify-center space-y-12 reveal-text">

@@ -95,6 +95,8 @@ export default function Equipament() {
                 className={`h-full w-full object-cover object-center transition-transform duration-700 
                   md:group-hover:scale-110 ${isActiveMobile ? "scale-110" : "scale-100"}`}
                 src={item.src}
+                loading="lazy"
+                decoding="async"
                 alt={item.title}
               />
               

@@ -29,6 +29,8 @@ export const CategoryGallery = ({ images }) => {
             >
               <img
                 src={src}
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 w-full h-[130%] object-cover -top-[15%]"
                 alt={`Imagen de galería ${i + 1}`}
               />

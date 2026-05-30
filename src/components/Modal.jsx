@@ -61,6 +61,8 @@ export const ImageModal = ({ isOpen, onClose, images, currentIndex, setCurrentIn
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             src={images[currentIndex]}
+            loading="lazy"
+            decoding="async"
             alt="Vista completa"
             className="max-w-full max-h-full object-contain rounded-lg"
             onClick={(e) => e.stopPropagation()}
@@ -165,6 +167,7 @@ export const VideoModal = ({ isOpen, onClose, videos, currentIndex, setCurrentIn
               <iframe
                 src={videos[currentIndex].url} 
                 title={videos[currentIndex].title}
+                loading="lazy"
                 className="absolute top-0 left-0 w-full h-full z-50"
                 allowFullScreen
               />
@@ -283,6 +286,7 @@ export const PostInstagramModal = ({ isOpen, onClose, posts, currentIndex, setCu
               <video 
                 src={currentPost.mediaUrl} 
                 controls
+                preload="metadata"
                 autoPlay
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover"
@@ -290,6 +294,8 @@ export const PostInstagramModal = ({ isOpen, onClose, posts, currentIndex, setCu
             ) : (
               <img
                 src={currentPost.mediaUrl}
+                loading="lazy"
+                decoding="async"
                 alt={currentPost.caption}
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -305,6 +311,8 @@ export const PostInstagramModal = ({ isOpen, onClose, posts, currentIndex, setCu
       <div className="h-10 w-10 rounded-full object-cover border border-zinc-200 bg-black justify-center items-center flex">
         <img 
           src={currentPost.avatarUrl} 
+          loading="lazy"
+          decoding="async"
           alt={currentPost.username} 
           className="scale-100 rounded-full"
         />

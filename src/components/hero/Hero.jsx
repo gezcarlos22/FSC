@@ -99,7 +99,7 @@ const Hero = () => {
                         className="md:order-last relative z-10 flex flex-col items-center md:items-start"
                     >
                         {/* mx-auto centra la imagen en mobile, md:mx-0 la alinea a la izquierda en desktop */}
-                        <img className="w-auto h-18 lg:h-26 mx-auto md:mx-0" src="/logo.png" alt="Logo" />
+                        <img className="w-auto h-18 lg:h-26 mx-auto md:mx-0" src="/logo.png" alt="Logo" loading="lazy" decoding="async" />
                         
                         {/* text-center para mobile, md:text-left para desktop */}
                         <p className="mt-4 md:w-8/10 text-lg font-medium text-gray-200 md:text-gray-400 sm:mt-8 text-center md:text-left">

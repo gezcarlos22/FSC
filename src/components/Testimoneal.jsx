@@ -103,6 +103,8 @@ export const Testimoneal = () => {
                                         <img 
                                             className="flex-shrink-0 object-cover rounded-full w-12 h-12 border-2 border-purple-500/50 shadow-lg shadow-purple-500/20" 
                                             src={item.avatar} 
+                                            loading="lazy"
+                                            decoding="async"
                                             alt={item.name} 
                                         />
                                         <div className="ml-4 min-w-0">

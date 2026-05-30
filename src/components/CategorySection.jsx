@@ -26,6 +26,8 @@ const AccordionItem = ({ currentSection }) => {
             <div className="flex h-12 w-16 md:w-26 items-center justify-center">
               <img 
                 src={currentSection.logo} 
+                loading="lazy"
+                decoding="async"
                 alt={`${currentSection.title} logo`} 
                 className="object-cover" 
               />

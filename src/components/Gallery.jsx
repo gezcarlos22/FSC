@@ -63,6 +63,7 @@ export default function VideoSection({ setIsModalOpen: setGlobalModalOpen }) {
             <video 
               src={url} 
               muted 
+              preload="metadata"
               autoPlay 
               loop 
               playsInline 

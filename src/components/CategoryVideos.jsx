@@ -33,6 +33,7 @@ export const CategoryVideos = ({ videos }) => {
                 <iframe 
                   src={video.url} 
                   title={video.title} 
+                  loading="lazy"
                   className="absolute top-0 left-0 w-full h-full" 
                   allowFullScreen 
                 />

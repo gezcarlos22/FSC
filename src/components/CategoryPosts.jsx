@@ -82,6 +82,7 @@ export const Posts = ({
                     <video
                       src={post.mediaUrl}
                       muted
+                      preload="metadata"
                       loop
                       autoPlay
                       playsInline
@@ -90,6 +91,8 @@ export const Posts = ({
                   ) : (
                     <img
                       src={post.mediaUrl || '/placeholder-img.jpg'}
+                      loading="lazy"
+                      decoding="async"
                       alt={`Post de ${post.username}`}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -102,6 +105,8 @@ export const Posts = ({
                       <div className="h-10 w-10 rounded-full object-cover border border-white/20 bg-black justify-center items-center flex">
                         <img
                           src={post.avatarUrl || '/default-avatar.jpg'}
+                          loading="lazy"
+                          decoding="async"
                           alt={post.username}
                           className="scale-100 rounded-full"
                         />

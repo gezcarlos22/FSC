@@ -44,7 +44,7 @@ export const Header = () => {
                     {/* Logo */}
                     <div className="flex-shrink-0 lg:flex-1">
                         <Link to="/" className="flex">
-                            <img className="w-auto h-6 lg:h-8" src="/logo.png" alt="Logo" />
+                            <img className="w-auto h-6 lg:h-8" src="/logo.png" alt="Logo" loading="lazy" decoding="async" />
                         </Link>
                     </div>
 

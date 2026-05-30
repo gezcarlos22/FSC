@@ -61,6 +61,8 @@ export default function Programs() {
             >
               <img
                 src={logo.url}
+                loading="lazy"
+                decoding="async"
                 alt={logo.name}
                 className="h-20 md:h-24 w-auto object-contain transition-opacity duration-300"
               />
