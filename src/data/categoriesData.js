@@ -5,7 +5,7 @@ export const categories = [
     "subtitle": "Identidad en movimiento",
     "description": "Traducimos los valores y la fuerza de tu marca en una narrativa visual impactante. A través de una estética cinematográfica y fotografía corporativa de vanguardia, capturamos la esencia de tu equipo, la innovación en tus procesos y la infraestructura de tu negocio. Documentamos la cultura empresarial no solo como un espacio de trabajo, sino como un motor de éxito y evolución.",  
     "covers":[
-      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773969/C20_gbxukl.jpg",
+      "https://drive.google.com/file/d/1Z3yrHNHRssUd-BOEJGhOnxvwJH3RdS0y/view?usp=sharing",
       "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394987/I14_gi7cti.jpg", 
       "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773969/C29_vphlc1.jpg",
       "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394993/I8_gjptr8.jpg",
