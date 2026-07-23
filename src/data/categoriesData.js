@@ -1,3 +1,71 @@
+// Constante base de tu Bucket de Oracle Cloud Storage
+const OCI_BASE_URL = "https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o";
+
+// Función helper para generar la URL completa evitando repetir código
+const getImageUrl = (category, fileName) => {
+  // Si fileName ya termina en .jpg, .JPG, .png, etc., lo deja igual; si no, le agrega .jpg
+  const fileWithExt = /\.[a-zA-Z0-9]+$/.test(fileName) ? fileName : `${fileName}.jpg`;
+  return `${OCI_BASE_URL}/${encodeURIComponent(category)}/${encodeURIComponent(fileWithExt)}`;
+};
+
+const getEventUrl = (folder, fileName) => {
+  const fileWithExt = /\.[a-zA-Z0-9]+$/.test(fileName) ? fileName : `${fileName}.jpg`;
+  return `${OCI_BASE_URL}/${encodeURIComponent(folder)}/${encodeURIComponent(fileWithExt)}`;
+};
+
+// IDs Animales
+const coverAnimalesIds = ['A9', 'A11', 'A15', 'A8', 'A4'];
+
+const animalesIds = [
+  'A9', 'A11', 'A15', 'A8', 'A4', 'A1', 'A3', 'A6', 'A20', 'A2', 'A10', 
+  'A21', 'A14', 'A19', 'A12', 'A24', 'A18', 'A26', 'A5', 'A23', 'A22', 
+  'A13', 'A16', 'A17', 'A27', 'A25', 'A28'
+];
+
+// IDs Productos
+const coverProductosIds = ['P15', 'P9', 'P14', 'P8', 'P7'];
+
+const productosIds = [
+  'P15', 'P9', 'P14', 'P8', 'P7', 'P6', 'P5', 'P10', 'P13', 'P12', 'P11',
+  'P40', 'P41', 'P39', 'P37', 'P38', 'P34', 'P33', 'P36', 'P35', 'P4',
+  'P32', 'P31', 'P30', 'P3', 'P29', 'P28', 'P27', 'P26', 'P25', 'P24',
+  'P23', 'P22', 'P2', 'P19', 'P18', 'P17', 'P16', 'P1', 'P21', 'P20'
+];
+
+// IDs Deportes (Fútbol)
+const coverDeportesIds = ['F1', 'F23', 'F8'];
+
+const deportesIds = [
+  'F22', 'F23', 'F14', 'F19', 'F21', 'F20', 'F16', 'F17', 'F12', 'F8', 
+  'F7', 'F3', 'F11', 'F6', 'F13', 'F18', 'F10', 'F5', 'F24', 'F15', 'F1'
+];
+
+// IDs Graduaciones / Recibidas
+const coverRecibidasIds = ['RECB (44)', 'RECB (10)', 'RECB (31)', 'RECB (51)'];
+
+const recibidasIds = [
+  'RECB (17)', 'RECB (16)', 'RECB (15)', 'RECB (18)', 'RECB (13)', 'RECB (14)', 
+  'RECB (19)', 'RECB (20)', 'RECB (68)', 'RECB (63)', 'RECB (44)', 'RECB (49)', 
+  'RECB (48)', 'RECB (41)', 'RECB (64)', 'RECB (28)', 'RECB (62)', 'RECB (42)', 
+  'RECB (40)', 'RECB (5)',  'RECB (1)',  'RECB (67)', 'RECB (3)',  'RECB (35)', 
+  'RECB (34)', 'RECB (39)', 'RECB (23)', 'RECB (7)',  'RECB (36)', 'RECB (38)', 
+  'RECB (21)', 'RECB (2)',  'RECB (30)', 'RECB (27)', 'RECB (46)', 'RECB (22)', 
+  'RECB (45)', 'RECB (4)',  'RECB (51)', 'RECB (37)', 'RECB (32)', 'RECB (31)', 
+  'RECB (29)', 'RECB (24)', 'RECB (43)', 'RECB (65)', 'RECB (66)', 'RECB (33)', 
+  'RECB (25)', 'RECB (47)', 'RECB (26)', 'RECB (8)',  'RECB (6)',  'RECB (9)',  
+  'RECB (54)', 'RECB (52)', 'RECB (10)', 'RECB (50)', 'RECB (61)', 'RECB (12)', 
+  'RECB (55)', 'RECB (53)', 'RECB (58)', 'RECB (57)', 'RECB (11)', 'RECB (56)', 
+  'RECB (59)', 'RECB (60)'
+];
+
+const coverTymIds = ['TYM (7).JPG', 'TYM (9).JPG', 'TYM (2).JPG'];
+
+const tymIds = [
+  'TYM (1).JPG', 'TYM (4).JPG', 'TYM (6).JPG', 
+  'TYM (5).JPG', 'TYM (3).JPG', 'TYM (9).JPG', 
+  'TYM (2).JPG', 'TYM (7).JPG', 'TYM (8).JPG'
+];
+
 export const categories = [
   {
     "slug": "empresas",
@@ -384,12 +452,7 @@ export const categories = [
     "title": "Eventos",
     "subtitle": "Momentos únicos, recuerdos eternos",
     "description": "Inmortalizamos la energía, las emociones y los instantes clave de tus celebraciones más significativas. Desde la magia de un casamiento y la ilusión de unos 15 años, hasta la calidez de un cumpleaños o la distinción de un evento empresarial. Capturamos tanto la imponencia de la ambientación como los gestos espontáneos que le dan vida y autenticidad a cada acontecimiento.",
-    "covers":[
-      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779753979/I18_xb6kkc.jpg",
-      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754589/TYM_9_cb7fup.jpg",
-      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754589/TYM_2_obmhbx.jpg",
-
-    ],
+    "covers": coverTymIds.map(id => getEventUrl('Eventos/TYM', id)),
     "section":[
       {
         "title": "Casamientos",
@@ -452,17 +515,7 @@ export const categories = [
       {
         "title": "Eventos",
         "desc":"",
-        "images": [
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754595/TYM_1_yvx9cc.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754594/TYM_4_qzgry2.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754593/TYM_6_lwd8om.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754591/TYM_5_acoq6n.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754590/TYM_3_kbkrfj.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754589/TYM_9_cb7fup.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754589/TYM_2_obmhbx.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754589/TYM_7_maarnt.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754588/TYM_8_v8h2vp.jpg",
-        ],
+        "images": tymIds.map(id => getEventUrl('Eventos/TYM', id)),
         "posts":[
           { 
             id: 1, 
@@ -641,56 +694,9 @@ export const categories = [
     title: 'Productos',
     subtitle: 'Esencia de marcas',
     description: 'Transformamos objetos cotidianos en piezas de deseo. Aplicamos técnicas de iluminación de estudio y composición editorial para resaltar los materiales, el diseño y la identidad única de cada producto.',
-    "covers":[
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P15_suzrcq.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P9_dwhkye.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/P14_l9hry3.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P8_wzpxjn.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/P7_txsl0u.jpg',
-    ],
-    images: [
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P15_suzrcq.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P9_dwhkye.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/P14_l9hry3.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P8_wzpxjn.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/P7_txsl0u.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P6_xqkxwq.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/P5_o3qmei.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P10_bzklip.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P13_sa6ghf.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/P12_vg8bcb.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/P11_u7jxlk.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P40_cjpmsf.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P41_xpni9x.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P39_ypci5x.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P37_z8clyj.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P38_lvlsxc.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P34_pgqkcp.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751281/P33_vs0g38.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751281/P36_dg8xyg.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751281/P35_ncvaba.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/P4_ksukqg.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/P32_mij7db.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773958/P31_tnyofg.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/P30_frfmir.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773958/P3_hkmgbg.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773958/P29_kjgljo.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/P28_eqpa5s.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/P27_crcnoa.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/P26_uovgdg.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/P25_gduvbk.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/P24_lcwnot.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773964/P23_lgllik.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773964/P22_nvtsxm.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/P2_vxadyz.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/P19_x7medm.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/P18_vf6btm.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773958/P17_zzydko.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P16_vtektq.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/P1_as2q0f.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773958/P21_ofdwev.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773964/P20_gorma8.jpg',
-    ],
+    // Generación dinámica de URLs para Productos
+    covers: coverProductosIds.map(id => getImageUrl('Productos', id)),
+    images: productosIds.map(id => getImageUrl('Productos', id)),
     highlights: [
       'Iluminación controlada para evitar reflejos no deseados',
       'Fotografía Macro para detalles imperceptibles al ojo humano',
@@ -704,82 +710,8 @@ export const categories = [
   "title": "Graduaciones",
   "subtitle": "El instante exacto de la victoria",
   "description": "Capturamos el clímax de años de esfuerzo, traducido en pura euforia y alivio. Desde la mirada fija en el cartel de 'Soy Ingeniero/a' hasta el estallido de espuma, pintura y harina con amigos y familia, nos infiltramos en el festejo para congelar la emoción en su estado más salvaje y genuino. No hacemos fotos posadas de protocolo; buscamos la lágrima cómplice de un padre, el abrazo grupal que corta la respiración y los detalles de una fiesta inolvidable. Documentamos el logro de tu vida con la estética vibrante y profesional que se merece.",
-  "covers": [
-    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755081/RECB_44_soji8i.jpg",
-    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754979/RECB_10_mpqlot.jpg",
-    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755008/RECB_31_whk2le.jpg",
-    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755013/RECB_51_p9jxfv.jpg",
-  ],
-  "images": [
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755111/RECB_17_spfbfi.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755106/RECB_16_jkzlxj.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755105/RECB_15_sn0rrv.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755104/RECB_18_iaoyot.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755102/RECB_13_u7cupg.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755101/RECB_14_u01tvp.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755087/RECB_19_qfkozh.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755085/RECB_20_smweh8.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755084/RECB_68_ru5cqk.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755083/RECB_63_g9xljp.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755081/RECB_44_soji8i.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755080/RECB_49_xbej1g.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755079/RECB_48_y8gvou.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755075/RECB_41_ax4kqe.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755074/RECB_64_s1ogp9.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755073/RECB_28_wkccen.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755072/RECB_62_la2c9v.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755070/RECB_42_nwgwqv.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755064/RECB_40_warpvg.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755062/RECB_5_biuhig.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755060/RECB_1_mvqxza.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755059/RECB_67_tolnso.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755055/RECB_3_owvraz.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755053/RECB_35_umdcqz.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755052/RECB_34_hnyumm.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755051/RECB_39_ggm6c0.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755050/RECB_23_x1lcfy.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755044/RECB_7_xhlldf.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755042/RECB_36_vo6h06.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755041/RECB_38_fzirkk.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755040/RECB_21_dfl9jt.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755035/RECB_2_jqrosd.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755034/RECB_30_ylics5.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755032/RECB_27_orynah.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755031/RECB_46_p2zeht.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755030/RECB_22_c34yxz.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755029/RECB_45_spae8z.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755028/RECB_4_tpsrsi.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755013/RECB_51_p9jxfv.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755012/RECB_37_mdkck4.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755010/RECB_32_w10uyb.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755008/RECB_31_whk2le.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779755007/RECB_29_kauzdy.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754990/RECB_24_lia3gj.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754995/RECB_43_ivmxdg.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754994/RECB_65_xyo1nz.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754993/RECB_66_o5pqx2.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754992/RECB_33_lsr2hp.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754991/RECB_25_pupguz.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754989/RECB_47_zxkk60.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754987/RECB_26_weg2fg.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754986/RECB_8_tsg4ui.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754985/RECB_6_texnys.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754983/RECB_9_uij7yd.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754982/RECB_54_gwrs7x.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754980/RECB_52_twjcrz.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754979/RECB_10_mpqlot.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754978/RECB_50_ryduob.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754977/RECB_61_r1yh1s.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754975/RECB_12_sn1myw.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754974/RECB_55_lvh0zp.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754973/RECB_53_gijeuv.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754972/RECB_58_sqriit.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754971/RECB_57_vmy8od.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754970/RECB_11_jiy19s.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754967/RECB_56_vxgq7d.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754967/RECB_59_tug6tq.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754966/RECB_60_q9tscz.jpg",
-        ],
+  "covers": coverRecibidasIds.map(id => getEventUrl('Eventos/Recibidas', id)),
+  "images": recibidasIds.map(id => getEventUrl('Eventos/Recibidas', id)),
   "highlights": [
     "Fotografía de acción de alta velocidad para congelar el estallido de cotillón, pintura y espuma.",
     "Foco en la narrativa documental: capturando abrazos espontáneos, lágrimas y risas sin poses forzadas.",
@@ -793,37 +725,8 @@ export const categories = [
   "title": "Deportes",
   "subtitle": "Cobertura masiva y análisis táctico profesional",
   "description": "Fusionamos la pasión del juego con la precisión del análisis deportivo de alta competencia. Nos encargamos de la transmisión en vivo de eventos, el seguimiento técnico de atletas en tiempo real y el minucioso proceso de análisis de datos, edición de jugadas destacadas y preparación táctica audiovisual. Traducimos el esfuerzo en el campo en piezas de alto impacto visual, donde la adrenalina del juego y el rigor estadístico caminan de la mano para potenciar el rendimiento de equipos, resúmenes de ligas y contenidos premium para televisión y streaming.",
-  "covers": [
-    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754480/FUTBOL_1_ssc9cu.png",
-    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754500/FUTBOL_23_ojgbym.jpg",
-    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754492/FUTBOL_8_pto7gp.jpg",
-  ],
-        "images": [
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754501/FUTBOL_22_m8blpx.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754500/FUTBOL_23_ojgbym.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754500/FUTBOL_14_cuwmii.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754498/FUTBOL_19_dynasx.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754497/FUTBOL_21_w5ee6b.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754496/FUTBOL_20_cjoo19.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754494/FUTBOL_16_xkaroc.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754494/FUTBOL_17_qtuz3m.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754493/FUTBOL_12_gns9s0.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754492/FUTBOL_8_pto7gp.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754491/FUTBOL_9_d86mob.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754490/FUTBOL_7_vvlymo.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754489/FUTBOL_3_okyqvj.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754489/FUTBOL_11_yvp7xm.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754488/FUTBOL_6_fkjhkz.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754487/FUTBOL_13_qphxot.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754486/FUTBOL_18_mktq17.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754485/FUTBOL_4_vuc5jj.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754484/FUTBOL_10_bigj3i.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754484/FUTBOL_5_fzfbqf.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754482/FUTBOL_24_yplppt.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754481/FUTBOL_15_causcl.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754481/FUTBOL_2_jgiptz.png",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754480/FUTBOL_1_ssc9cu.png",
-        ],
+  covers: coverDeportesIds.map(id => getImageUrl('Eventos/Futbol', id)),
+  images: deportesIds.map(id => getImageUrl('Eventos/Futbol', id)),
   "posts":[
           { 
             id: 1, 
@@ -886,42 +789,8 @@ export const categories = [
     title: 'Animales',
     subtitle: 'Retratos animales',
     description: 'Más que simples fotografías, buscamos retratar la personalidad y el alma de cada especie. Capturamos la intensidad de la mirada salvaje y la delicadeza de los comportamientos naturales en su hábitat más auténtico.',
-    "covers":[
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/A9_v7t7sl.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/A11_wjqy7m.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A15_mcl6xz.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A8_huthw2.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A4_teyg5j.jpg',
-    ],
-    images: [
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/A9_v7t7sl.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/A11_wjqy7m.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A15_mcl6xz.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A8_huthw2.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A4_teyg5j.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A1_eoz6p2.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/A3_y8lqcg.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/A6_hejeir.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/A20_uxrzox.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/A2_w3rvwu.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/A10_ehotqy.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/A21_izntjz.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/A14_pabobq.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/A19_pbgjhe.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/A12_hmji73.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/A24_o8hy28.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/A18_hfvmk3.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/A26_tusvas.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/A5_ygeglq.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/A23_vuvrml.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/A22_m0y3lz.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/A13_ywbequ.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/A16_l1wubo.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/A17_fosi7g.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/A27_ubzngb.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/A25_nbd7tn.jpg',
-      'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/A28_jz4iqi.jpg'
-    ],
+    covers: coverAnimalesIds.map(id => getImageUrl('Animales', id)),
+    images: animalesIds.map(id => getImageUrl('Animales', id)),
     "posts":[
       { 
             id: 1, 
