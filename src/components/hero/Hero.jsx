@@ -9,11 +9,16 @@ import PolaroidGallery from './PolaroidGallery';
 const Hero = () => {
     const [scrollProgress, setScrollProgress] = useState(0)
 
+    const OCI_BASE_URL = "https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o";
+
+    const getImageUrl = (folder, fileName) => {
+    return `${OCI_BASE_URL}/${encodeURIComponent(folder)}/${encodeURIComponent(fileName)}`;
+    };
+
     const sampleImages = [
-        
-        "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754259/FEDE_1_kbakhk.jpg",
-        "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754260/FEDE_3_eqdmwn.jpg",
-        "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779754262/FEDE_2_svsasw.jpg",
+        getImageUrl('Mias', 'FEDE (3).jpg'),
+        getImageUrl('Mias', 'FEDE (2).jpg'),
+        getImageUrl('Mias', 'FEDE (1).jpg'),
     ];
 
     useEffect(() => {

@@ -3,14 +3,11 @@ const OCI_BASE_URL = "https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslk
 
 // Función helper para generar la URL completa evitando repetir código
 const getImageUrl = (category, fileName) => {
-  // Si fileName ya termina en .jpg, .JPG, .png, etc., lo deja igual; si no, le agrega .jpg
-  const fileWithExt = /\.[a-zA-Z0-9]+$/.test(fileName) ? fileName : `${fileName}.jpg`;
-  return `${OCI_BASE_URL}/${encodeURIComponent(category)}/${encodeURIComponent(fileWithExt)}`;
-};
+  // Comprueba si ya tiene una extensión explícita como .jpg, .png, .JPG
+  const hasExtension = /\.(jpg|jpeg|png|webp|gif|JPG|JPEG|PNG)$/i.test(fileName);
+  const fileWithExt = hasExtension ? fileName : `${fileName}.jpg`;
 
-const getEventUrl = (folder, fileName) => {
-  const fileWithExt = /\.[a-zA-Z0-9]+$/.test(fileName) ? fileName : `${fileName}.jpg`;
-  return `${OCI_BASE_URL}/${encodeURIComponent(folder)}/${encodeURIComponent(fileWithExt)}`;
+  return `${OCI_BASE_URL}/${encodeURIComponent(category)}/${encodeURIComponent(fileWithExt)}`;
 };
 
 // IDs Animales
@@ -41,24 +38,32 @@ const deportesIds = [
 ];
 
 // IDs Graduaciones / Recibidas
-const coverRecibidasIds = ['RECB (44)', 'RECB (10)', 'RECB (31)', 'RECB (51)'];
+const coverRecibidasIds = [
+  getImageUrl('Eventos/Recibidas', 'RECB (17)'),
+  getImageUrl('Eventos/Recibidas', 'RECB (10)'),
+  getImageUrl('Eventos/Recibidas', 'RECB (31)'),
+  getImageUrl('Eventos/Recibidas', 'RECB (51)'),
+  ];
 
 const recibidasIds = [
   'RECB (17)', 'RECB (16)', 'RECB (15)', 'RECB (18)', 'RECB (13)', 'RECB (14)', 
   'RECB (19)', 'RECB (20)', 'RECB (68)', 'RECB (63)', 'RECB (44)', 'RECB (49)', 
   'RECB (48)', 'RECB (41)', 'RECB (64)', 'RECB (28)', 'RECB (62)', 'RECB (42)', 
-  'RECB (40)', 'RECB (5)',  'RECB (1)',  'RECB (67)', 'RECB (3)',  'RECB (35)', 
-  'RECB (34)', 'RECB (39)', 'RECB (23)', 'RECB (7)',  'RECB (36)', 'RECB (38)', 
+  'RECB (40)', 'RECB (5).JPG',  'RECB (1)',  'RECB (67)', 'RECB (3).JPG',  'RECB (35)', 
+  'RECB (34)', 'RECB (39)', 'RECB (23)', 'RECB (7).JPG',  'RECB (36)', 'RECB (38)', 
   'RECB (21)', 'RECB (2)',  'RECB (30)', 'RECB (27)', 'RECB (46)', 'RECB (22)', 
-  'RECB (45)', 'RECB (4)',  'RECB (51)', 'RECB (37)', 'RECB (32)', 'RECB (31)', 
+  'RECB (45)', 'RECB (4).JPG',  'RECB (51)', 'RECB (37)', 'RECB (32)', 'RECB (31)', 
   'RECB (29)', 'RECB (24)', 'RECB (43)', 'RECB (65)', 'RECB (66)', 'RECB (33)', 
-  'RECB (25)', 'RECB (47)', 'RECB (26)', 'RECB (8)',  'RECB (6)',  'RECB (9)',  
+  'RECB (25)', 'RECB (47)', 'RECB (26)', 'RECB (8)',  'RECB (6).JPG',  'RECB (9)',  
   'RECB (54)', 'RECB (52)', 'RECB (10)', 'RECB (50)', 'RECB (61)', 'RECB (12)', 
   'RECB (55)', 'RECB (53)', 'RECB (58)', 'RECB (57)', 'RECB (11)', 'RECB (56)', 
   'RECB (59)', 'RECB (60)'
 ];
 
-const coverTymIds = ['TYM (7).JPG', 'TYM (9).JPG', 'TYM (2).JPG'];
+const coverTymIds = [
+  getImageUrl('Eventos/TYM', 'TYM (8).JPG'),
+  getImageUrl('Eventos/TYM', 'TYM (2).JPG'),
+];
 
 const tymIds = [
   'TYM (1).JPG', 'TYM (4).JPG', 'TYM (6).JPG', 
@@ -66,48 +71,51 @@ const tymIds = [
   'TYM (2).JPG', 'TYM (7).JPG', 'TYM (8).JPG'
 ];
 
+// IDs Empresas
+
+const coverEmpresasIds = [
+  getImageUrl('Empresas/HeMod', 'C20'),
+  getImageUrl('Empresas/Riiing', 'I14'),
+  getImageUrl('Empresas/Riiing', 'I8'),
+  getImageUrl('Empresas/HeMod', 'C29'),
+];
+
+const heModIds = [
+  'C20', 'C18', 'C15', 'C29', 'C21', 'C16', 
+  'C28', 'C24', 'C25', 'C3',  'C19', 'C1', 
+  'C2',  'C7',  'C4',  'C8',  'C5',  'C14', 
+  'C11', 'C13', 'C9',  'C10', 'C12', 'C6', 
+  'C22', 'C23'
+];
+
+const riiingIds = [
+  'I16', 'I15', 'I18.JPG', 'I1',  'I2', 
+  'I14', 'I13', 'I11', 'I10', 'I9',  'I8', 
+  'I7',  'I6',  'I5', 'I12'
+];
+const riiingProductIds = [
+  'P40', 'P41', 'P39', 'P37', 'P38', 'P34', 'P33', 'P36', 'P35'
+];
+
+const welineIds = [
+  'P15', 'P9', 'P14', 'P8', 'P7', 'P6', 'P5', 'P10', 'P13', 'P12', 'P11',
+];
+
+
 export const categories = [
   {
     "slug": "empresas",
     "title": "Empresas",
     "subtitle": "Identidad en movimiento",
     "description": "Traducimos los valores y la fuerza de tu marca en una narrativa visual impactante. A través de una estética cinematográfica y fotografía corporativa de vanguardia, capturamos la esencia de tu equipo, la innovación en tus procesos y la infraestructura de tu negocio. Documentamos la cultura empresarial no solo como un espacio de trabajo, sino como un motor de éxito y evolución.",  
-    "covers":[
-      "https://drive.google.com/uc?export=download&id=1Z3yrHNHRssUd-BOEJGhOnxvwJH3RdS0y",
-      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394987/I14_gi7cti.jpg", 
-      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773969/C29_vphlc1.jpg",
-      "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394993/I8_gjptr8.jpg",
-    ],
+    "covers":coverEmpresasIds,
     "section":[
       {
         "logo":"/logos/riiing/riiing_png.png",
         "desc":"",
-        "images":[
-          "https://drive.google.com/uc?export=download&id=1Z3yrHNHRssUd-BOEJGhOnxvwJH3RdS0y",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779753980/I16_somly6.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779753980/I15_up1srz.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779753979/I18_xb6kkc.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394984/I1_idz5pp.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394988/I2_ns7bqb.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394989/I3_vlirzs.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394987/I14_gi7cti.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394985/I13_vfyhyr.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394985/I11_nvvrid.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394986/I10_t1n2fm.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394992/I9_itufqm.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394993/I8_gjptr8.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394991/I7_weeyxw.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394991/I6_edegyr.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779394990/I5_hky3cz.jpg",
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P40_cjpmsf.jpg',
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P41_xpni9x.jpg',
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P39_ypci5x.jpg',
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P37_z8clyj.jpg',
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P38_lvlsxc.jpg',
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751282/P34_pgqkcp.jpg',
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751281/P33_vs0g38.jpg',
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751281/P36_dg8xyg.jpg',
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1779751281/P35_ncvaba.jpg',
+        images: [
+         ...riiingIds.map(id => getImageUrl('Empresas/Riiing', id)),
+         ...riiingProductIds.map(id => getImageUrl('Productos', id))
         ],
         "videos": [
           {
@@ -133,7 +141,7 @@ export const categories = [
             url: "https://www.instagram.com/p/DQcdl8zgSns/", 
             caption: `Pasé por @riiingtm y me llevé un teléfono y una Tablet de Samsung para que me acompañen en mis entrenamientos 💪🏼
             Si buscás tecnología, pasá por Riiing 😉`,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779328963/1_pv6e1x.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FRiiing%2F1.mp4',
             username: "riiingtm",
             avatarUrl: "/logos/riiing/riiing.png",
             date: "30 de octubre de 2025"
@@ -146,14 +154,14 @@ export const categories = [
             .
             .
             Bases y condiciones en www.riiing.com.ar`, 
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779328965/2_zkbeuz.mp4', 
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FRiiing%2F2.mp4', 
             username: "riiingtm", avatarUrl: "/logos/riiing/riiing.png", 
             date: "25 de septiembre de 2025" },
           { id: 3, url: "https://www.instagram.com/p/DLnBXxKuR1S/", 
             caption: `Ayer fue la entrega de los primeros 40 smartwatch de Talleres por Riiing
 
             Gracias a todos por venir 🙌😁`, 
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779328966/3_elj4ic.mp4', 
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FRiiing%2F3.mp4', 
             username: "riiingtm", 
             avatarUrl: "/logos/riiing/riiing.png", 
             date: "Hace 2 semanas" },
@@ -164,7 +172,7 @@ export const categories = [
             .
             .
             Bases y condiciones en www.riiing.com.ar`, 
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779328968/4_zedjfs.mp4', 
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FRiiing%2F4.mp4', 
             username: "riiingtm", 
             avatarUrl: "/logos/riiing/riiing.png", 
             date: "21 de septiembre de 2025" },
@@ -172,7 +180,7 @@ export const categories = [
             id: 5, 
             url: "https://www.instagram.com/p/DOvtIn8judZ/", 
             caption: `El nuevo Motorola Edge 60 llegó para redefinir tu experiencia: pantalla curva, cámara profesional y la potencia de Moto IA. 📱✨ Conseguilo en Riiing en hasta 12 cuotas sin interés en riiing.com.ar o en nuestras +80 sucursales --> Elegí la opción RETIRO YA en tu sucursal más cercana😉`,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779328968/5_tro97c.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FRiiing%2F5.mp4',
             username: "riiingtm",
             avatarUrl: "/logos/riiing/riiing.png",
             date: "18 de septiembre de 2025"
@@ -182,7 +190,7 @@ export const categories = [
             url: "https://www.instagram.com/p/DQCYBm0gaxn/", 
             caption: `Unboxing del Smartwatch Zentia Immer Series🚀
             P/D: Mirá lo que es en color naranja😍`,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779328963/6_yyi243.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FRiiing%2F6.mp4',
             username: "riiingtm",
             avatarUrl: "/logos/riiing/riiing.png",
             date: "20 de octubre de 2025"
@@ -191,7 +199,7 @@ export const categories = [
             id: 7, 
             url: "https://www.instagram.com/p/DObxfzjD1LI/", 
             caption: `Galaxy Watch8✨⌚Vení a probártelos a cualquiera de nuestras sucursales y elegí el que más te guste😉`,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779328967/7_gqgyau.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FRiiing%2F7.mp4',
             username: "riiingtm",
             avatarUrl: "/logos/riiing/riiing.png",
             date: "10 de septiembre de 2025"
@@ -203,7 +211,7 @@ export const categories = [
             🥰Por eso, en esta edición especial por el día de la madre de #ConectadasxRiiing, invitamos a personas de nuestro equipo a compartir con sus mamás o hijo/as, esa conexión única que los une desde siempre 💛
 
             Porque más allá de la tecnología, la conexión con mamá es para siempre.`,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779328971/8_qwkmou.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FRiiing%2F8.mp4',
             username: "riiingtm",
             avatarUrl: "/logos/riiing/riiing.png",
             date: "19 de octubre de 2025"
@@ -222,28 +230,28 @@ export const categories = [
             👉🏼AURISGRATIS para todos los que compren un celular Motorola se llevan auriculares 3s de regalo 
 
             Estén atentos porque estos códigos los vamos a activar en horas específicas de Hot sale, les vamos a contar por historias !!🥳🥳`,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779328970/9_zghnvu.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FRiiing%2F9.mp4',
             username: "riiingtm",
             avatarUrl: "/logos/riiing/riiing.png",
             date: "8 de mayo de 2024"
           },
-          { 
+          /*{ 
             id: 10, 
             url: "https://www.instagram.com/p/DNHJ0J4iQ8o/", 
             caption: `Riiingo fue reemplazado?😱
             Claro que no, pero nos enteramos de LA novedad del mes...mirá el video👀`,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779328965/10_txt6zh.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FRiiing%2F10.mp4',
             username: "riiingtm",
             avatarUrl: "/logos/riiing/riiing.png",
             date: "8 de agosto de 2025"
-          },
+          },*/
           { 
             id: 11, 
             url: "https://www.instagram.com/p/DB19Mi0xnVb/", 
             caption: `Unboxing del smartwatch Riiing Tempo
 
             Encontralo en riiing.com.ar 👉 🙌🏃‍➡️`,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779328963/11_jacr53.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FRiiing%2F11.mp4',
             username: "riiingtm",
             avatarUrl: "/logos/riiing/riiing.png",
             date: "1 de noviembre de 2024"
@@ -254,7 +262,7 @@ export const categories = [
             caption: `Te presento el nuevo anillo inteligente de Riiing🙌🎁
 
             Encontralo en hasta 12 cuotas sin interés en Riiing.com.ar ➡️`,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779328962/12_qwtuj9.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FRiiing%2F12.mp4',
             username: "riiingtm",
             avatarUrl: "/logos/riiing/riiing.png",
             date: "11 de octubre de 2024"
@@ -263,7 +271,7 @@ export const categories = [
             id: 13, 
             url: "https://www.instagram.com/p/DCy2mv8RGvB/", 
             caption: `🎧 Sumergite en tu mundo con los nuevos Sensus de Riiing: comodidad, estilo y sonido que te mueve😉`,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779328965/13_uxifal.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FRiiing%2F13.mp4',
             username: "riiingtm",
             avatarUrl: "/logos/riiing/riiing.png",
             date: "25 de noviembre de 2024"
@@ -272,7 +280,7 @@ export const categories = [
             id: 14, 
             url: "https://www.instagram.com/p/DCUMkjHxS7u/", 
             caption: `Conocé los Auriculares Kosmos 🔥`,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779328963/14_jy5wmb.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FRiiing%2F14.mp4',
             username: "riiingtm",
             avatarUrl: "/logos/riiing/riiing.png",
             date: "13 de noviembre de 2024"
@@ -283,7 +291,7 @@ export const categories = [
             caption: `Te muestro los auriculares sensus Riiing
 
             Encontralos en riiing.com.ar🏃‍➡️👏🙌`,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779328964/15_vclope.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FRiiing%2F15.mp4',
             username: "riiingtm",
             avatarUrl: "/logos/riiing/riiing.png",
             date: "23 de octubre de 2024"
@@ -293,7 +301,7 @@ export const categories = [
             url: "https://www.instagram.com/p/DR4_jBvjq07/", 
             caption: `Unboxing ASMR ✨️ Volvió a ingresar el trípode Focus 360 Pro de Riiing😍 
             (Activá el sonido😉)`,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779328964/16_t2qe60.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FRiiing%2F16.mp4',
             username: "riiingtm",
             avatarUrl: "/logos/riiing/riiing.png",
             date: "5 de diciembre de 2025"
@@ -302,7 +310,7 @@ export const categories = [
             id: 17, 
             url: "https://www.instagram.com/p/DTTBJIMDi8P/", 
             caption: `Ya conociste el nuevo Mic Ultra de Riiing? 😍`,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779328963/17_bd3rup.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FRiiing%2F17.mp4',
             username: "riiingtm",
             avatarUrl: "/logos/riiing/riiing.png",
             date: "9 de enero de 2026"
@@ -313,34 +321,7 @@ export const categories = [
         "title": "He Mod",
         "logo":"/logos/he-mod/he-mod_png.png",
         "desc":"",
-        "images": [
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773969/C20_gbxukl.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/C18_rkbyps.jpg", 
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773968/C15_mjsjk7.jpg", 
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773969/C29_vphlc1.jpg", 
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773968/C21_xaxguy.jpg", 
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773967/C16_fsxnph.jpg", 
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773966/C28_coefxc.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773966/C24_rcgjjg.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773966/C25_vgqdoi.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773965/C3_vrtclo.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773965/C19_go6tu3.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773965/C1_wixxvs.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773965/C2_wdjo7r.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773964/C7_v0sxux.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773964/C4_fanqee.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/C8_qtcrpa.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/C5_howqst.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773963/C14_micn3e.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/C11_raekto.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/C13_hkxuhc.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/C9_kazqwj.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/C10_kttvzo.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/C12_wkkouq.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/C6_cgw1yk.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773968/C22_bjojlf.jpg",
-          "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773967/C23_ay3nuq.jpg"
-        ],
+        "images": heModIds.map(id => getImageUrl('Empresas/HeMod', id)),
         "posts": [
       { 
         id: 1, 
@@ -357,7 +338,7 @@ export const categories = [
 
         #lacasadellago #mod430 #arquitecturamodular #innovacionydiseño #entregafinal
         `,
-        mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779320484/1-HEMOD_ictouj.mp4',
+        mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FHeMod%2F1-HEMOD.mp4',
         username: "hemodsas",
         avatarUrl: "/logos/he-mod/he-mod.jpg",
         date: "6 de febrero de 2025"
@@ -373,7 +354,7 @@ export const categories = [
         Conoce las infinitas posibilidades que la arquitectura modular tiene para ofrecer.
 
         #arquitecturamodular #innovación #sustentabilidad #diseñomoderno #arquitecturatransportable`, 
-        mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779320483/2-HEMOD_dbjoqj.mp4', 
+        mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FHeMod%2F2-HEMOD.mp4', 
         username: "hemodsas", 
         avatarUrl: "/logos/he-mod/he-mod.jpg", 
         date: "23 de agosto de 2024" },
@@ -387,7 +368,7 @@ export const categories = [
         ¡Experimenta la emoción de tener tu hogar listo en poco tiempo! 🌟🏡
 
         #arquitecturamodular #instalaciónrápida #sostenibilidad #vivemod #hemod #tunuevomododevivir #arquitecturaecofriendly`, 
-        mediaUrl: "https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779320483/3-HEMOD_uswadh.mp4", 
+        mediaUrl: "https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FHeMod%2F3-HEMOD.mp4", 
         username: "hemodsas", 
         avatarUrl: "/logos/he-mod/he-mod.jpg", 
         date: "12 de marzo de 2024" },
@@ -397,17 +378,7 @@ export const categories = [
         "logo":"/logos/weline/weline-png.png",
         "desc":"",
         "images": [
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P15_suzrcq.jpg',
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P9_dwhkye.jpg',
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773954/P14_l9hry3.jpg',
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P8_wzpxjn.jpg',
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/P7_txsl0u.jpg',
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P6_xqkxwq.jpg',
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773953/P5_o3qmei.jpg',
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773956/P10_bzklip.jpg',
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P13_sa6ghf.jpg',
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/P12_vg8bcb.jpg',
-          'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/P11_u7jxlk.jpg',
+          ...welineIds.map(id => getImageUrl('Productos', id)),
         ],
         "videos":[
           {
@@ -452,7 +423,7 @@ export const categories = [
     "title": "Eventos",
     "subtitle": "Momentos únicos, recuerdos eternos",
     "description": "Inmortalizamos la energía, las emociones y los instantes clave de tus celebraciones más significativas. Desde la magia de un casamiento y la ilusión de unos 15 años, hasta la calidez de un cumpleaños o la distinción de un evento empresarial. Capturamos tanto la imponencia de la ambientación como los gestos espontáneos que le dan vida y autenticidad a cada acontecimiento.",
-    "covers": coverTymIds.map(id => getEventUrl('Eventos/TYM', id)),
+    "covers": coverTymIds,
     "section":[
       {
         "title": "Casamientos",
@@ -515,7 +486,7 @@ export const categories = [
       {
         "title": "Eventos",
         "desc":"",
-        "images": tymIds.map(id => getEventUrl('Eventos/TYM', id)),
+        "images": tymIds.map(id => getImageUrl('Eventos/TYM', id)),
         "posts":[
           { 
             id: 1, 
@@ -530,7 +501,7 @@ export const categories = [
 
             @tedequim  @centrosbz  @pabloramirez__3  @ds.argentina  @dentsplysironaarg  @emmanuel.sarria  @tissum.biomateriales  @ultradentarg  @joaquin.gimenez.ud  @rosterdent_oficial
             `,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779393686/2_nxicjt.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FEventos%2F2.mp4',
             username: "circulo_odontologico_cba",
             avatarUrl: "/logos/odont.jpg",
             date: "15 de diciembre de 2025"
@@ -584,7 +555,7 @@ export const categories = [
             📽️@ph.fedesosa
             Vane y Stefy
             `,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1780104088/publi-trasla-fest_qy4esf.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FEventos%2F1.mp4',
             username: "traslasierrawinefest",
             avatarUrl: "/logos/trasla-fest.jpg",
             date: "24 de marzo de 2026"
@@ -612,7 +583,7 @@ export const categories = [
             @traslasierrawinefest
             @cordobawinetravel
             `,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1780104091/publi-sanja_kw7fun.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FEventos%2F4.mp4',
             username: "sanjavieryacantoturismo",
             avatarUrl: "/logos/sanja.jpg",
             date: "24 de marzo de 2026"
@@ -622,7 +593,7 @@ export const categories = [
             url: "https://www.instagram.com/ph.fedesosa/reel/DCUa9bdxHlh/", 
             caption: `Mini resumen del cumpleaños de Claudia!!
             `,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779393685/3_egfy4b.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FEventos%2F3.mp4',
             username: "ph.fedesosa",
             avatarUrl: "/feddesosa.jpg",
             date: "13 de noviembre de 2024"
@@ -646,7 +617,7 @@ export const categories = [
             @balcarcemerlosanluis 
             @solrojo.barber
             `,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779393691/1_lx0rd6.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FBoliches%2F1.mp4',
             username: "sol.rojo.producciones",
             avatarUrl: "/logos/sol-prod/sol-prod.jpg",
             date: "16 de julio de 2024"
@@ -661,7 +632,7 @@ export const categories = [
             @santioviedoo 
             @wanzoproducciones
             `,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779393687/2_ssaef8.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FBoliches%2F2.mp4',
             username: "sol.rojo.producciones",
             avatarUrl: "/logos/sol-prod/sol-prod.jpg",
             date: "2 de octubre de 2024"
@@ -673,7 +644,7 @@ export const categories = [
 
             Edición número 13 de esta fiesta hermosa ❤️🎪🤹‍♀️🤹🤡
             `,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779393688/3_w3yfok.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FBoliches%2F3.mp4',
             username: "fiestadedisfracesnabuco",
             avatarUrl: "/logos/nabuco.jpg",
             date: "30 de noviembre de 2024"
@@ -710,8 +681,8 @@ export const categories = [
   "title": "Graduaciones",
   "subtitle": "El instante exacto de la victoria",
   "description": "Capturamos el clímax de años de esfuerzo, traducido en pura euforia y alivio. Desde la mirada fija en el cartel de 'Soy Ingeniero/a' hasta el estallido de espuma, pintura y harina con amigos y familia, nos infiltramos en el festejo para congelar la emoción en su estado más salvaje y genuino. No hacemos fotos posadas de protocolo; buscamos la lágrima cómplice de un padre, el abrazo grupal que corta la respiración y los detalles de una fiesta inolvidable. Documentamos el logro de tu vida con la estética vibrante y profesional que se merece.",
-  "covers": coverRecibidasIds.map(id => getEventUrl('Eventos/Recibidas', id)),
-  "images": recibidasIds.map(id => getEventUrl('Eventos/Recibidas', id)),
+  "covers": coverRecibidasIds,
+  "images": recibidasIds.map(id => getImageUrl('Eventos/Recibidas', id)),
   "highlights": [
     "Fotografía de acción de alta velocidad para congelar el estallido de cotillón, pintura y espuma.",
     "Foco en la narrativa documental: capturando abrazos espontáneos, lágrimas y risas sin poses forzadas.",
@@ -738,7 +709,7 @@ export const categories = [
 
             #modoucfa #somosucfa #ucfaok #ucfa #futboldeverdad #pasiónporelfútbol
             `,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779393691/1_ed2wex.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FDeportes%2F1.mp4',
             username: "ucfaok",
             avatarUrl: "/logos/UCFA.jpg",
             date: "21 de diciembre de 2025"
@@ -823,7 +794,7 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
 🔴 Aportando con lo más bello de tan linda Provincia ... 🇦🇷 de @sa.tap.ph
 
 #cordobahermosa #visitecordoba #traslasierracordoba #traslasierra #cordobaargentina #córdobaargentina #argentina #cordobaarg #altascumbres #sierrasdecordobaarg #sierrasdecordobaargentina #sierrasdecórdoba #sierrasdecordoba #lacumbre #lacumbrecordoba #proyectocaraya #proyectocarayá #monocaraya`,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779393715/1_jzxrf2.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FAnimales%2F1.mp4',
             username: "ph.fedesosa",
             avatarUrl: "/feddesosa.jpg",
             date: "27 de mayo de 2023"
@@ -882,7 +853,7 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
             #conocétraslasierra #conoce_traslasierra #traslasierras #visitecordoba #traslasierracordoba #traslasierra #cordobaargentina #córdobaargentina #argentina #cordobaarg #altascumbres #sierrasdecordobaarg #sierrasdecordobaargentina #sierrasdecórdoba #sierrasdecordoba #valledetraslasierra #lastapias #lastapiastraslasierra
             #lastapiascordoba #diquelaviñacórdoba #diquebocadelrio #bocadelrio #bocadelriolastapias #diquebocadelrio
             `,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779393682/1_rqpex2.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FDrone%2F1.mp4',
             username: "ph.fedesosa",
             avatarUrl: "/feddesosa.jpg",
             date: "1 de julio de 2023"
@@ -898,7 +869,7 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
             .
             #dique #traslasierra #cba #cordoba #dji #djımini3pro #djimini3 #drone
             `,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779393683/2_xmpwjz.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FDrone%2F2.mp4',
             username: "ph.fedesosa",
             avatarUrl: "/feddesosa.jpg",
             date: "8 de mayo de 2023"
@@ -911,7 +882,7 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
             .
             #pozonesdecaleufu #caleufu #patagonia #sanmartindelosandes #neuquen #patagoniaargentina #sony #dji #djimini3pro #drone #parati #travel
             `,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779393685/3_rsrekz.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FDrone%2F3.mp4',
             username: "ph.fedesosa",
             avatarUrl: "/feddesosa.jpg",
             date: "17 de mayo de 2024"
@@ -921,7 +892,7 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
             url: "https://www.instagram.com/ph.fedesosa/reel/C6l1LwfrBmO/", 
             caption: `#hosteriahuahum #huahum #lago #lagononthue #sanmartindelosandes #neuquen #neuquenargentina #argentina #patagonia #sur #drone #dji #mini3pro #muelle #muellehuahum #parati
             `,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779393683/4_jmzcno.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FDrone%2F4.mp4',
             username: "ph.fedesosa",
             avatarUrl: "/feddesosa.jpg",
             date: "5 de mayo de 2024"
@@ -932,7 +903,7 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
             caption: `El río Correntoso es un río ubicado en Villa La Angostura 🇦🇷. Este río va desde el lago Correntoso hacia el lago Nahuel Huapi, destacándose por ser uno de los ríos más cortos del mundo, con entre 200 y 300 m de longitud.
             #rio #riocorrentoso #riomascortodelmundo #lagocorrentoso #nahuelhuapi #villalangostura #patagonia #patagoniaargentina #argentina #dji #drone #djimini3pro #travel #parati 
             `,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779393683/5_nyltlx.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FDrone%2F5.mp4',
             username: "ph.fedesosa",
             avatarUrl: "/feddesosa.jpg",
             date: "31 de mayo de 2024"
@@ -948,7 +919,7 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
             .
             #lago #queñi #lagoqueñi #neuquen #argentina #pesca #pez #drone #dji #djimini3pro #sony #sonya7iii #montaña #bosque #parati
             `,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779393683/6_ryejjt.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FDrone%2F6.mp4',
             username: "ph.fedesosa",
             avatarUrl: "/feddesosa.jpg",
             date: "19 de abril de 2024"
@@ -960,7 +931,7 @@ Está ubicados a 11 km de La Cumbre, a dos horas de la Ciudad de Córdoba.
 
             #nono #traslasierra #cba #cordobaturismo #cordoba #dji #djimini3pro #djiglobal #djidrone #m83 #reels #montaña #goldenhour #youpic
             `,
-            mediaUrl: 'https://res.cloudinary.com/der3q5vw7/video/upload/q_auto/f_auto/v1779393682/7_qgkmli.mp4',
+            mediaUrl: 'https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o/Videos%2FDrone%2F17.mp4',
             username: "ph.fedesosa",
             avatarUrl: "/feddesosa.jpg",
             date: "29 de julio de 2023"

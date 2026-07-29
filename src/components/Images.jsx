@@ -5,28 +5,47 @@ import { motion } from "framer-motion"; // Importamos Framer Motion
 export const Images = ({ isModalOpen, setIsModalOpen }) => {
   const [selectedIdx, setSelectedIdx] = useState(0);
 
-  const allImages = [
-    // Columna 1
-    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773961/P18_vf6btm.jpg',  
-    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/A18_hfvmk3.jpg',
-    "https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773968/C15_mjsjk7.jpg",
-    
-    
-    // Columna 2
-    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P13_sa6ghf.jpg',
-    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773962/P24_lcwnot.jpg',
-    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773966/C24_rcgjjg.jpg',
-  
-    
-    // Columna 3
-    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773959/C18_rkbyps.jpg',
-    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773960/A1_eoz6p2.jpg',
-    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773955/P9_dwhkye.jpg',
+  const OCI_BASE_URL = "https://objectstorage.us-phoenix-1.oraclecloud.com/n/axslkpadz0ub/b/FSC-Fotos/o";
 
-    // Columna 4
-    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773958/P21_ofdwev.jpg',
-    'https://res.cloudinary.com/der3q5vw7/image/upload/q_auto/f_auto/v1778773957/P19_x7medm.jpg',
-  ];
+  const getImageUrl = (category, fileName) => {
+  // Si fileName ya termina en .jpg, .JPG, .png, etc., lo deja igual; si no, le agrega .jpg
+  const fileWithExt = /\.[a-zA-Z0-9]+$/.test(fileName) ? fileName : `${fileName}.jpg`;
+  return `${OCI_BASE_URL}/${encodeURIComponent(category)}/${encodeURIComponent(fileWithExt)}`;
+};
+
+// Definimos los IDs agrupados o en una sola lista limpia
+const rawImageIds = [
+  // Columna 1
+  'P18', 'A18', 'C15',
+
+  // Columna 2
+  'P13', 'P24', 'C24',
+
+  // Columna 3
+  'C18', 'A1', 'P9',
+
+  // Columna 4
+  'P21', 'P19'
+];
+
+// Helper para resolver la URL según el prefijo del ID
+const resolveImageUrlByPrefix = (id) => {
+  const prefix = id.charAt(0).toUpperCase();
+
+  switch (prefix) {
+    case 'P':
+      return getImageUrl('Productos', id);
+    case 'A':
+      return getImageUrl('Animales', id);
+    case 'C':
+      return getImageUrl('Empresas/HeMod', id);
+    default:
+      return getImageUrl('general', id);
+  }
+};
+
+// Array final refactorizado
+const allImages = rawImageIds.map(resolveImageUrlByPrefix);
 
   const openModalAt = (index) => {
     setSelectedIdx(index);

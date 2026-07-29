@@ -42,33 +42,40 @@ export const Collection = () => {
 
   const currentCategory = categories[currentIndex];
 
+  // Resolver la URL de la imagen de forma segura con fallbacks
+  const bgImage = 
+    currentCategory?.image || 
+    (currentCategory?.covers && currentCategory.covers.length > 0 ? currentCategory.covers[0] : null);
+
   return (
     <section className="relative z-1 w-full h-screen overflow-hidden bg-black font-pj">
       
       {/* 1. BACKGROUND DINÁMICO (Sincronizado) */}
-      {/* Eliminamos mode="wait" para que el nuevo fondo entre mientras el viejo sale */}
       <AnimatePresence initial={false}>
-        <motion.div
-          key={`bg-${currentIndex}`}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{
-            opacity: { duration: 1.2, ease: "easeInOut" }, 
-            scale: { duration: 1.5, ease: "easeOut" },
-          }}
-          className="absolute inset-0 w-full h-full"
-        >
-          <div
-            className="absolute inset-0 w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage: `url(${currentCategory.image ?? currentCategory.covers[0]})`,
+        {bgImage && (
+          <motion.div
+            key={`bg-${currentIndex}-${bgImage}`}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              opacity: { duration: 1.2, ease: "easeInOut" }, 
+              scale: { duration: 1.5, ease: "easeOut" },
             }}
+            className="absolute inset-0 w-full h-full"
           >
-            <div className="absolute inset-0 bg-black/40" />
-          </div>
-        </motion.div>
+            {/* Reemplazo de background-image por tag <img> nativo */}
+            <img
+              src={bgImage}
+              alt={currentCategory?.title || 'Categoría'}
+              className="w-full h-full object-cover object-center"
+              loading="eager"
+            />
+            {/* Overlay oscuro para contraste del texto */}
+            <div className="absolute inset-0 bg-black/40 z-10" />
+          </motion.div>
+        )}
       </AnimatePresence>
 
       {/* 2. UI DE CÁMARA (HUD) */}
@@ -86,8 +93,8 @@ export const Collection = () => {
         
         <div className="absolute right-20 top-10 flex items-center gap-2">
           <div className="absolute bg-red-600 px-3 py-1 text-[10px] font-bold rounded-sm animate-pulse">
-          LIVE
-        </div>
+            LIVE
+          </div>
         </div>
       </div>
 
@@ -100,26 +107,26 @@ export const Collection = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
-            
           >
-            <p className="inline-block px-5 py-1.5 mb-6 text-xs font-bold tracking-[0.4em] uppercase bg-white text-black rounded-full shadow-lg">
-              {currentCategory.subtitle}
-            </p>
+            {currentCategory?.subtitle && (
+              <p className="inline-block px-5 py-1.5 mb-6 text-xs font-bold tracking-[0.4em] uppercase bg-white text-black rounded-full shadow-lg">
+                {currentCategory.subtitle}
+              </p>
+            )}
 
             <h1 className="text-5xl md:text-[10rem] font-black uppercase leading-tight md:leading-none tracking-normal md:tracking-tighter transition-all duration-700 select-none">
-              {/* En móvil el texto es blanco sólido. En escritorio (md) se vuelve transparente y activa el borde */}
               <span 
                 className="text-white md:text-transparent block" 
                 style={{ WebkitTextStroke: '2px white' }} 
               >
-                {currentCategory.title}
+                {currentCategory?.title}
               </span>
             </h1>
 
             <div className="mt-10 flex flex-col items-center gap-8">
               <button
                 onClick={() => navigate(`/categoria/${currentCategory.slug}`)}
-                className="pointer-events-auto px-10 py-4 bg-white text-black text-sm font-bold uppercase tracking-widest rounded-full hover:bg-white/90 transition-transform active:scale-95 shadow-xl"
+                className="pointer-events-auto px-10 py-4 bg-white text-black text-sm font-bold uppercase tracking-widest rounded-full hover:bg-white/90 transition-transform active:scale-95 shadow-xl cursor-pointer"
               >
                 Explorar Colección
               </button>
@@ -137,7 +144,7 @@ export const Collection = () => {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`h-1 transition-all duration-500 rounded-full ${
+                className={`h-1 transition-all duration-500 rounded-full cursor-pointer ${
                   index === currentIndex ? 'w-12 bg-white' : 'w-4 bg-white/20'
                 }`}
               />
@@ -147,13 +154,13 @@ export const Collection = () => {
           <div className="flex gap-4">
             <button
               onClick={prevSlide}
-              className="p-4 border border-white/10 text-white rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-md group"
+              className="p-4 border border-white/10 text-white rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-md group cursor-pointer"
             >
               <ArrowLeft size={20} className="group-active:-translate-x-1 transition-transform" />
             </button>
             <button
               onClick={nextSlide}
-              className="p-4 border border-white/10 text-white rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-md group"
+              className="p-4 border border-white/10 text-white rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-md group cursor-pointer"
             >
               <ArrowRight size={20} className="group-active:translate-x-1 transition-transform" />
             </button>
@@ -161,6 +168,7 @@ export const Collection = () => {
         </div>
       </div>
 
+      {/* Scanlines Overlay */}
       <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.05)_50%),linear-gradient(90deg,rgba(255,0,0,0.02),rgba(0,255,0,0.01),rgba(0,0,255,0.02))] bg-[length:100%_4px,3px_100%] z-30" />
     </section>
   );

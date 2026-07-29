@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, Navigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Header } from '../components/Header';
@@ -41,32 +41,49 @@ const CategoryPage = () => {
 const CategoryHero = ({ category }) => {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
 
+  // Sanitización de portadas para evitar fallos si covers viene vacío o undefined
+  const covers = useMemo(
+    () => (category?.covers && category.covers.length > 0 ? category.covers : []),
+    [category]
+  );
+
+  // Rotación automática de imágenes
   useEffect(() => {
-    if (!category?.covers?.length) return;
+    if (covers.length <= 1) return;
 
     const interval = setInterval(() => {
-      setCurrentImgIndex((prev) => (prev + 1) % category.covers.length);
+      setCurrentImgIndex((prev) => (prev + 1) % covers.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [category]);
+  }, [covers]);
+
+  const currentImageUrl = covers[currentImgIndex];
 
   return (
-    <section className="relative z-10 h-screen w-full flex items-center justify-center overflow-hidden">
+    <section className="relative z-10 h-screen w-full flex items-center justify-center overflow-hidden bg-black">
       
-      {/* Background Animado */}
-      <AnimatePresence mode='wait'>
-        <motion.div
-          key={currentImgIndex}
-          initial={{ scale: 1.2, opacity: 0 }}
-          animate={{ scale: 1.05, opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${category.covers[currentImgIndex]})` }}
-        >
-          <div className="absolute inset-0 bg-black/30" />
-        </motion.div>
+      {/* Background Animado usando tag <img> en lugar de CSS background-image */}
+      <AnimatePresence>
+        {currentImageUrl && (
+          <motion.div
+            key={currentImageUrl} // Key basada en la URL para que React detecte la imagen actual
+            initial={{ scale: 1.15, opacity: 0 }}
+            animate={{ scale: 1.05, opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="absolute inset-0 w-full h-full"
+          >
+            <img
+              src={currentImageUrl}
+              alt={category?.title || 'Cover image'}
+              className="w-full h-full object-cover object-center"
+              loading="eager"
+            />
+            {/* Dark Overlay sobre la imagen para contraste */}
+            <div className="absolute inset-0 bg-black/40" />
+          </motion.div>
+        )}
       </AnimatePresence>
 
       {/* UI de Cámara (HUD) */}
@@ -91,20 +108,21 @@ const CategoryHero = ({ category }) => {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
+          transition={{ duration: 1, delay: 0.3 }}
           className="text-center"
         >
-          <p className="inline-block px-4 py-1 mb-4 text-xs font-bold tracking-[0.3em] uppercase bg-white text-black rounded-full">
-            {category.subtitle}
-          </p>
+          {category?.subtitle && (
+            <p className="inline-block px-4 py-1 mb-4 text-xs font-bold tracking-[0.3em] uppercase bg-white text-black rounded-full">
+              {category.subtitle}
+            </p>
+          )}
           
           <h1 className="text-5xl md:text-[10rem] font-black uppercase leading-tight md:leading-none tracking-normal md:tracking-tighter transition-all duration-700 select-none">
-            {/* En móvil el texto es blanco sólido. En escritorio (md) se vuelve transparente y activa el borde */}
             <span 
               className="text-white md:text-transparent block" 
               style={{ WebkitTextStroke: '2px white' }} 
             >
-              {category.title}
+              {category?.title}
             </span>
           </h1>
           
